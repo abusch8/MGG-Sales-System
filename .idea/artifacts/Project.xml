@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Project">
+    <output-path>$PROJECT_DIR$/out/artifacts/Project</output-path>
+    <root id="archive" name="Project.jar">
+      <element id="module-source" name="MGG Sales System" />
+      <element id="module-output" name="MGG Sales System" />
+      <element id="directory" name="data">
+        <element id="dir-copy" path="$PROJECT_DIR$/data" />
+      </element>
+    </root>
+  </artifact>
+</component>

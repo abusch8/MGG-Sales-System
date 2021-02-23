@@ -18,7 +18,7 @@ public class DataConverter {
         System.out.println("=======================");
         ArrayList<Person[]> persons = new ArrayList<Person[]>();
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("/Users/Chambers/ideaProjects/MGG Sales System/data/Persons.csv"));
+            BufferedReader reader = new BufferedReader(new FileReader("data/Persons.csv"));
 
             int count = Integer.parseInt(reader.readLine()); //convert first line from string->int(how many lines there are in the file)
 
@@ -47,7 +47,7 @@ public class DataConverter {
         System.out.println("     STORES REPORT     ");
         System.out.println("=======================");
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("/Users/Chambers/ideaProjects/MGG Sales System/data/Stores.csv"));
+            BufferedReader reader = new BufferedReader(new FileReader("data/Stores.csv"));
 
             int count = Integer.parseInt(reader.readLine()); //convert first line from string->int(how many lines there are in the file)
 
@@ -69,7 +69,7 @@ public class DataConverter {
         System.out.println("      ITEMS REPORT     ");
         System.out.println("=======================");
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("/Users/Chambers/ideaProjects/MGG Sales System/data/Items.csv"));
+            BufferedReader reader = new BufferedReader(new FileReader("data/Items.csv"));
 
             int count = Integer.parseInt(reader.readLine()); //convert first line from string->int(how many lines there are in the file)
 

@@ -1,5 +1,87 @@
 package com.mgg;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+
 public class DataConverter {
 
+    public static void main(String[] args) {
+        generatePersons();
+        generateStores();
+        generateItems();
+    }
+
+    public static void generatePersons() {
+        System.out.println("=======================");
+        System.out.println("    CUSTOMER REPORT    ");
+        System.out.println("=======================");
+        ArrayList<Person[]> persons = new ArrayList<Person[]>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("/Users/Chambers/ideaProjects/MGG Sales System/data/Persons.csv"));
+
+            int count = Integer.parseInt(reader.readLine()); //convert first line from string->int(how many lines there are in the file)
+
+            for(int i = 0; i < count; i++) {
+                String[] content = reader.readLine().split(",", -1); //use delimiter to separate contents
+                Name name = new Name(content[2], content[3]);
+                ArrayList<String> emailList = new ArrayList<String>();
+
+                for(int j = 9; j <= content.length-1; j++) {
+                    emailList.add(content[j]); //filling ArrayList with emails
+                }
+
+                Address address = new Address(content[4], content[5], content[6], content[7], content[8]);
+                Person person = new Person(content[0], content[1], name, address, emailList);
+                //To do: Generate XML and JSON files here instead of printing.
+                System.out.println(person.toString()); //print customer
+            }
+            reader.close();
+        } catch(Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void generateStores() {
+        System.out.println("=======================");
+        System.out.println("     STORES REPORT     ");
+        System.out.println("=======================");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("/Users/Chambers/ideaProjects/MGG Sales System/data/Stores.csv"));
+
+            int count = Integer.parseInt(reader.readLine()); //convert first line from string->int(how many lines there are in the file)
+
+            for(int i = 0; i < count; i++) {
+                String[] content = reader.readLine().split(",", -1);
+                Address address = new Address(content[2], content[3], content[4], content[5], content[6]);
+                Store store = new Store(content[0], content[1], address);
+                //To do: Generate XML and JSON files here instead of printing.
+                System.out.println(store.toString());
+            }
+            reader.close();
+        } catch(Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void generateItems() {
+        System.out.println("=======================");
+        System.out.println("      ITEMS REPORT     ");
+        System.out.println("=======================");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("/Users/Chambers/ideaProjects/MGG Sales System/data/Items.csv"));
+
+            int count = Integer.parseInt(reader.readLine()); //convert first line from string->int(how many lines there are in the file)
+
+            for(int i = 0; i < count; i++) {
+                String[] content = reader.readLine().split(",", -1);
+                Item item = new Item(content[0], content[1], content[2], Double.parseDouble(content[3]));
+                //To do: Generate XML and JSON files here instead of printing.
+                System.out.println(item.toString());
+            }
+            reader.close();
+        } catch(Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -1,6 +1,6 @@
 package com.mgg;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Person {
 
@@ -8,9 +8,9 @@ public class Person {
     private String type;
     private Name name;
     private Address address;
-    private ArrayList<String> emails;
+    private List<String> emails;
 
-    public Person(String personId, String type, Name name, Address address, ArrayList<String> emails) {
+    public Person(String personId, String type, Name name, Address address, List<String> emails) {
         this.personId = personId;
         this.type = type;
         this.name = name;
@@ -50,17 +50,16 @@ public class Person {
         this.address = address;
     }
 
-    public ArrayList<String> getEmails() {
+    public List<String> getEmails() {
         return emails;
     }
 
-    public void setEmails(ArrayList<String> emails) {
+    public void setEmails(List<String> emails) {
         this.emails = emails;
     }
 
     public String toString() {
         String emailString = String.join(",", emails);
-        return personId + "," + type + "," + name.getLastName() + "," + name.getFirstName() + "," + address.getSTREET() + "," + address.getCITY() + "," + address.getSTATE()
-                + "," + address.getZIP() + "," + address.getCOUNTRY() + "," + emailString;
+        return personId + "," + type + "," + name.getLastName() + "," + name.getFirstName() + "," + address.getSTREET() + "," + address.getCITY() + "," + address.getSTATE() + "," + address.getZIP() + "," + address.getCOUNTRY() + "," + emailString;
     }
 }

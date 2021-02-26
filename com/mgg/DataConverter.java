@@ -46,13 +46,13 @@ public class DataConverter {
                     emailList.add(content[j]); //filling ArrayList with emails
                 }
                 Person person = null;
-                switch (content[1]) {
+                switch (content[1]) { //switch statement for properly identifying which type it is
                     case "E" -> person = new Employee(content[0], name, address, emailList);
                     case "C"-> person = new Customer(content[0], name, address, emailList);
                     case "P" -> person = new PlatinumMember(content[0], name, address, emailList);
                     case "G" -> person = new GoldMember(content[0], name, address, emailList);
                 }
-                persons.add(person);
+                persons.add(person); //add person to list
             }
             reader.close(); //close the reader and begin writing files
             XStream xstream = new XStream(new DomDriver());

@@ -30,9 +30,7 @@ public class DataConverter {
     }
 
     public static void generatePersons() {
-        System.out.println("=======================");
-        System.out.println("    CUSTOMER REPORT    ");
-        System.out.println("=======================");
+        //documentation is only for the first function, as the following (2) functions are very similar in structure and content, and would be redundant if included in all.
         List<Person> persons = new ArrayList<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader("data/Persons.csv"));
@@ -42,15 +40,12 @@ public class DataConverter {
                 Name name = new Name(content[2], content[3]);
                 Address address = new Address(content[4], content[5], content[6], content[7], content[8]);
 
-                List<String> emailList = new ArrayList<>();
+                List<String> emailList = new ArrayList<>(); //In-case someone has more than one email, we have created a list to store them.
                 for(int j = 9; j <= content.length-1; j++) {
                     emailList.add(content[j]); //filling ArrayList with emails
                 }
-
                 Person person = new Person(content[0], content[1], name, address, emailList);
                 persons.add(person);
-                //To do: Generate XML and JSON files here instead of printing.
-                System.out.println(person.toString()); //print customer
             }
             reader.close(); //close the reader and begin writing files
             XStream xstream = new XStream(new DomDriver());
@@ -79,9 +74,6 @@ public class DataConverter {
     }
 
     public static void generateStores() {
-        System.out.println("=======================");
-        System.out.println("     STORES REPORT     ");
-        System.out.println("=======================");
         List<Store> stores = new ArrayList<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader("data/Stores.csv"));
@@ -94,6 +86,22 @@ public class DataConverter {
                 stores.add(store);
             }
             reader.close();
+            XStream xstream = new XStream(new DomDriver());
+            xstream.alias("stores", List.class);
+            xstream.alias("store", Store.class);
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter("data/Stores.xml"));
+            String xml_output = xstream.toXML(stores);
+            writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+            writer.write(xml_output);
+            writer.close();
+
+            BufferedWriter json = new BufferedWriter(new FileWriter("data/Stores.json"));
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json_output = gson.toJson(stores);
+            json.write(json_output);
+            json.close();
+
         } catch(Exception e) {
             throw new RuntimeException(e);
         }

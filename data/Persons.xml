@@ -1,123 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<People>
-    <Person>
-        <personCode>c9fa12</personCode>
-        <personType>E</personType>
-        <lastName>Diehl</lastName>
-        <firstName>Dylan</firstName>
-        <Street>67 West Oak Valley Court</Street>
-        <City>Beatrice</City>
-        <State>NE</State>
-        <Zip>68503</Zip>
-        <Country>USA</Country>
-        <Email>dylandiehl@icloud.com</Email>
-    </Person>
-    <Person>
-        <personCode>oz901n</personCode>
-        <personType>C</personType>
-        <lastName>Smith</lastName>
-        <firstName>Jerry</firstName>
-        <Street>285 Oakmont Stratton</Street>
-        <City>Lawrence</City>
-        <State>KS</State>
-        <Zip>65810</Zip>
-        <Country>USA</Country>
-        <Email>jsmith75@gmail.com</Email>
-    </Person>
-    <Person>
-        <personCode>1icjam</personCode>
-        <personType>P</personType>
-        <lastName>Garfield</lastName>
-        <firstName>Gary</firstName>
-        <Street>106 N 19th</Street>
-        <City>Houndog</City>
-        <State>LA</State>
-        <Zip>19540</Zip>
-        <Country>USA</Country>
-        <Email>garyloveslasagna@icloud.com</Email>
-    </Person>
-    <Person>
-        <personCode>19ozud</personCode>
-        <personType>E</personType>
-        <lastName>Johnson</lastName>
-        <firstName>Arnold</firstName>
-        <Street>Creative Apartments Apt 192</Street>
-        <City>Princeton</City>
-        <State>NJ</State>
-        <Zip>10335</Zip>
-        <Country>USA</Country>
-        <Email>jarnie88@hotmail.com</Email>
-    </Person>
-    <Person>
-        <personCode>zm18te</personCode>
-        <personType>C</personType>
-        <lastName>Busch</lastName>
-        <firstName>Alex</firstName>
-        <Street>104 Abel Hall</Street>
-        <City>Grand Island</City>
-        <State>NE</State>
-        <Zip>18571</Zip>
-        <Country>USA</Country>
-        <Email>hooraygamer@yahoo.com</Email>
-    </Person>
-    <Person>
-        <personCode>1zqo0t</personCode>
-        <personType>G</personType>
-        <lastName>Mercedes</lastName>
-        <firstName>Agregory</firstName>
-        <Street>918 West Washington</Street>
-        <City>Clementine</City>
-        <State>OR</State>
-        <Zip>59184</Zip>
-        <Country>USA</Country>
-        <Email>godgamer25@gmail.com</Email>
-    </Person>
-    <Person>
-        <personCode>k7c93z</personCode>
-        <personType>C</personType>
-        <lastName>Moeller</lastName>
-        <firstName>James</firstName>
-        <Street>104 West Hickory</Street>
-        <City>Oklahoma City</City>
-        <State>OK</State>
-        <Zip>18571</Zip>
-        <Country>USA</Country>
-        <Email>monkamode@mail.com</Email>
-    </Person>
-    <Person>
-        <personCode>y7z01c</personCode>
-        <personType>P</personType>
-        <lastName>Muhammad</lastName>
-        <firstName>Dilshad</firstName>
-        <Street>104 Dubai</Street>
-        <City>Dubai</City>
-        <State>CA</State>
-        <Zip>37561</Zip>
-        <Country>USA</Country>
-        <Email>dilshadder2k@yahoo.com</Email>
-    </Person>
-    <Person>
-        <personCode>1mzn4n</personCode>
-        <personType>P</personType>
-        <lastName>Smith</lastName>
-        <firstName>Xavier</firstName>
-        <Street>104 Washington</Street>
-        <City>Creatile</City>
-        <State>ND</State>
-        <Zip>18139</Zip>
-        <Country>USA</Country>
-        <Email>xsmith@gmail.com</Email>
-    </Person>
-    <Person>
-        <personCode>z9aqq7</personCode>
-        <personType>G</personType>
-        <lastName>McGregor</lastName>
-        <firstName>Connor</firstName>
-        <Street>618 London</Street>
-        <City>Cratile</City>
-        <State>SD</State>
-        <Zip>18128</Zip>
-        <Country>USA</Country>
-        <Email>mcgreg@mail.com</Email>
-    </Person>
-</People>
+<people>
+  <person>
+    <personId>c9fa12</personId>
+    <type>E</type>
+    <name>
+      <lastName>Diehl</lastName>
+      <firstName>Dylan</firstName>
+    </name>
+    <address>
+      <STREET>67 West Oak Valley Court</STREET>
+      <CITY>Beatrice</CITY>
+      <STATE>NE</STATE>
+      <ZIP>68503</ZIP>
+      <COUNTRY>USA</COUNTRY>
+    </address>
+    <emails>
+      <email>dylandiehl@icloud.com</email>
+    </emails>
+  </person>
+  <person>
+    <personId>oz901n</personId>
+    <type>C</type>
+    <name>
+      <lastName>Smith</lastName>
+      <firstName>Jerry</firstName>
+    </name>
+    <address>
+      <STREET>285 Oakmont Stratton</STREET>
+      <CITY>Lawrence</CITY>
+      <STATE>KS</STATE>
+      <ZIP>65810</ZIP>
+      <COUNTRY>USA</COUNTRY>
+    </address>
+    <emails>
+      <email>jsmith75@gmail.com</email>
+    </emails>
+  </person>
+  <person>
+    <personId>1icjam</personId>
+    <type>P</type>
+    <name>
+      <lastName>Garfield</lastName>
+      <firstName>Gary</firstName>
+    </name>
+    <address>
+      <STREET>106 N 19th</STREET>
+      <CITY>Houndog</CITY>
+      <STATE>LA</STATE>
+      <ZIP>19540</ZIP>
+      <COUNTRY>USA</COUNTRY>
+    </address>
+    <emails>
+      <email>garyloveslasagna@icloud.com</email>
+    </emails>
+  </person>
+  <person>
+    <personId>19ozud</personId>
+    <type>E</type>
+    <name>
+      <lastName>Johnson</lastName>
+      <firstName>Arnold</firstName>
+    </name>
+    <address>
+      <STREET>Creative Apartments Apt 192</STREET>
+      <CITY>Princeton</CITY>
+      <STATE>NJ</STATE>
+      <ZIP>10335</ZIP>
+      <COUNTRY>USA</COUNTRY>
+    </address>
+    <emails>
+      <email>jarnie88@hotmail.com</email>
+    </emails>
+  </person>
+  <person>
+    <personId>zm18te</personId>
+    <type>C</type>
+    <name>
+      <lastName>Busch</lastName>
+      <firstName>Alex</firstName>
+    </name>
+    <address>
+      <STREET>104 Abel Hall</STREET>
+      <CITY>Grand Island</CITY>
+      <STATE>NE</STATE>
+      <ZIP>18571</ZIP>
+      <COUNTRY>USA</COUNTRY>
+    </address>
+    <emails>
+      <email>hooraygamer@yahoo.com</email>
+    </emails>
+  </person>
+  <person>
+    <personId>1zqo0t</personId>
+    <type>G</type>
+    <name>
+      <lastName>Mercedes</lastName>
+      <firstName>Agregory</firstName>
+    </name>
+    <address>
+      <STREET>918 West Washington</STREET>
+      <CITY>Clementine</CITY>
+      <STATE>OR</STATE>
+      <ZIP>59184</ZIP>
+      <COUNTRY>USA</COUNTRY>
+    </address>
+    <emails>
+      <email>godgamer25@gmail.com</email>
+    </emails>
+  </person>
+  <person>
+    <personId>k7c93z</personId>
+    <type>C</type>
+    <name>
+      <lastName>Moeller</lastName>
+      <firstName>James</firstName>
+    </name>
+    <address>
+      <STREET>104 West Hickory</STREET>
+      <CITY>Oklahoma City</CITY>
+      <STATE>OK</STATE>
+      <ZIP>18571</ZIP>
+      <COUNTRY>USA</COUNTRY>
+    </address>
+    <emails>
+      <email>monkamode@mail.com</email>
+    </emails>
+  </person>
+  <person>
+    <personId>y7z01c</personId>
+    <type>P</type>
+    <name>
+      <lastName>Muhammad</lastName>
+      <firstName>Dilshad</firstName>
+    </name>
+    <address>
+      <STREET>104 Dubai</STREET>
+      <CITY>Dubai</CITY>
+      <STATE>CA</STATE>
+      <ZIP>37561</ZIP>
+      <COUNTRY>USA</COUNTRY>
+    </address>
+    <emails>
+      <email>dilshadder2k@yahoo.com</email>
+    </emails>
+  </person>
+  <person>
+    <personId>1mzn4n</personId>
+    <type>P</type>
+    <name>
+      <lastName>Smith</lastName>
+      <firstName>Xavier</firstName>
+    </name>
+    <address>
+      <STREET>104 Washington</STREET>
+      <CITY>Creatile</CITY>
+      <STATE>ND</STATE>
+      <ZIP>18139</ZIP>
+      <COUNTRY>USA</COUNTRY>
+    </address>
+    <emails>
+      <email>xsmith@gmail.com</email>
+    </emails>
+  </person>
+  <person>
+    <personId>z9aqq7</personId>
+    <type>G</type>
+    <name>
+      <lastName>McGregor</lastName>
+      <firstName>Connor</firstName>
+    </name>
+    <address>
+      <STREET>618 London</STREET>
+      <CITY>Cratile</CITY>
+      <STATE>SD</STATE>
+      <ZIP>18128</ZIP>
+      <COUNTRY>USA</COUNTRY>
+    </address>
+    <emails>
+      <email>mcgreg@mail.com</email>
+      <email>asdfasdf@gmail.com</email>
+    </emails>
+  </person>
+</people>

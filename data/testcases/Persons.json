@@ -1,0 +1,122 @@
+[
+  {
+    "personCode": "c9fa12",
+    "personType": "E",
+    "lastName": "Diehl",
+    "firstName": "Dylan",
+    "Street": "67 West Oak Valley Court",
+    "City": "Beatrice",
+    "State": "NE",
+    "Zip": 68503,
+    "Country": "USA",
+    "Email": "dylandiehl@icloud.com"
+  },
+  {
+    "personCode": "oz901n",
+    "personType": "C",
+    "lastName": "Smith",
+    "firstName": "Jerry",
+    "Street": "285 Oakmont Stratton",
+    "City": "Lawrence",
+    "State": "KS",
+    "Zip": 65810,
+    "Country": "USA",
+    "Email": "jsmith75@gmail.com"
+  },
+  {
+    "personCode": "1icjam",
+    "personType": "P",
+    "lastName": "Garfield",
+    "firstName": "Gary",
+    "Street": "106 N 19th",
+    "City": "Houndog",
+    "State": "LA",
+    "Zip": 19540,
+    "Country": "USA",
+    "Email": "garyloveslasagna@icloud.com"
+  },
+  {
+    "personCode": "19ozud",
+    "personType": "E",
+    "lastName": "Johnson",
+    "firstName": "Arnold",
+    "Street": "Creative Apartments Apt 192",
+    "City": "Princeton",
+    "State": "NJ",
+    "Zip": 10335,
+    "Country": "USA",
+    "Email": "jarnie88@hotmail.com"
+  },
+  {
+    "personCode": "zm18te",
+    "personType": "C",
+    "lastName": "Busch",
+    "firstName": "Alex",
+    "Street": "104 Abel Hall",
+    "City": "Grand Island",
+    "State": "NE",
+    "Zip": 18571,
+    "Country": "USA",
+    "Email": "hooraygamer@yahoo.com"
+  },
+  {
+    "personCode": "1zqo0t",
+    "personType": "G",
+    "lastName": "Mercedes",
+    "firstName": "Agregory",
+    "Street": "918 West Washington",
+    "City": "Clementine",
+    "State": "OR",
+    "Zip": 59184,
+    "Country": "USA",
+    "Email": "godgamer25@gmail.com"
+  },
+  {
+    "personCode": "k7c93z",
+    "personType": "C",
+    "lastName": "Moeller",
+    "firstName": "James",
+    "Street": "104 West Hickory",
+    "City": "Oklahoma City",
+    "State": "OK",
+    "Zip": 18571,
+    "Country": "USA",
+    "Email": "monkamode@mail.com"
+  },
+  {
+    "personCode": "y7z01c",
+    "personType": "P",
+    "lastName": "Muhammad",
+    "firstName": "Dilshad",
+    "Street": "104 Dubai",
+    "City": "Dubai",
+    "State": "CA",
+    "Zip": 37561,
+    "Country": "USA",
+    "Email": "dilshadder2k@yahoo.com"
+  },
+  {
+    "personCode": "1mzn4n",
+    "personType": "P",
+    "lastName": "Smith",
+    "firstName": "Xavier",
+    "Street": "104 Washington",
+    "City": "Creatile",
+    "State": "ND",
+    "Zip": 18139,
+    "Country": "USA",
+    "Email": "xsmith@gmail.com"
+  },
+  {
+    "personCode": "z9aqq7",
+    "personType": "G",
+    "lastName": "McGregor",
+    "firstName": "Connor",
+    "Street": "618 London",
+    "City": "Cratile",
+    "State": "SD",
+    "Zip": 18128,
+    "Country": "USA",
+    "Email": "mcgreg@mail.com"
+  }
+]

@@ -38,13 +38,20 @@ public class DataConverter {
             for(int i = 0; i < count; i++) {
                 String[] content = reader.readLine().split(","); //use delimiter to separate contents
                 Name name = new Name(content[2], content[3]);
+
                 Address address = new Address(content[4], content[5], content[6], content[7], content[8]);
 
                 List<String> emailList = new ArrayList<>(); //In-case someone has more than one email, we have created a list to store them.
                 for(int j = 9; j <= content.length-1; j++) {
                     emailList.add(content[j]); //filling ArrayList with emails
                 }
-                Person person = new Person(content[0], content[1], name, address, emailList);
+                Person person = null;
+                switch (content[1]) {
+                    case "E" -> person = new Employee(content[0], name, address, emailList);
+                    case "C"-> person = new Customer(content[0], name, address, emailList);
+                    case "P" -> person = new PlatinumMember(content[0], name, address, emailList);
+                    case "G" -> person = new GoldMember(content[0], name, address, emailList);
+                }
                 persons.add(person);
             }
             reader.close(); //close the reader and begin writing files

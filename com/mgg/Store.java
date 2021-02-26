@@ -16,27 +16,11 @@ public class Store {
         return storeCode;
     }
 
-    public void setStoreCode(String storeCode) {
-        this.storeCode = storeCode;
-    }
-
     public String getManagerCode() {
         return managerCode;
     }
 
-    public void setManagerCode(String managerCode) {
-        this.managerCode = managerCode;
-    }
-
     public Address getAddress() {
         return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public String toString() {
-        return storeCode + "," + managerCode + "," + address.toString();
     }
 }

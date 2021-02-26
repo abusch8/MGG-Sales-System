@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<people>
-  <person>
+<Persons>
+  <Employee>
     <personId>c9fa12</personId>
-    <type>E</type>
     <name>
       <lastName>Diehl</lastName>
       <firstName>Dylan</firstName>
@@ -17,10 +16,9 @@
     <emails>
       <email>dylandiehl@icloud.com</email>
     </emails>
-  </person>
-  <person>
+  </Employee>
+  <Customer>
     <personId>oz901n</personId>
-    <type>C</type>
     <name>
       <lastName>Smith</lastName>
       <firstName>Jerry</firstName>
@@ -35,10 +33,9 @@
     <emails>
       <email>jsmith75@gmail.com</email>
     </emails>
-  </person>
-  <person>
+  </Customer>
+  <PlatinumMember>
     <personId>1icjam</personId>
-    <type>P</type>
     <name>
       <lastName>Garfield</lastName>
       <firstName>Gary</firstName>
@@ -53,10 +50,9 @@
     <emails>
       <email>garyloveslasagna@icloud.com</email>
     </emails>
-  </person>
-  <person>
+  </PlatinumMember>
+  <Employee>
     <personId>19ozud</personId>
-    <type>E</type>
     <name>
       <lastName>Johnson</lastName>
       <firstName>Arnold</firstName>
@@ -71,10 +67,9 @@
     <emails>
       <email>jarnie88@hotmail.com</email>
     </emails>
-  </person>
-  <person>
+  </Employee>
+  <Customer>
     <personId>zm18te</personId>
-    <type>C</type>
     <name>
       <lastName>Busch</lastName>
       <firstName>Alex</firstName>
@@ -89,10 +84,9 @@
     <emails>
       <email>hooraygamer@yahoo.com</email>
     </emails>
-  </person>
-  <person>
+  </Customer>
+  <GoldMember>
     <personId>1zqo0t</personId>
-    <type>G</type>
     <name>
       <lastName>Mercedes</lastName>
       <firstName>Agregory</firstName>
@@ -107,10 +101,9 @@
     <emails>
       <email>godgamer25@gmail.com</email>
     </emails>
-  </person>
-  <person>
+  </GoldMember>
+  <Customer>
     <personId>k7c93z</personId>
-    <type>C</type>
     <name>
       <lastName>Moeller</lastName>
       <firstName>James</firstName>
@@ -125,10 +118,9 @@
     <emails>
       <email>monkamode@mail.com</email>
     </emails>
-  </person>
-  <person>
+  </Customer>
+  <PlatinumMember>
     <personId>y7z01c</personId>
-    <type>P</type>
     <name>
       <lastName>Muhammad</lastName>
       <firstName>Dilshad</firstName>
@@ -143,10 +135,9 @@
     <emails>
       <email>dilshadder2k@yahoo.com</email>
     </emails>
-  </person>
-  <person>
+  </PlatinumMember>
+  <PlatinumMember>
     <personId>1mzn4n</personId>
-    <type>P</type>
     <name>
       <lastName>Smith</lastName>
       <firstName>Xavier</firstName>
@@ -161,10 +152,9 @@
     <emails>
       <email>xsmith@gmail.com</email>
     </emails>
-  </person>
-  <person>
+  </PlatinumMember>
+  <GoldMember>
     <personId>z9aqq7</personId>
-    <type>G</type>
     <name>
       <lastName>McGregor</lastName>
       <firstName>Connor</firstName>
@@ -180,5 +170,5 @@
       <email>mcgreg@mail.com</email>
       <email>asdfasdf@gmail.com</email>
     </emails>
-  </person>
-</people>
+  </GoldMember>
+</Persons>

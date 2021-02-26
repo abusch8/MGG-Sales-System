@@ -1,39 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
-  <item>
-    <code>8sfd79</code>
-    <type>PN</type>
+  <NewProduct>
+    <itemCode>8sfd79</itemCode>
     <name>Call of Duty: Cold War</name>
-    <price>59.99</price>
-  </item>
-  <item>
-    <code>hn7890</code>
-    <type>PU</type>
+    <basePrice>59.99</basePrice>
+  </NewProduct>
+  <UsedProduct>
+    <itemCode>hn7890</itemCode>
     <name>Mario Kart 8</name>
-    <price>29.99</price>
-  </item>
-  <item>
-    <code>a0s87d</code>
-    <type>SB</type>
+    <basePrice>29.99</basePrice>
+  </UsedProduct>
+  <Subscription>
+    <itemCode>a0s87d</itemCode>
     <name>Xbox Live Gold Membership 12-months</name>
-    <price>59.99</price>
-  </item>
-  <item>
-    <code>dnfg0h</code>
-    <type>PG</type>
+    <annualFee>59.99</annualFee>
+  </Subscription>
+  <GiftCard>
+    <itemCode>dnfg0h</itemCode>
     <name>Fortnite Gift Card</name>
-    <price>99.99</price>
-  </item>
-  <item>
-    <code>a796d4</code>
-    <type>SV</type>
+  </GiftCard>
+  <Service>
+    <itemCode>a796d4</itemCode>
     <name>PS4 Repair</name>
-    <price>99.99</price>
-  </item>
-  <item>
-    <code>245hjk</code>
-    <type>SB</type>
+    <hourlyRate>99.99</hourlyRate>
+  </Service>
+  <Subscription>
+    <itemCode>245hjk</itemCode>
     <name>Switch Online Membership 12-months</name>
-    <price>19.99</price>
-  </item>
+    <annualFee>19.99</annualFee>
+  </Subscription>
 </items>

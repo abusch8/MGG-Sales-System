@@ -1,7 +1,6 @@
 [
   {
     "personId": "c9fa12",
-    "type": "E",
     "name": {
       "lastName": "Diehl",
       "firstName": "Dylan"
@@ -19,7 +18,6 @@
   },
   {
     "personId": "oz901n",
-    "type": "C",
     "name": {
       "lastName": "Smith",
       "firstName": "Jerry"
@@ -37,7 +35,6 @@
   },
   {
     "personId": "1icjam",
-    "type": "P",
     "name": {
       "lastName": "Garfield",
       "firstName": "Gary"
@@ -55,7 +52,6 @@
   },
   {
     "personId": "19ozud",
-    "type": "E",
     "name": {
       "lastName": "Johnson",
       "firstName": "Arnold"
@@ -73,7 +69,6 @@
   },
   {
     "personId": "zm18te",
-    "type": "C",
     "name": {
       "lastName": "Busch",
       "firstName": "Alex"
@@ -91,7 +86,6 @@
   },
   {
     "personId": "1zqo0t",
-    "type": "G",
     "name": {
       "lastName": "Mercedes",
       "firstName": "Agregory"
@@ -109,7 +103,6 @@
   },
   {
     "personId": "k7c93z",
-    "type": "C",
     "name": {
       "lastName": "Moeller",
       "firstName": "James"
@@ -127,7 +120,6 @@
   },
   {
     "personId": "y7z01c",
-    "type": "P",
     "name": {
       "lastName": "Muhammad",
       "firstName": "Dilshad"
@@ -145,7 +137,6 @@
   },
   {
     "personId": "1mzn4n",
-    "type": "P",
     "name": {
       "lastName": "Smith",
       "firstName": "Xavier"
@@ -163,7 +154,6 @@
   },
   {
     "personId": "z9aqq7",
-    "type": "G",
     "name": {
       "lastName": "McGregor",
       "firstName": "Connor"

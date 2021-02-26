@@ -36,7 +36,7 @@ public class DataConverter {
             BufferedReader reader = new BufferedReader(new FileReader("data/Persons.csv"));
             int count = Integer.parseInt(reader.readLine()); //convert first line from string->int(how many lines there are in the file)
             for(int i = 0; i < count; i++) {
-                String[] content = reader.readLine().split(",", -1); //use delimiter to separate contents
+                String[] content = reader.readLine().split(","); //use delimiter to separate contents
                 Name name = new Name(content[2], content[3]);
                 Address address = new Address(content[4], content[5], content[6], content[7], content[8]);
 
@@ -49,8 +49,11 @@ public class DataConverter {
             }
             reader.close(); //close the reader and begin writing files
             XStream xstream = new XStream(new DomDriver());
-            xstream.alias("people", List.class); //Change the 'list' class to display "people"
-            xstream.alias("person", Person.class); //Change the 'person' class to display "person"
+            xstream.alias("Persons", List.class); //Change the 'list' class to display "people"
+            xstream.alias("Employee", Employee.class);
+            xstream.alias("Customer", Customer.class);
+            xstream.alias("GoldMember", GoldMember.class);
+            xstream.alias("PlatinumMember", PlatinumMember.class);
 
             ClassAliasingMapper mapper = new ClassAliasingMapper(xstream.getMapper());
             mapper.addClassAlias("email", String.class); //searches for the string class and changes the display to "email"
@@ -114,14 +117,26 @@ public class DataConverter {
 
             int count = Integer.parseInt(reader.readLine());
             for(int i = 0; i < count; i++) {
-                String[] content = reader.readLine().split(",", -1);
-                Item item = new Item(content[0], content[1], content[2], Double.parseDouble(content[3]));
+                String[] content = reader.readLine().split(",");
+                Item item = null;
+                switch (content[1]) {
+                    case "PN" -> item = new NewProduct(content[0], content[2], Double.parseDouble(content[3]));
+                    case "PU"-> item = new UsedProduct(content[0], content[2], Double.parseDouble(content[3]));
+                    case "PG" -> item = new GiftCard(content[0], content[2]);
+                    case "SV" -> item = new Service(content[0], content[2], Double.parseDouble(content[3]));
+                    case "SB" -> item = new Subscription(content[0], content[2], Double.parseDouble(content[3]));
+                }
                 items.add(item);
             }
             reader.close();
             XStream xstream = new XStream(new DomDriver());
             xstream.alias("items", List.class);
-            xstream.alias("item", Item.class);
+            xstream.alias("NewProduct", NewProduct.class);
+            xstream.alias("UsedProduct", UsedProduct.class);
+            xstream.alias("GiftCard", GiftCard.class);
+            xstream.alias("Service", Service.class);
+            xstream.alias("Subscription", Subscription.class);
+            xstream.aliasField("itemCode", Item.class, "code");
 
             BufferedWriter writer = new BufferedWriter(new FileWriter("data/Items.xml"));
             String xml_output = xstream.toXML(items);

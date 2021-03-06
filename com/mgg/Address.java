@@ -2,37 +2,37 @@ package com.mgg;
 
 public class Address {
 
-    private String STREET;
-    private String CITY;
-    private String STATE;
-    private String ZIP;
-    private String COUNTRY;
+    private String street;
+    private String city;
+    private String state;
+    private String zip;
+    private String country;
 
-    public Address(String STREET, String CITY, String STATE, String ZIP, String COUNTRY) {
-        this.STREET = STREET;
-        this.CITY = CITY;
-        this.STATE = STATE;
-        this.ZIP = ZIP;
-        this.COUNTRY = COUNTRY;
+    public Address(String street, String city, String state, String zip, String country) {
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.country = country;
     }
 
-    public String getSTREET() {
-        return STREET;
+    public String getStreet() {
+        return street;
     }
 
-    public String getCITY() {
-        return CITY;
+    public String getCity() {
+        return city;
     }
 
-    public String getSTATE() {
-        return STATE;
+    public String getState() {
+        return state;
     }
 
-    public String getZIP() {
-        return ZIP;
+    public String getZip() {
+        return zip;
     }
 
-    public String getCOUNTRY() {
-        return COUNTRY;
+    public String getCountry() {
+        return country;
     }
 }

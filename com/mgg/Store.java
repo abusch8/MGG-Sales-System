@@ -3,12 +3,12 @@ package com.mgg;
 public class Store {
 
     private String storeCode;
-    private String managerCode;
+    private Employee manager;
     private Address address;
 
-    public Store(String storeCode, String managerCode, Address address) {
+    public Store(String storeCode, Employee manager, Address address) {
         this.storeCode = storeCode;
-        this.managerCode = managerCode;
+        this.manager = manager;
         this.address = address;
     }
 
@@ -16,8 +16,8 @@ public class Store {
         return storeCode;
     }
 
-    public String getManagerCode() {
-        return managerCode;
+    public Employee getManagerCode() {
+        return manager;
     }
 
     public Address getAddress() {

@@ -7,11 +7,11 @@
       <firstName>Dylan</firstName>
     </name>
     <address>
-      <STREET>67 West Oak Valley Court</STREET>
-      <CITY>Beatrice</CITY>
-      <STATE>NE</STATE>
-      <ZIP>68503</ZIP>
-      <COUNTRY>USA</COUNTRY>
+      <street>67 West Oak Valley Court</street>
+      <city>Beatrice</city>
+      <state>NE</state>
+      <zip>68503</zip>
+      <country>USA</country>
     </address>
     <emails>
       <email>dylandiehl@icloud.com</email>
@@ -24,11 +24,11 @@
       <firstName>Jerry</firstName>
     </name>
     <address>
-      <STREET>285 Oakmont Stratton</STREET>
-      <CITY>Lawrence</CITY>
-      <STATE>KS</STATE>
-      <ZIP>65810</ZIP>
-      <COUNTRY>USA</COUNTRY>
+      <street>285 Oakmont Stratton</street>
+      <city>Lawrence</city>
+      <state>KS</state>
+      <zip>65810</zip>
+      <country>USA</country>
     </address>
     <emails>
       <email>jsmith75@gmail.com</email>
@@ -41,11 +41,11 @@
       <firstName>Gary</firstName>
     </name>
     <address>
-      <STREET>106 N 19th</STREET>
-      <CITY>Houndog</CITY>
-      <STATE>LA</STATE>
-      <ZIP>19540</ZIP>
-      <COUNTRY>USA</COUNTRY>
+      <street>106 N 19th</street>
+      <city>Houndog</city>
+      <state>LA</state>
+      <zip>19540</zip>
+      <country>USA</country>
     </address>
     <emails>
       <email>garyloveslasagna@icloud.com</email>
@@ -58,11 +58,11 @@
       <firstName>Arnold</firstName>
     </name>
     <address>
-      <STREET>Creative Apartments Apt 192</STREET>
-      <CITY>Princeton</CITY>
-      <STATE>NJ</STATE>
-      <ZIP>10335</ZIP>
-      <COUNTRY>USA</COUNTRY>
+      <street>Creative Apartments Apt 192</street>
+      <city>Princeton</city>
+      <state>NJ</state>
+      <zip>10335</zip>
+      <country>USA</country>
     </address>
     <emails>
       <email>jarnie88@hotmail.com</email>
@@ -75,11 +75,11 @@
       <firstName>Alex</firstName>
     </name>
     <address>
-      <STREET>104 Abel Hall</STREET>
-      <CITY>Grand Island</CITY>
-      <STATE>NE</STATE>
-      <ZIP>18571</ZIP>
-      <COUNTRY>USA</COUNTRY>
+      <street>104 Abel Hall</street>
+      <city>Grand Island</city>
+      <state>NE</state>
+      <zip>18571</zip>
+      <country>USA</country>
     </address>
     <emails>
       <email>hooraygamer@yahoo.com</email>
@@ -92,11 +92,11 @@
       <firstName>Agregory</firstName>
     </name>
     <address>
-      <STREET>918 West Washington</STREET>
-      <CITY>Clementine</CITY>
-      <STATE>OR</STATE>
-      <ZIP>59184</ZIP>
-      <COUNTRY>USA</COUNTRY>
+      <street>918 West Washington</street>
+      <city>Clementine</city>
+      <state>OR</state>
+      <zip>59184</zip>
+      <country>USA</country>
     </address>
     <emails>
       <email>godgamer25@gmail.com</email>
@@ -109,11 +109,11 @@
       <firstName>James</firstName>
     </name>
     <address>
-      <STREET>104 West Hickory</STREET>
-      <CITY>Oklahoma City</CITY>
-      <STATE>OK</STATE>
-      <ZIP>18571</ZIP>
-      <COUNTRY>USA</COUNTRY>
+      <street>104 West Hickory</street>
+      <city>Oklahoma City</city>
+      <state>OK</state>
+      <zip>18571</zip>
+      <country>USA</country>
     </address>
     <emails>
       <email>monkamode@mail.com</email>
@@ -126,11 +126,11 @@
       <firstName>Dilshad</firstName>
     </name>
     <address>
-      <STREET>104 Dubai</STREET>
-      <CITY>Dubai</CITY>
-      <STATE>CA</STATE>
-      <ZIP>37561</ZIP>
-      <COUNTRY>USA</COUNTRY>
+      <street>104 Dubai</street>
+      <city>Dubai</city>
+      <state>CA</state>
+      <zip>37561</zip>
+      <country>USA</country>
     </address>
     <emails>
       <email>dilshadder2k@yahoo.com</email>
@@ -143,11 +143,11 @@
       <firstName>Xavier</firstName>
     </name>
     <address>
-      <STREET>104 Washington</STREET>
-      <CITY>Creatile</CITY>
-      <STATE>ND</STATE>
-      <ZIP>18139</ZIP>
-      <COUNTRY>USA</COUNTRY>
+      <street>104 Washington</street>
+      <city>Creatile</city>
+      <state>ND</state>
+      <zip>18139</zip>
+      <country>USA</country>
     </address>
     <emails>
       <email>xsmith@gmail.com</email>
@@ -160,11 +160,11 @@
       <firstName>Connor</firstName>
     </name>
     <address>
-      <STREET>618 London</STREET>
-      <CITY>Cratile</CITY>
-      <STATE>SD</STATE>
-      <ZIP>18128</ZIP>
-      <COUNTRY>USA</COUNTRY>
+      <street>618 London</street>
+      <city>Cratile</city>
+      <state>SD</state>
+      <zip>18128</zip>
+      <country>USA</country>
     </address>
     <emails>
       <email>mcgreg@mail.com</email>

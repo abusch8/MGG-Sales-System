@@ -2,57 +2,104 @@
 <stores>
   <store>
     <storeCode>1al23k</storeCode>
-    <managerCode>c9fa12</managerCode>
+    <manager>
+      <personId>c9fa12</personId>
+      <name>
+        <lastName>Diehl</lastName>
+        <firstName>Dylan</firstName>
+      </name>
+      <address>
+        <street>67 West Oak Valley Court</street>
+        <city>Beatrice</city>
+        <state>NE</state>
+        <zip>68503</zip>
+        <country>USA</country>
+      </address>
+      <emails>
+        <string>dylandiehl@icloud.com</string>
+      </emails>
+    </manager>
     <address>
-      <STREET>484 Grove Court</STREET>
-      <CITY>Chicago</CITY>
-      <STATE>IL</STATE>
-      <ZIP>19426</ZIP>
-      <COUNTRY>US</COUNTRY>
+      <street>484 Grove Court</street>
+      <city>Chicago</city>
+      <state>IL</state>
+      <zip>19426</zip>
+      <country>US</country>
     </address>
   </store>
   <store>
     <storeCode>234jkd</storeCode>
-    <managerCode>19ozud</managerCode>
+    <manager>
+      <personId>19ozud</personId>
+      <name>
+        <lastName>Johnson</lastName>
+        <firstName>Arnold</firstName>
+      </name>
+      <address>
+        <street>Creative Apartments Apt 192</street>
+        <city>Princeton</city>
+        <state>NJ</state>
+        <zip>10335</zip>
+        <country>USA</country>
+      </address>
+      <emails>
+        <string>jarnie88@hotmail.com</string>
+      </emails>
+    </manager>
     <address>
-      <STREET>4 County Street</STREET>
-      <CITY>New York City</CITY>
-      <STATE>NY</STATE>
-      <ZIP>47150</ZIP>
-      <COUNTRY>US</COUNTRY>
+      <street>4 County Street</street>
+      <city>New York City</city>
+      <state>NY</state>
+      <zip>47150</zip>
+      <country>US</country>
     </address>
   </store>
   <store>
     <storeCode>jas890</storeCode>
-    <managerCode>c9fa12</managerCode>
+    <manager>
+      <personId>c9fa12</personId>
+      <name reference="../../../store/manager/name"/>
+      <address reference="../../../store/manager/address"/>
+      <emails reference="../../../store/manager/emails"/>
+    </manager>
     <address>
-      <STREET>420 Lafayette Drive</STREET>
-      <CITY>Tampa</CITY>
-      <STATE>FL</STATE>
-      <ZIP>22701</ZIP>
-      <COUNTRY>US</COUNTRY>
+      <street>420 Lafayette Drive</street>
+      <city>Tampa</city>
+      <state>FL</state>
+      <zip>22701</zip>
+      <country>US</country>
     </address>
   </store>
   <store>
     <storeCode>aj90ds</storeCode>
-    <managerCode>19ozud</managerCode>
+    <manager>
+      <personId>19ozud</personId>
+      <name reference="../../../store[2]/manager/name"/>
+      <address reference="../../../store[2]/manager/address"/>
+      <emails reference="../../../store[2]/manager/emails"/>
+    </manager>
     <address>
-      <STREET>9273 Vermont Lane</STREET>
-      <CITY>Phoenix</CITY>
-      <STATE>AZ</STATE>
-      <ZIP>85001</ZIP>
-      <COUNTRY>US</COUNTRY>
+      <street>9273 Vermont Lane</street>
+      <city>Phoenix</city>
+      <state>AZ</state>
+      <zip>85001</zip>
+      <country>US</country>
     </address>
   </store>
   <store>
     <storeCode>3j90fs</storeCode>
-    <managerCode>c9fa12</managerCode>
+    <manager>
+      <personId>c9fa12</personId>
+      <name reference="../../../store/manager/name"/>
+      <address reference="../../../store/manager/address"/>
+      <emails reference="../../../store/manager/emails"/>
+    </manager>
     <address>
-      <STREET>7624 Chris Bourke Memorial Street</STREET>
-      <CITY>Lincoln</CITY>
-      <STATE>NE</STATE>
-      <ZIP>68501</ZIP>
-      <COUNTRY>US</COUNTRY>
+      <street>7624 Chris Bourke Memorial Street</street>
+      <city>Lincoln</city>
+      <state>NE</state>
+      <zip>68501</zip>
+      <country>US</country>
     </address>
   </store>
 </stores>

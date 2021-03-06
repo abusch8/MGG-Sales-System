@@ -6,11 +6,11 @@
       "firstName": "Dylan"
     },
     "address": {
-      "STREET": "67 West Oak Valley Court",
-      "CITY": "Beatrice",
-      "STATE": "NE",
-      "ZIP": "68503",
-      "COUNTRY": "USA"
+      "street": "67 West Oak Valley Court",
+      "city": "Beatrice",
+      "state": "NE",
+      "zip": "68503",
+      "country": "USA"
     },
     "emails": [
       "dylandiehl@icloud.com"
@@ -23,11 +23,11 @@
       "firstName": "Jerry"
     },
     "address": {
-      "STREET": "285 Oakmont Stratton",
-      "CITY": "Lawrence",
-      "STATE": "KS",
-      "ZIP": "65810",
-      "COUNTRY": "USA"
+      "street": "285 Oakmont Stratton",
+      "city": "Lawrence",
+      "state": "KS",
+      "zip": "65810",
+      "country": "USA"
     },
     "emails": [
       "jsmith75@gmail.com"
@@ -40,11 +40,11 @@
       "firstName": "Gary"
     },
     "address": {
-      "STREET": "106 N 19th",
-      "CITY": "Houndog",
-      "STATE": "LA",
-      "ZIP": "19540",
-      "COUNTRY": "USA"
+      "street": "106 N 19th",
+      "city": "Houndog",
+      "state": "LA",
+      "zip": "19540",
+      "country": "USA"
     },
     "emails": [
       "garyloveslasagna@icloud.com"
@@ -57,11 +57,11 @@
       "firstName": "Arnold"
     },
     "address": {
-      "STREET": "Creative Apartments Apt 192",
-      "CITY": "Princeton",
-      "STATE": "NJ",
-      "ZIP": "10335",
-      "COUNTRY": "USA"
+      "street": "Creative Apartments Apt 192",
+      "city": "Princeton",
+      "state": "NJ",
+      "zip": "10335",
+      "country": "USA"
     },
     "emails": [
       "jarnie88@hotmail.com"
@@ -74,11 +74,11 @@
       "firstName": "Alex"
     },
     "address": {
-      "STREET": "104 Abel Hall",
-      "CITY": "Grand Island",
-      "STATE": "NE",
-      "ZIP": "18571",
-      "COUNTRY": "USA"
+      "street": "104 Abel Hall",
+      "city": "Grand Island",
+      "state": "NE",
+      "zip": "18571",
+      "country": "USA"
     },
     "emails": [
       "hooraygamer@yahoo.com"
@@ -91,11 +91,11 @@
       "firstName": "Agregory"
     },
     "address": {
-      "STREET": "918 West Washington",
-      "CITY": "Clementine",
-      "STATE": "OR",
-      "ZIP": "59184",
-      "COUNTRY": "USA"
+      "street": "918 West Washington",
+      "city": "Clementine",
+      "state": "OR",
+      "zip": "59184",
+      "country": "USA"
     },
     "emails": [
       "godgamer25@gmail.com"
@@ -108,11 +108,11 @@
       "firstName": "James"
     },
     "address": {
-      "STREET": "104 West Hickory",
-      "CITY": "Oklahoma City",
-      "STATE": "OK",
-      "ZIP": "18571",
-      "COUNTRY": "USA"
+      "street": "104 West Hickory",
+      "city": "Oklahoma City",
+      "state": "OK",
+      "zip": "18571",
+      "country": "USA"
     },
     "emails": [
       "monkamode@mail.com"
@@ -125,11 +125,11 @@
       "firstName": "Dilshad"
     },
     "address": {
-      "STREET": "104 Dubai",
-      "CITY": "Dubai",
-      "STATE": "CA",
-      "ZIP": "37561",
-      "COUNTRY": "USA"
+      "street": "104 Dubai",
+      "city": "Dubai",
+      "state": "CA",
+      "zip": "37561",
+      "country": "USA"
     },
     "emails": [
       "dilshadder2k@yahoo.com"
@@ -142,11 +142,11 @@
       "firstName": "Xavier"
     },
     "address": {
-      "STREET": "104 Washington",
-      "CITY": "Creatile",
-      "STATE": "ND",
-      "ZIP": "18139",
-      "COUNTRY": "USA"
+      "street": "104 Washington",
+      "city": "Creatile",
+      "state": "ND",
+      "zip": "18139",
+      "country": "USA"
     },
     "emails": [
       "xsmith@gmail.com"
@@ -159,11 +159,11 @@
       "firstName": "Connor"
     },
     "address": {
-      "STREET": "618 London",
-      "CITY": "Cratile",
-      "STATE": "SD",
-      "ZIP": "18128",
-      "COUNTRY": "USA"
+      "street": "618 London",
+      "city": "Cratile",
+      "state": "SD",
+      "zip": "18128",
+      "country": "USA"
     },
     "emails": [
       "mcgreg@mail.com",

@@ -1,5 +1,8 @@
 package com.mgg;
 
+/**
+ * Class that contains all of the necessary information for storing an item.
+ */
 public abstract class Item {
 
     private String code;

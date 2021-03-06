@@ -2,6 +2,9 @@ package com.mgg;
 
 import java.util.List;
 
+/**
+ * Class that stores all the necessary information for keeping track of a customer/employee.
+ */
 public abstract class Person {
 
     private String personId;

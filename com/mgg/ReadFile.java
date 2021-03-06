@@ -5,8 +5,15 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is used to read from 3 csv files and store their contents accordingly.
+ */
 public class ReadFile {
 
+    /**
+     * This method is used to read the "Persons.csv" file and store the contents accordingly.
+     * @return List<Person>
+     */
     public static List<Person> readPersonsCSV() {
         List<Person> persons = new ArrayList<>();
         try {
@@ -39,6 +46,11 @@ public class ReadFile {
         }
     }
 
+    /**
+     * This method is used to read from the "Stores.csv" file and grab its contents.
+     * @param persons This is the list of people from the previous method, or any list of "persons"
+     * @return stores Returns the list of stores(its contents are stored in the list)
+     */
     public static List<Store> readStoresCSV(List<Person> persons) {
         List<Store> stores = new ArrayList<>();
         try { BufferedReader reader = new BufferedReader(new FileReader("data/Stores.csv"));
@@ -64,6 +76,10 @@ public class ReadFile {
         }
     }
 
+    /**
+     * This method reads the "Items.csv" file and stores its contents into a list of type <Item>.
+     * @return items The list of items with their respective contents.
+     */
     public static List<Item> readItemsCSV() {
         List<Item> items = new ArrayList<>();
         try {

@@ -3,14 +3,13 @@ package com.mgg;
 import java.util.List;
 
 /**
+ * @author Dylan Diehl
+ * @author Alex Busch
  *
- * @author abusch
- * @author ddiehl
  *
- * Takes in 3 CSV files, each in specific format, and outputs/formats them into a JSON and XML file accordingly.
  *
+ * Uses all of the other classes(ReadFile,WriteFile, etc) and runs them to get our desired result.
  */
-
 public class DataConverter {
 
     public static void main(String[] args) {

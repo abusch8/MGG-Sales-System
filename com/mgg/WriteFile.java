@@ -11,8 +11,15 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.List;
 
+/**
+ * This class is used to write information to a file in an XML or JSON format from a list type.
+ */
 public class WriteFile {
 
+    /**
+     * This method takes in a list of information and writes to the file "Persons.xml" correctly formatting it.
+     * @param persons A list of type Person, or the content that will be formatted.
+     */
     public static void convertPersonToXML(List<Person> persons) {
         XStream xstream = new XStream(new DomDriver());
         xstream.alias("Persons", List.class); //Change the 'list' class to display "people"
@@ -35,6 +42,11 @@ public class WriteFile {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * This method takes in a list of type Store and formats the contents into XML.
+     * @param stores a list type Store
+     */
     public static void convertStoreToXML(List<Store> stores) {
         try {
             XStream xstream = new XStream(new DomDriver());
@@ -52,6 +64,10 @@ public class WriteFile {
 
     }
 
+    /**
+     * This method takes in a list of type Item and formats the contents into an XML file.
+     * @param items a list type Item
+     */
     public static void convertItemToXML(List<Item> items) {
         XStream xstream = new XStream(new DomDriver());
         xstream.alias("items", List.class);
@@ -73,6 +89,10 @@ public class WriteFile {
         }
     }
 
+    /**
+     * This method takes in a list of type Person and formats the contents into an JSON file.
+     * @param persons a list type Person
+     */
     public static void convertPersonToJSON(List<Person> persons) {
         try {
             BufferedWriter json = new BufferedWriter(new FileWriter("data/Persons.json")); //writing to the file for JSON
@@ -85,6 +105,10 @@ public class WriteFile {
         }
     }
 
+    /**
+     * This method takes in a list of type Store and formats the contents into an JSON file.
+     * @param stores a list type Store
+     */
     public static void convertStoreToJSON(List<Store> stores) {
         try {
             BufferedWriter json = new BufferedWriter(new FileWriter("data/Stores.json"));
@@ -97,6 +121,10 @@ public class WriteFile {
         }
     }
 
+    /**
+     * This method takes in a list of type Item and formats the contents into an JSON file.
+     * @param items a list type Item
+     */
     public static void convertItemToJSON(List<Item> items) {
         try {
             BufferedWriter json = new BufferedWriter(new FileWriter("data/Items.json"));

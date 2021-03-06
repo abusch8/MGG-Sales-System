@@ -1,5 +1,9 @@
 package com.mgg;
 
+/**
+ * Class that stores the information for an address in a convenient format
+ *
+ */
 public class Address {
 
     private String street;

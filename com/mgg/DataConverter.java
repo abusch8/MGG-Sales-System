@@ -6,9 +6,11 @@ import java.util.List;
  * @author Dylan Diehl
  * @author Alex Busch
  *
- *
- *
- * Uses all of the other classes(ReadFile,WriteFile, etc) and runs them to get our desired result.
+ */
+
+
+/**
+ * Main class for running all of the classes, combining them to get our desired result.
  */
 public class DataConverter {
 

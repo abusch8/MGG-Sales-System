@@ -95,11 +95,11 @@ public class WriteFile {
      */
     public static void convertPersonToJSON(List<Person> persons) {
         try {
-            BufferedWriter json = new BufferedWriter(new FileWriter("data/Persons.json")); //writing to the file for JSON
-            Gson gson = new GsonBuilder().setPrettyPrinting().create(); //format so it is readable
+            BufferedWriter json = new BufferedWriter(new FileWriter("data/Persons.json"));
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String json_output = gson.toJson(persons);
             json.write(json_output);
-            json.close(); //close file for writing
+            json.close();
         } catch(Exception e) {
             throw new RuntimeException(e);
         }

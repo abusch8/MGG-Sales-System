@@ -18,26 +18,26 @@ public class ReadFile {
         List<Person> persons = new ArrayList<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader("data/Persons.csv"));
-            int count = Integer.parseInt(reader.readLine()); //convert first line from string->int(how many lines there are in the file)
+            int count = Integer.parseInt(reader.readLine());
             for (int i = 0; i < count; i++) {
-                String[] content = reader.readLine().split(","); //use delimiter to separate contents
+                String[] content = reader.readLine().split(",");
                 Name name = new Name(content[2], content[3]);
 
                 Address address = new Address(content[4], content[5], content[6], content[7], content[8]);
 
-                List<String> emailList = new ArrayList<>(); //In-case someone has more than one email, we have created a list to store them.
+                List<String> emailList = new ArrayList<>();
                 for (int j = 9; j <= content.length - 1; j++) {
-                    emailList.add(content[j]); //filling ArrayList with emails
+                    emailList.add(content[j]);
                 }
 
                 Person person = null;
-                switch (content[1]) { //switch statement for properly identifying which type it is
+                switch (content[1]) {
                     case "E" -> person = new Employee(content[0], name, address, emailList);
                     case "C" -> person = new Customer(content[0], name, address, emailList);
                     case "P" -> person = new PlatinumMember(content[0], name, address, emailList);
                     case "G" -> person = new GoldMember(content[0], name, address, emailList);
                 }
-                persons.add(person); //add person to list
+                persons.add(person);
             }
             reader.close();
             return persons;

@@ -2,107 +2,102 @@
   {
     "basePrice": 399.99,
     "quantity": 2,
-    "code": "du3gvc",
+    "code": "1d4d89",
     "name": "PlayStation 5 Digital Edition"
-  },
-  {
-    "basePrice": 999.99,
-    "quantity": 2,
-    "code": "8cgtc5",
-    "name": "Xbox Series X"
   },
   {
     "basePrice": 199.99,
     "quantity": 2,
-    "code": "okc480",
+    "code": "1ed5b7",
     "name": "Nintendo Switch Lite"
   },
   {
-    "basePrice": 44.99,
+    "basePrice": 59.99,
     "quantity": 2,
-    "code": "h1z0px",
-    "name": "Cyberpunk 2077"
+    "code": "6ce4cd",
+    "name": "Splatoon 2 (Digital Copy)"
+  },
+  {
+    "basePrice": 1.99,
+    "quantity": 2,
+    "code": "c547e7",
+    "name": "Diet Mt Dew (20oz)"
   },
   {
     "basePrice": 0.0,
-    "code": "g8e3m1",
+    "code": "5f73aa",
+    "name": "Nintendo Digital Gold"
+  },
+  {
+    "basePrice": 0.0,
+    "code": "14e2b7",
     "name": "Steam"
   },
   {
     "basePrice": 0.0,
-    "code": "gf05gd",
-    "name": "Fortnite"
+    "code": "8a30ad",
+    "name": "Android Store"
   },
   {
     "basePrice": 0.0,
-    "code": "tmuvc6",
-    "name": "Roblox"
-  },
-  {
-    "basePrice": 0.0,
-    "code": "hjrjmf",
-    "name": "App Store"
-  },
-  {
-    "basePrice": 0.0,
-    "code": "vta4x6",
-    "name": "PlayStation Store"
+    "code": "daad6a",
+    "name": "Robux"
   },
   {
     "basePrice": 24.5,
     "quantity": 1,
-    "code": "czsbx8",
+    "code": "649f88",
     "name": "Legend of Zelda (NES)"
-  },
-  {
-    "basePrice": 2.99,
-    "quantity": 1,
-    "code": "1u08fl",
-    "name": "Tomb Raider"
-  },
-  {
-    "basePrice": 599.99,
-    "quantity": 1,
-    "code": "ndop6a",
-    "name": "Vive"
   },
   {
     "basePrice": 59.99,
     "quantity": 1,
-    "code": "wyuhli",
+    "code": "0ec6e9",
     "name": "Animal Crossings"
   },
   {
-    "hourlyRate": 173.99,
-    "numHours": 173.99,
-    "code": "r57oej",
+    "basePrice": 199.99,
+    "quantity": 1,
+    "code": "9b6e30",
+    "name": "Oculus Rift"
+  },
+  {
+    "basePrice": 599.99,
+    "quantity": 1,
+    "code": "40a433",
+    "name": "Vive"
+  },
+  {
+    "hourlyRate": 59.99,
+    "numHours": 59.99,
+    "code": "8e366e",
     "name": "Console Repair"
   },
   {
-    "hourlyRate": 186.91,
-    "numHours": 186.91,
-    "code": "t2jurm",
-    "name": "Headset Repair"
+    "hourlyRate": 120.0,
+    "numHours": 120.0,
+    "code": "c4fb35",
+    "name": "VR Party Rental"
   },
   {
-    "hourlyRate": 213.27,
-    "numHours": 213.27,
-    "code": "uq4ufn",
-    "name": "VR set up"
+    "hourlyRate": 1.99,
+    "numHours": 1.99,
+    "code": "740515",
+    "name": "Game Addiction Counseling"
+  },
+  {
+    "annualFee": 50.0,
+    "code": "426dda",
+    "name": "X-Box Live"
+  },
+  {
+    "annualFee": 120.0,
+    "code": "dedd44",
+    "name": "Nintendo Power magazine"
   },
   {
     "annualFee": 89.99,
-    "code": "a7ssvx",
-    "name": "Steam"
-  },
-  {
-    "annualFee": 109.99,
-    "code": "wgqevs",
-    "name": "PUBG Mobile"
-  },
-  {
-    "annualFee": 54.99,
-    "code": "nb6d0j",
-    "name": "X-Box Live"
+    "code": "3506f6",
+    "name": "Disney Plus"
   }
 ]

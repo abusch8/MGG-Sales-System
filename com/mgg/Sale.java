@@ -41,7 +41,7 @@ public class Sale {
 
     public double calculateSubTotal() {
         double subTotal = 0;
-        for(Item item : this.items) {
+        for (Item item : this.items) {
             if (item instanceof GiftCard) {
                 subTotal += ((GiftCard) item).calculatePrice();
             } else if (item instanceof Product) {
@@ -62,7 +62,7 @@ public class Sale {
 
     public double calculateTax() {
         double taxTotal = 0;
-        for(Item item : this.items) {
+        for (Item item : this.items) {
             if (item instanceof GiftCard) {
                 taxTotal += ((GiftCard) item).calculateTax();
             } else if (item instanceof Product) {
@@ -87,7 +87,7 @@ public class Sale {
             discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .1;
         } else if (customer instanceof GoldMember) {
             discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .05;
-        } else if(customer.getPersonId().equals(salesperson.getPersonId())) {
+        } else if (customer.getPersonId().equals(salesperson.getPersonId())) {
             discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .15;
         }
         return discountAmount;

@@ -30,10 +30,10 @@ public class Subscription extends Item {
     }
 
     public double getDayDifference() {
-       return ((double) (beginDate.until(endDate, ChronoUnit.DAYS)) + 1);
+        return ((double) (beginDate.until(endDate, ChronoUnit.DAYS)) + 1);
     }
 
     public double calculatePrice() {
-        return ((annualFee/365)*this.getDayDifference());
+        return ((annualFee / 365) * this.getDayDifference()*100) / 100;
     }
 }

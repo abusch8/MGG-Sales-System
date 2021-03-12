@@ -1,126 +1,131 @@
 [
   {
-    "storeCode": "j8woan",
+    "storeCode": "3c0234",
     "manager": {
-      "personId": "pi71s9",
-      "lastName": "O\u0027Gready",
-      "firstName": "Lockwood",
+      "personId": "fdc267",
+      "lastName": "Quarry",
+      "firstName": "Staci",
       "address": {
-        "street": "51220 Lindbergh Junction",
-        "city": "Houston",
-        "state": "TX",
-        "zip": "77095",
+        "street": "601 Lotheville Road",
+        "city": "Savannah",
+        "state": "GA",
+        "zip": "31405",
         "country": "US"
       },
       "emails": [
-        "logreadyc@cam.ac.uk"
+        "squarry0@reverbnation.com",
+        "squarry0@salon.com"
       ]
     },
     "address": {
-      "street": "63 Del Mar Crossing",
-      "city": "Inglewood",
-      "state": "CA",
-      "zip": "90398",
+      "street": "2 Crest Line Way",
+      "city": "New York City",
+      "state": "NY",
+      "zip": "10184",
       "country": "US"
     }
   },
   {
-    "storeCode": "pca7io",
+    "storeCode": "9f352c",
     "manager": {
-      "personId": "pi71s9",
-      "lastName": "O\u0027Gready",
-      "firstName": "Lockwood",
+      "personId": "aa887a",
+      "lastName": "Leavold",
+      "firstName": "Wit",
       "address": {
-        "street": "51220 Lindbergh Junction",
-        "city": "Houston",
-        "state": "TX",
-        "zip": "77095",
+        "street": "65337 Straubel Place",
+        "city": "Muncie",
+        "state": "IN",
+        "zip": "47306",
         "country": "US"
       },
       "emails": [
-        "logreadyc@cam.ac.uk"
+        "wleavold2@npr.org",
+        "wleavold2@craigslist.org"
       ]
     },
     "address": {
-      "street": "4 Memorial Lane",
-      "city": "Knoxville",
-      "state": "TN",
-      "zip": "37924",
+      "street": "438 Jenna Road",
+      "city": "Huntsville",
+      "state": "AL",
+      "zip": "35815",
       "country": "US"
     }
   },
   {
-    "storeCode": "i04hle",
+    "storeCode": "73668b",
     "manager": {
-      "personId": "kameic",
-      "lastName": "Yitzovicz",
-      "firstName": "Bale",
+      "personId": "fdc267",
+      "lastName": "Quarry",
+      "firstName": "Staci",
       "address": {
-        "street": "64151 Atwood Lane",
-        "city": "Chicago",
-        "state": "IL",
-        "zip": "60663",
+        "street": "601 Lotheville Road",
+        "city": "Savannah",
+        "state": "GA",
+        "zip": "31405",
         "country": "US"
       },
       "emails": [
-        "byitzovicz1@so-net.ne.jp"
+        "squarry0@reverbnation.com",
+        "squarry0@salon.com"
       ]
     },
     "address": {
-      "street": "81 Arkansas Way",
-      "city": "Winston Salem",
-      "state": "NC",
-      "zip": "27116",
+      "street": "9257 Maywood Junction",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85099",
       "country": "US"
     }
   },
   {
-    "storeCode": "ns4ie7",
+    "storeCode": "96f2cf",
     "manager": {
-      "personId": "pi71s9",
-      "lastName": "O\u0027Gready",
-      "firstName": "Lockwood",
+      "personId": "fdc267",
+      "lastName": "Quarry",
+      "firstName": "Staci",
       "address": {
-        "street": "51220 Lindbergh Junction",
-        "city": "Houston",
-        "state": "TX",
-        "zip": "77095",
+        "street": "601 Lotheville Road",
+        "city": "Savannah",
+        "state": "GA",
+        "zip": "31405",
         "country": "US"
       },
       "emails": [
-        "logreadyc@cam.ac.uk"
+        "squarry0@reverbnation.com",
+        "squarry0@salon.com"
       ]
     },
     "address": {
-      "street": "149 Northport Avenue",
-      "city": "Louisville",
-      "state": "KY",
-      "zip": "40287",
+      "street": "1145 Transport Drive",
+      "city": "Gainesville",
+      "state": "FL",
+      "zip": "32605",
       "country": "US"
     }
   },
   {
-    "storeCode": "yzn182",
+    "storeCode": "25d901",
     "manager": {
-      "personId": "xta9br",
-      "lastName": "Nock",
-      "firstName": "Dominick",
+      "personId": "aa887a",
+      "lastName": "Leavold",
+      "firstName": "Wit",
       "address": {
-        "street": "522 Warrior Circle",
-        "city": "Jackson",
-        "state": "MS",
-        "zip": "39236",
+        "street": "65337 Straubel Place",
+        "city": "Muncie",
+        "state": "IN",
+        "zip": "47306",
         "country": "US"
       },
       "emails": [
-        "dnockd@networkadvertising.org"
+        "wleavold2@npr.org",
+        "wleavold2@craigslist.org"
       ]
     },
     "address": {
-      "street": "34 Wayridge Pass",
-      "city": "Grand Rapids",
-      "state": "MI",
-      "zip": "49510",
+      "street": "180 Magdeline Plaza",
+      "city": "Wichita",
+      "state": "KS",
+      "zip": "67230",
       "country": "US"
     }
   }

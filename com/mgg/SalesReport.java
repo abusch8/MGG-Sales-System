@@ -1,5 +1,6 @@
 package com.mgg;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -14,7 +15,6 @@ public class SalesReport {
         System.out.println("+-----------------------------------------------------+");
         System.out.println("| Salesperson Summary Report                          |");
         System.out.println("+-----------------------------------------------------+");
-
         System.out.println("Salesperson                    # Sales    Grand Total  ");
 
         sales.sort(cmpBySalesPerson);
@@ -30,49 +30,110 @@ public class SalesReport {
             salesCountTotal++;
             if (i + 1 < sales.size() && sales.get(i).getSalesperson().getLastName().equals(sales.get(i + 1).getSalesperson().getLastName())) {
                 salesCount++;
-
             } else {
-                System.out.printf("%s, %s  %d %.2f\n", sales.get(i).getSalesperson().getLastName(), sales.get(i).getSalesperson().getFirstName(), salesCount, total);
+                StringBuilder printString = new StringBuilder();
+                printString.append(String.format("%s, %s", sales.get(i).getSalesperson().getLastName(), sales.get(i).getSalesperson().getFirstName()));
+                int length = printString.length();
+                for (int j = 0; j < 31 - length; j++) {
+                    printString.append(" ");
+                }
+                printString.append(String.format("%-11d$%10.2f", salesCount, (double) Math.round(total * 100) / 100));
+                System.out.println(printString);
+                //grandTotal += total;
                 total = 0;
                 salesCount = 1;
             }
         }
 
-        System.out.println("+-----------------------------------------------------+");
-        System.out.printf("%d $%10.2f\n", salesCountTotal, (double) (Math.round(grandTotal) * 100) / 100);
-        System.out.print("\n\n");
+        List<Employee> salespersons = new ArrayList<>();
+        for (Person person : personList) {
+            if (person instanceof Employee) {
+                salespersons.add((Employee) person);
+            }
+        }
 
+        salespersons.sort(cmpByEmployee);
+
+        int counter;
+        for (Employee salesperson : salespersons) {
+            counter = 0;
+            for(Sale sale : sales) {
+                if (salesperson.getPersonId().equals(sale.getSalesperson().getPersonId())) {
+                    counter++;
+                }
+            }
+            if (counter == 0) {
+                StringBuilder printString = new StringBuilder();
+                printString.append(String.format("%s, %s", salesperson.getLastName(), salesperson.getFirstName()));
+                int length = printString.length();
+                for (int j = 0; j < 31 - length; j++) {
+                    printString.append(" ");
+                }
+                printString.append(String.format("%-11d$%10.2f", 0, 0.00));
+                System.out.println(printString);
+            }
+        }
+
+        System.out.println("+-----------------------------------------------------+");
+        System.out.printf("                               %-11d$%10.2f\n\n\n", salesCountTotal, (double) Math.round(grandTotal * 100) / 100);
 
 
         System.out.println("+----------------------------------------------------------------+");
         System.out.println("| Store Sales Summary Report                                     |");
         System.out.println("+----------------------------------------------------------------+");
         System.out.println("Store      Manager                        # Sales    Grand Total  ");
-        sales.sort(cmpByStoreCode);
-        int storeSalesCount = 1;
-        int storeSalesCountTotal = 0;
-        double storeTotal = 0;
-        double storeGrandTotal = 0;
 
-        for(int i = 0; i < sales.size(); i++) {
-            storeTotal += sales.get(i).calculateGrandTotal();
-            storeGrandTotal += sales.get(i).calculateGrandTotal();
-            storeSalesCountTotal++;
-            if(i + 1 < sales.size() && sales.get(i).getStore().getStoreCode().equals(sales.get(i+1).getStore().getStoreCode())) {
-                storeSalesCount++;
+        sales.sort(cmpByStoreCode);
+
+        salesCount = 1;
+        salesCountTotal = 0;
+        total = 0;
+        grandTotal = 0;
+
+        for (int i = 0; i < sales.size(); i++) {
+            total += sales.get(i).calculateGrandTotal();
+            grandTotal += sales.get(i).calculateGrandTotal();
+            salesCountTotal++;
+            if (i + 1 < sales.size() && sales.get(i).getStore().getStoreCode().equals(sales.get(i + 1).getStore().getStoreCode())) {
+                salesCount++;
             } else {
-                System.out.printf("%s %s, %s  %d %.2f\n", sales.get(i).getStore().getStoreCode(), sales.get(i).getStore().getManager().getLastName(), sales.get(i).getStore().getManager().getFirstName(), storeSalesCount, storeTotal);
-                storeTotal = 0;
-                storeSalesCount = 1;
+                StringBuilder printString = new StringBuilder();
+                printString.append(String.format("%s %s, %s", sales.get(i).getStore().getStoreCode(), sales.get(i).getStore().getManager().getLastName(), sales.get(i).getStore().getManager().getFirstName()));
+                int length = printString.length();
+                for (int j = 0; j < 42 - length; j++) {
+                    printString.append(" ");
+                }
+                printString.append(String.format("%-11d$%10.2f", salesCount, (double) Math.round(total * 100) / 100));
+                System.out.println(printString);
+                total = 0;
+                salesCount = 1;
+            }
+        }
+
+        salespersons.sort(cmpByEmployee);
+        storeList.sort(cmpByStoreId);
+        for (Store store : storeList) {
+            counter = 0;
+            for(Sale sale : sales) {
+                if (store.getStoreCode().equals(sale.getStore().getStoreCode())) {
+                    counter++;
+                }
+            }
+            if (counter == 0) {
+                StringBuilder printString = new StringBuilder();
+                printString.append(String.format("%s %s, %s", store.getStoreCode(), store.getManager().getLastName(), store.getManager().getFirstName()));
+                int length = printString.length();
+                for (int j = 0; j < 42 - length; j++) {
+                    printString.append(" ");
+                }
+                printString.append(String.format("%-11d$%10.2f", 0, 0.00));
+                System.out.println(printString);
             }
         }
 
         System.out.println("+----------------------------------------------------------------+");
-        System.out.printf("%d $%10.2f\n", storeSalesCountTotal, (double) (Math.round(storeGrandTotal) * 100) / 100);
+        System.out.printf("                                          %-11d$%10.2f\n\n\n", salesCountTotal, (double) Math.round(grandTotal * 100) / 100);
 
-
-
-        System.out.print("\n\n\n\n");
 
         //printing out sales and calculating prices
         for (Sale sale : sales) {
@@ -85,7 +146,6 @@ public class SalesReport {
 
             System.out.println("Item                                                               Total");
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-");
-
 
             for (Item item : sale.getItems()) {
 
@@ -122,7 +182,7 @@ public class SalesReport {
 
                     } else if (product instanceof UsedProduct) {
 
-                       double price = ((UsedProduct) product).calculatePrice(); //80 percent of original price
+                        double price = ((UsedProduct) product).calculatePrice(); //80 percent of original price
 
                         System.out.print(product.getName() + "\n\t");
                         StringBuilder printString = new StringBuilder();
@@ -172,18 +232,14 @@ public class SalesReport {
             System.out.printf("                                                    Subtotal $%10.2f\n", sale.calculateSubTotal());
             System.out.printf("                                                         Tax $%10.2f\n", sale.calculateTax());
             if (sale.getCustomer() instanceof PlatinumMember) {
-
                 System.out.printf("                                           Discount (10.00%%) $%10.2f\n", sale.calculateDiscount());
             } else if (sale.getCustomer() instanceof GoldMember) {
-
                 System.out.printf("                                            Discount (5.00%%) $%10.2f\n", sale.calculateDiscount());
             } else if (sale.getCustomer().getPersonId().equals(sale.getSalesperson().getPersonId())) {
-
                 System.out.printf("                                           Discount (15.00%%) $%10.2f\n", sale.calculateDiscount());
             }
-            System.out.printf("                                                 Grand Total $%10.2f\n", sale.calculateGrandTotal());
+            System.out.printf("                                                 Grand Total $%10.2f\n\n\n", (double) Math.round(sale.calculateGrandTotal() * 100) / 100);
 
-            System.out.print("\n\n");
         }
     }
 }

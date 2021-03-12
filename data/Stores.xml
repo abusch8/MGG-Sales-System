@@ -1,111 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <stores>
   <store>
-    <storeCode>j8woan</storeCode>
+    <storeCode>3c0234</storeCode>
     <manager>
-      <personId>pi71s9</personId>
-      <lastName>O&apos;Gready</lastName>
-      <firstName>Lockwood</firstName>
+      <personId>fdc267</personId>
+      <lastName>Quarry</lastName>
+      <firstName>Staci</firstName>
       <address>
-        <street>51220 Lindbergh Junction</street>
-        <city>Houston</city>
-        <state>TX</state>
-        <zip>77095</zip>
+        <street>601 Lotheville Road</street>
+        <city>Savannah</city>
+        <state>GA</state>
+        <zip>31405</zip>
         <country>US</country>
       </address>
       <emails>
-        <string>logreadyc@cam.ac.uk</string>
+        <string>squarry0@reverbnation.com</string>
+        <string>squarry0@salon.com</string>
       </emails>
     </manager>
     <address>
-      <street>63 Del Mar Crossing</street>
-      <city>Inglewood</city>
-      <state>CA</state>
-      <zip>90398</zip>
+      <street>2 Crest Line Way</street>
+      <city>New York City</city>
+      <state>NY</state>
+      <zip>10184</zip>
       <country>US</country>
     </address>
   </store>
   <store>
-    <storeCode>pca7io</storeCode>
+    <storeCode>9f352c</storeCode>
     <manager>
-      <personId>pi71s9</personId>
-      <lastName>O&apos;Gready</lastName>
-      <firstName>Lockwood</firstName>
+      <personId>aa887a</personId>
+      <lastName>Leavold</lastName>
+      <firstName>Wit</firstName>
+      <address>
+        <street>65337 Straubel Place</street>
+        <city>Muncie</city>
+        <state>IN</state>
+        <zip>47306</zip>
+        <country>US</country>
+      </address>
+      <emails>
+        <string>wleavold2@npr.org</string>
+        <string>wleavold2@craigslist.org</string>
+      </emails>
+    </manager>
+    <address>
+      <street>438 Jenna Road</street>
+      <city>Huntsville</city>
+      <state>AL</state>
+      <zip>35815</zip>
+      <country>US</country>
+    </address>
+  </store>
+  <store>
+    <storeCode>73668b</storeCode>
+    <manager>
+      <personId>fdc267</personId>
+      <lastName>Quarry</lastName>
+      <firstName>Staci</firstName>
       <address reference="../../../store/manager/address"/>
       <emails reference="../../../store/manager/emails"/>
     </manager>
     <address>
-      <street>4 Memorial Lane</street>
-      <city>Knoxville</city>
-      <state>TN</state>
-      <zip>37924</zip>
+      <street>9257 Maywood Junction</street>
+      <city>Phoenix</city>
+      <state>AZ</state>
+      <zip>85099</zip>
       <country>US</country>
     </address>
   </store>
   <store>
-    <storeCode>i04hle</storeCode>
+    <storeCode>96f2cf</storeCode>
     <manager>
-      <personId>kameic</personId>
-      <lastName>Yitzovicz</lastName>
-      <firstName>Bale</firstName>
-      <address>
-        <street>64151 Atwood Lane</street>
-        <city>Chicago</city>
-        <state>IL</state>
-        <zip>60663</zip>
-        <country>US</country>
-      </address>
-      <emails>
-        <string>byitzovicz1@so-net.ne.jp</string>
-      </emails>
-    </manager>
-    <address>
-      <street>81 Arkansas Way</street>
-      <city>Winston Salem</city>
-      <state>NC</state>
-      <zip>27116</zip>
-      <country>US</country>
-    </address>
-  </store>
-  <store>
-    <storeCode>ns4ie7</storeCode>
-    <manager>
-      <personId>pi71s9</personId>
-      <lastName>O&apos;Gready</lastName>
-      <firstName>Lockwood</firstName>
+      <personId>fdc267</personId>
+      <lastName>Quarry</lastName>
+      <firstName>Staci</firstName>
       <address reference="../../../store/manager/address"/>
       <emails reference="../../../store/manager/emails"/>
     </manager>
     <address>
-      <street>149 Northport Avenue</street>
-      <city>Louisville</city>
-      <state>KY</state>
-      <zip>40287</zip>
+      <street>1145 Transport Drive</street>
+      <city>Gainesville</city>
+      <state>FL</state>
+      <zip>32605</zip>
       <country>US</country>
     </address>
   </store>
   <store>
-    <storeCode>yzn182</storeCode>
+    <storeCode>25d901</storeCode>
     <manager>
-      <personId>xta9br</personId>
-      <lastName>Nock</lastName>
-      <firstName>Dominick</firstName>
-      <address>
-        <street>522 Warrior Circle</street>
-        <city>Jackson</city>
-        <state>MS</state>
-        <zip>39236</zip>
-        <country>US</country>
-      </address>
-      <emails>
-        <string>dnockd@networkadvertising.org</string>
-      </emails>
+      <personId>aa887a</personId>
+      <lastName>Leavold</lastName>
+      <firstName>Wit</firstName>
+      <address reference="../../../store[2]/manager/address"/>
+      <emails reference="../../../store[2]/manager/emails"/>
     </manager>
     <address>
-      <street>34 Wayridge Pass</street>
-      <city>Grand Rapids</city>
-      <state>MI</state>
-      <zip>49510</zip>
+      <street>180 Magdeline Plaza</street>
+      <city>Wichita</city>
+      <state>KS</state>
+      <zip>67230</zip>
       <country>US</country>
     </address>
   </store>

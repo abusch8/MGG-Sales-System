@@ -2,7 +2,6 @@ package com.mgg;
 
 /**
  * Class that stores the information for an address in a convenient format
- *
  */
 public class Address {
 
@@ -41,5 +40,6 @@ public class Address {
     }
 
     public String toString() {
-        return getStreet() + "\n" + "\t" + getCity() + " " + getState() + " " + getZip() + " " + getCountry(); }
+        return getStreet() + "\n" + "\t" + getCity() + " " + getState() + " " + getZip() + " " + getCountry();
+    }
 }

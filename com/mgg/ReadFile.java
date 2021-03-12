@@ -110,7 +110,6 @@ public class ReadFile {
      */
     public static List<Sale> readSaleCSV(List<Person> personList, List<Store> storeList, List<Item> itemList) {
         List<Sale> sales = new ArrayList<>();
-        Sale sale = null;
         Store store = null;
         Customer customer = null;
         Employee salesperson = null;
@@ -122,19 +121,18 @@ public class ReadFile {
                 List<Item> items = new ArrayList<>();
                 Item item = null;
 
-
-
-                currentLine : {
-                    for(int j = 4; j < content.length; j++) {
+                currentLine:
+                {
+                    for (int j = 4; j < content.length; j++) {
                         int k = 0;
-                        while(k < itemList.size()) {
-                            if(content[j].equals(itemList.get(k).getCode())) {
-                                if(itemList.get(k) instanceof Product) {
+                        while (k < itemList.size()) {
+                            if (content[j].equals(itemList.get(k).getCode())) {
+                                if (itemList.get(k) instanceof Product) {
                                     Product existingProduct = (Product) itemList.get(k);
-                                    if(existingProduct instanceof NewProduct) {
-                                        item = new NewProduct(existingProduct.getCode(), existingProduct.getName(), existingProduct.getBasePrice(), Integer.parseInt(content[j+1]));
-                                    } else if(existingProduct instanceof UsedProduct) {
-                                        item = new UsedProduct(existingProduct.getCode(), existingProduct.getName(), existingProduct.getBasePrice(), Integer.parseInt(content[j+1]));
+                                    if (existingProduct instanceof NewProduct) {
+                                        item = new NewProduct(existingProduct.getCode(), existingProduct.getName(), existingProduct.getBasePrice(), Integer.parseInt(content[j + 1]));
+                                    } else if (existingProduct instanceof UsedProduct) {
+                                        item = new UsedProduct(existingProduct.getCode(), existingProduct.getName(), existingProduct.getBasePrice(), Integer.parseInt(content[j + 1]));
                                     }
                                     items.add(item);
                                     k = 0;
@@ -143,24 +141,24 @@ public class ReadFile {
                                     } else {
                                         j += 2;
                                     }
-                                } else if(itemList.get(k) instanceof GiftCard) {
-                                    item = new GiftCard(itemList.get(k).getCode(), itemList.get(k).getName(), Double.parseDouble(content[j+1]));
+                                } else if (itemList.get(k) instanceof GiftCard) {
+                                    item = new GiftCard(itemList.get(k).getCode(), itemList.get(k).getName(), Double.parseDouble(content[j + 1]));
                                     items.add(item);
                                     k = 0;
-                                    if(j + 2 >= content.length) {
+                                    if (j + 2 >= content.length) {
                                         break currentLine;
                                     } else {
                                         j += 2;
                                     }
-                                } else if(itemList.get(k) instanceof Service) {
+                                } else if (itemList.get(k) instanceof Service) {
                                     Employee employee = null;
-                                    for(Person existingPerson : personList) {
-                                        if(content[j + 1].equals(existingPerson.getPersonId())) {
+                                    for (Person existingPerson : personList) {
+                                        if (content[j + 1].equals(existingPerson.getPersonId())) {
                                             employee = new Employee(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
                                         }
                                     }
                                     Service existingService = (Service) itemList.get(k);
-                                    item = new Service(itemList.get(k).getCode(), existingService.getName(), existingService.getHourlyRate(), employee, Double.parseDouble(content[j+2]));
+                                    item = new Service(itemList.get(k).getCode(), existingService.getName(), existingService.getHourlyRate(), employee, Double.parseDouble(content[j + 2]));
                                     items.add(item);
                                     k = 0;
                                     if (j + 3 >= content.length) {
@@ -168,12 +166,12 @@ public class ReadFile {
                                     } else {
                                         j += 3;
                                     }
-                                } else if(itemList.get(k) instanceof Subscription) {
+                                } else if (itemList.get(k) instanceof Subscription) {
                                     Subscription existingSubscription = (Subscription) itemList.get(k);
-                                    item = new Subscription(existingSubscription.getCode(), existingSubscription.getName(), existingSubscription.getAnnualFee(), LocalDate.parse(content[j+1]), LocalDate.parse(content[j+2]));
+                                    item = new Subscription(existingSubscription.getCode(), existingSubscription.getName(), existingSubscription.getAnnualFee(), LocalDate.parse(content[j + 1]), LocalDate.parse(content[j + 2]));
                                     items.add(item);
                                     k = 0;
-                                    if(j + 3 >= content.length) {
+                                    if (j + 3 >= content.length) {
                                         break currentLine;
                                     } else {
                                         j += 3;
@@ -182,17 +180,17 @@ public class ReadFile {
                             } else {
                                 k++;
                             }
-                            for(Store existingStore : storeList) {
-                                if(content[1].equals(existingStore.getStoreCode())) {
+                            for (Store existingStore : storeList) {
+                                if (content[1].equals(existingStore.getStoreCode())) {
                                     store = new Store(existingStore.getStoreCode(), existingStore.getManager(), existingStore.getAddress());
                                 }
                             }
                             //this is where are storing the customers, platinum members, etc.
-                            for(Person existingPerson : personList) {
-                                if(content[2].equals(existingPerson.getPersonId())) {
-                                    if(existingPerson instanceof PlatinumMember) {
+                            for (Person existingPerson : personList) {
+                                if (content[2].equals(existingPerson.getPersonId())) {
+                                    if (existingPerson instanceof PlatinumMember) {
                                         customer = new PlatinumMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
-                                    } else if(existingPerson instanceof GoldMember) {
+                                    } else if (existingPerson instanceof GoldMember) {
                                         customer = new GoldMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
                                     } else {
                                         customer = new Customer(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
@@ -205,13 +203,13 @@ public class ReadFile {
                         }
                     }
                 }
-                sale = new Sale(content[0], store, customer, salesperson, items);
+                Sale sale = new Sale(content[0], store, customer, salesperson, items);
                 sales.add(sale);
                 //System.out.println("Created a sale!");
             }
             reader.close();
             return sales;
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

@@ -1,109 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
   <NewProduct>
-    <itemCode>du3gvc</itemCode>
+    <itemCode>1d4d89</itemCode>
     <name>PlayStation 5 Digital Edition</name>
     <basePrice>399.99</basePrice>
     <quantity>2</quantity>
   </NewProduct>
   <NewProduct>
-    <itemCode>8cgtc5</itemCode>
-    <name>Xbox Series X</name>
-    <basePrice>999.99</basePrice>
-    <quantity>2</quantity>
-  </NewProduct>
-  <NewProduct>
-    <itemCode>okc480</itemCode>
+    <itemCode>1ed5b7</itemCode>
     <name>Nintendo Switch Lite</name>
     <basePrice>199.99</basePrice>
     <quantity>2</quantity>
   </NewProduct>
   <NewProduct>
-    <itemCode>h1z0px</itemCode>
-    <name>Cyberpunk 2077</name>
-    <basePrice>44.99</basePrice>
+    <itemCode>6ce4cd</itemCode>
+    <name>Splatoon 2 (Digital Copy)</name>
+    <basePrice>59.99</basePrice>
+    <quantity>2</quantity>
+  </NewProduct>
+  <NewProduct>
+    <itemCode>c547e7</itemCode>
+    <name>Diet Mt Dew (20oz)</name>
+    <basePrice>1.99</basePrice>
     <quantity>2</quantity>
   </NewProduct>
   <GiftCard>
-    <itemCode>g8e3m1</itemCode>
+    <itemCode>5f73aa</itemCode>
+    <name>Nintendo Digital Gold</name>
+    <basePrice>0.0</basePrice>
+  </GiftCard>
+  <GiftCard>
+    <itemCode>14e2b7</itemCode>
     <name>Steam</name>
     <basePrice>0.0</basePrice>
   </GiftCard>
   <GiftCard>
-    <itemCode>gf05gd</itemCode>
-    <name>Fortnite</name>
+    <itemCode>8a30ad</itemCode>
+    <name>Android Store</name>
     <basePrice>0.0</basePrice>
   </GiftCard>
   <GiftCard>
-    <itemCode>tmuvc6</itemCode>
-    <name>Roblox</name>
-    <basePrice>0.0</basePrice>
-  </GiftCard>
-  <GiftCard>
-    <itemCode>hjrjmf</itemCode>
-    <name>App Store</name>
-    <basePrice>0.0</basePrice>
-  </GiftCard>
-  <GiftCard>
-    <itemCode>vta4x6</itemCode>
-    <name>PlayStation Store</name>
+    <itemCode>daad6a</itemCode>
+    <name>Robux</name>
     <basePrice>0.0</basePrice>
   </GiftCard>
   <UsedProduct>
-    <itemCode>czsbx8</itemCode>
+    <itemCode>649f88</itemCode>
     <name>Legend of Zelda (NES)</name>
     <basePrice>24.5</basePrice>
     <quantity>1</quantity>
   </UsedProduct>
   <UsedProduct>
-    <itemCode>1u08fl</itemCode>
-    <name>Tomb Raider</name>
-    <basePrice>2.99</basePrice>
-    <quantity>1</quantity>
-  </UsedProduct>
-  <UsedProduct>
-    <itemCode>ndop6a</itemCode>
-    <name>Vive</name>
-    <basePrice>599.99</basePrice>
-    <quantity>1</quantity>
-  </UsedProduct>
-  <UsedProduct>
-    <itemCode>wyuhli</itemCode>
+    <itemCode>0ec6e9</itemCode>
     <name>Animal Crossings</name>
     <basePrice>59.99</basePrice>
     <quantity>1</quantity>
   </UsedProduct>
+  <UsedProduct>
+    <itemCode>9b6e30</itemCode>
+    <name>Oculus Rift</name>
+    <basePrice>199.99</basePrice>
+    <quantity>1</quantity>
+  </UsedProduct>
+  <UsedProduct>
+    <itemCode>40a433</itemCode>
+    <name>Vive</name>
+    <basePrice>599.99</basePrice>
+    <quantity>1</quantity>
+  </UsedProduct>
   <Service>
-    <itemCode>r57oej</itemCode>
+    <itemCode>8e366e</itemCode>
     <name>Console Repair</name>
-    <hourlyRate>173.99</hourlyRate>
-    <numHours>173.99</numHours>
+    <hourlyRate>59.99</hourlyRate>
+    <numHours>59.99</numHours>
   </Service>
   <Service>
-    <itemCode>t2jurm</itemCode>
-    <name>Headset Repair</name>
-    <hourlyRate>186.91</hourlyRate>
-    <numHours>186.91</numHours>
+    <itemCode>c4fb35</itemCode>
+    <name>VR Party Rental</name>
+    <hourlyRate>120.0</hourlyRate>
+    <numHours>120.0</numHours>
   </Service>
   <Service>
-    <itemCode>uq4ufn</itemCode>
-    <name>VR set up</name>
-    <hourlyRate>213.27</hourlyRate>
-    <numHours>213.27</numHours>
+    <itemCode>740515</itemCode>
+    <name>Game Addiction Counseling</name>
+    <hourlyRate>1.99</hourlyRate>
+    <numHours>1.99</numHours>
   </Service>
   <Subscription>
-    <itemCode>a7ssvx</itemCode>
-    <name>Steam</name>
-    <annualFee>89.99</annualFee>
-  </Subscription>
-  <Subscription>
-    <itemCode>wgqevs</itemCode>
-    <name>PUBG Mobile</name>
-    <annualFee>109.99</annualFee>
-  </Subscription>
-  <Subscription>
-    <itemCode>nb6d0j</itemCode>
+    <itemCode>426dda</itemCode>
     <name>X-Box Live</name>
-    <annualFee>54.99</annualFee>
+    <annualFee>50.0</annualFee>
+  </Subscription>
+  <Subscription>
+    <itemCode>dedd44</itemCode>
+    <name>Nintendo Power magazine</name>
+    <annualFee>120.0</annualFee>
+  </Subscription>
+  <Subscription>
+    <itemCode>3506f6</itemCode>
+    <name>Disney Plus</name>
+    <annualFee>89.99</annualFee>
   </Subscription>
 </items>

@@ -42,14 +42,13 @@ public abstract class Person {
     }
 
     public String emailListToString() {
-        String emailListToString = "[";
+        StringBuilder emailListToString = new StringBuilder();
         for(int i = 0; i < emails.size(); i++) {
-            emailListToString += emails.get(i);
+            emailListToString.append(emails.get(i));
             if(i + 1 < emails.size()) {
-                emailListToString += ", ";
+                emailListToString.append(", ");
             }
         }
-        emailListToString += "]";
-        return emailListToString;
+        return String.format("[%s]", emailListToString);
     }
 }

@@ -18,6 +18,7 @@ public class WriteFile {
 
     /**
      * This method takes in a list of information and writes to the file "Persons.xml" correctly formatting it.
+     *
      * @param persons A list of type Person, or the content that will be formatted.
      */
     public static void convertPersonToXML(List<Person> persons) {
@@ -38,13 +39,14 @@ public class WriteFile {
             xml.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
             xml.write(xml_output);
             xml.close(); //close file for writing
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     /**
      * This method takes in a list of type Store and formats the contents into XML.
+     *
      * @param stores a list type Store
      */
     public static void convertStoreToXML(List<Store> stores) {
@@ -58,13 +60,14 @@ public class WriteFile {
             writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
             writer.write(xml_output);
             writer.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     /**
      * This method takes in a list of type Item and formats the contents into an XML file.
+     *
      * @param items a list type Item
      */
     public static void convertItemToXML(List<Item> items) {
@@ -83,13 +86,14 @@ public class WriteFile {
             writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
             writer.write(xml_output);
             writer.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     /**
      * This method takes in a list of type Person and formats the contents into an JSON file.
+     *
      * @param persons a list type Person
      */
     public static void convertPersonToJSON(List<Person> persons) {
@@ -99,13 +103,14 @@ public class WriteFile {
             String json_output = gson.toJson(persons);
             json.write(json_output);
             json.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     /**
      * This method takes in a list of type Store and formats the contents into an JSON file.
+     *
      * @param stores a list type Store
      */
     public static void convertStoreToJSON(List<Store> stores) {
@@ -115,13 +120,14 @@ public class WriteFile {
             String json_output = gson.toJson(stores);
             json.write(json_output);
             json.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     /**
      * This method takes in a list of type Item and formats the contents into an JSON file.
+     *
      * @param items a list type Item
      */
     public static void convertItemToJSON(List<Item> items) {
@@ -131,7 +137,7 @@ public class WriteFile {
             String json_output = gson.toJson(items);
             json.write(json_output);
             json.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

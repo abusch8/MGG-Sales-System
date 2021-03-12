@@ -1,11 +1,16 @@
 package com.mgg;
 
-public class UsedProduct extends Item {
+public class UsedProduct extends Product {
 
-    private double basePrice;
+    public UsedProduct(String code, String name, double basePrice, int quantity) {
+        super(code, name, basePrice, quantity);
+    }
 
-    public UsedProduct(String code, String name, double basePrice) {
-        super(code, name);
-        this.basePrice = basePrice;
+    public double calculatePrice() {
+        return (double) Math.round(((basePrice * .8) * quantity) * 100) / 100;
+    }
+
+    public double getReducedPrice() {
+        return (basePrice * .8);
     }
 }

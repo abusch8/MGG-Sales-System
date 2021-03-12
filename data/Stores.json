@@ -1,136 +1,126 @@
 [
   {
-    "storeCode": "1al23k",
+    "storeCode": "j8woan",
     "manager": {
-      "personId": "c9fa12",
-      "name": {
-        "lastName": "Diehl",
-        "firstName": "Dylan"
-      },
+      "personId": "pi71s9",
+      "lastName": "O\u0027Gready",
+      "firstName": "Lockwood",
       "address": {
-        "street": "67 West Oak Valley Court",
-        "city": "Beatrice",
-        "state": "NE",
-        "zip": "68503",
-        "country": "USA"
+        "street": "51220 Lindbergh Junction",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77095",
+        "country": "US"
       },
       "emails": [
-        "dylandiehl@icloud.com"
+        "logreadyc@cam.ac.uk"
       ]
     },
     "address": {
-      "street": "484 Grove Court",
-      "city": "Chicago",
-      "state": "IL",
-      "zip": "19426",
+      "street": "63 Del Mar Crossing",
+      "city": "Inglewood",
+      "state": "CA",
+      "zip": "90398",
       "country": "US"
     }
   },
   {
-    "storeCode": "234jkd",
+    "storeCode": "pca7io",
     "manager": {
-      "personId": "19ozud",
-      "name": {
-        "lastName": "Johnson",
-        "firstName": "Arnold"
-      },
+      "personId": "pi71s9",
+      "lastName": "O\u0027Gready",
+      "firstName": "Lockwood",
       "address": {
-        "street": "Creative Apartments Apt 192",
-        "city": "Princeton",
-        "state": "NJ",
-        "zip": "10335",
-        "country": "USA"
+        "street": "51220 Lindbergh Junction",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77095",
+        "country": "US"
       },
       "emails": [
-        "jarnie88@hotmail.com"
+        "logreadyc@cam.ac.uk"
       ]
     },
     "address": {
-      "street": "4 County Street",
-      "city": "New York City",
-      "state": "NY",
-      "zip": "47150",
+      "street": "4 Memorial Lane",
+      "city": "Knoxville",
+      "state": "TN",
+      "zip": "37924",
       "country": "US"
     }
   },
   {
-    "storeCode": "jas890",
+    "storeCode": "i04hle",
     "manager": {
-      "personId": "c9fa12",
-      "name": {
-        "lastName": "Diehl",
-        "firstName": "Dylan"
-      },
+      "personId": "kameic",
+      "lastName": "Yitzovicz",
+      "firstName": "Bale",
       "address": {
-        "street": "67 West Oak Valley Court",
-        "city": "Beatrice",
-        "state": "NE",
-        "zip": "68503",
-        "country": "USA"
+        "street": "64151 Atwood Lane",
+        "city": "Chicago",
+        "state": "IL",
+        "zip": "60663",
+        "country": "US"
       },
       "emails": [
-        "dylandiehl@icloud.com"
+        "byitzovicz1@so-net.ne.jp"
       ]
     },
     "address": {
-      "street": "420 Lafayette Drive",
-      "city": "Tampa",
-      "state": "FL",
-      "zip": "22701",
+      "street": "81 Arkansas Way",
+      "city": "Winston Salem",
+      "state": "NC",
+      "zip": "27116",
       "country": "US"
     }
   },
   {
-    "storeCode": "aj90ds",
+    "storeCode": "ns4ie7",
     "manager": {
-      "personId": "19ozud",
-      "name": {
-        "lastName": "Johnson",
-        "firstName": "Arnold"
-      },
+      "personId": "pi71s9",
+      "lastName": "O\u0027Gready",
+      "firstName": "Lockwood",
       "address": {
-        "street": "Creative Apartments Apt 192",
-        "city": "Princeton",
-        "state": "NJ",
-        "zip": "10335",
-        "country": "USA"
+        "street": "51220 Lindbergh Junction",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77095",
+        "country": "US"
       },
       "emails": [
-        "jarnie88@hotmail.com"
+        "logreadyc@cam.ac.uk"
       ]
     },
     "address": {
-      "street": "9273 Vermont Lane",
-      "city": "Phoenix",
-      "state": "AZ",
-      "zip": "85001",
+      "street": "149 Northport Avenue",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40287",
       "country": "US"
     }
   },
   {
-    "storeCode": "3j90fs",
+    "storeCode": "yzn182",
     "manager": {
-      "personId": "c9fa12",
-      "name": {
-        "lastName": "Diehl",
-        "firstName": "Dylan"
-      },
+      "personId": "xta9br",
+      "lastName": "Nock",
+      "firstName": "Dominick",
       "address": {
-        "street": "67 West Oak Valley Court",
-        "city": "Beatrice",
-        "state": "NE",
-        "zip": "68503",
-        "country": "USA"
+        "street": "522 Warrior Circle",
+        "city": "Jackson",
+        "state": "MS",
+        "zip": "39236",
+        "country": "US"
       },
       "emails": [
-        "dylandiehl@icloud.com"
+        "dnockd@networkadvertising.org"
       ]
     },
     "address": {
-      "street": "7624 Chris Bourke Memorial Street",
-      "city": "Lincoln",
-      "state": "NE",
-      "zip": "68501",
+      "street": "34 Wayridge Pass",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "zip": "49510",
       "country": "US"
     }
   }

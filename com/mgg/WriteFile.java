@@ -61,7 +61,6 @@ public class WriteFile {
         } catch(Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 
     /**

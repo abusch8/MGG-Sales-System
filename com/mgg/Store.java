@@ -16,7 +16,7 @@ public class Store {
         return storeCode;
     }
 
-    public Employee getManagerCode() {
+    public Employee getManager() {
         return manager;
     }
 

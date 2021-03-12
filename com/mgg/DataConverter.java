@@ -26,5 +26,9 @@ public class DataConverter {
         WriteFile.convertPersonToJSON(persons);
         WriteFile.convertStoreToJSON(stores);
         WriteFile.convertItemToJSON(items);
+
+        List<Sale> sales = ReadFile.readSaleCSV(persons, stores, items);
+
+        SalesReport.generateSalesReport(sales);
     }
 }

@@ -1,15 +1,8 @@
 package com.mgg;
 
-public class NewProduct extends Item{
+public class NewProduct extends Product {
 
-    double basePrice;
-
-    public NewProduct(String code, String name, double basePrice) {
-        super(code, name);
-        this.basePrice = basePrice;
-    }
-
-    public double getBasePrice() {
-        return basePrice;
+    public NewProduct(String code, String name, double basePrice, int quantity) {
+        super(code, name, basePrice, quantity);
     }
 }

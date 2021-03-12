@@ -39,4 +39,7 @@ public class Address {
     public String getCountry() {
         return country;
     }
+
+    public String toString() {
+        return getStreet() + "\n" + "\t" + getCity() + " " + getState() + " " + getZip() + " " + getCountry(); }
 }

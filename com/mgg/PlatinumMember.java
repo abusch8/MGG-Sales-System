@@ -2,9 +2,9 @@ package com.mgg;
 
 import java.util.List;
 
-public class PlatinumMember extends Person {
+public class PlatinumMember extends Customer {
 
-    public PlatinumMember(String personId, Name name, Address address, List<String> emails) {
-        super(personId, name, address, emails);
+    public PlatinumMember(String personId, String lastName, String firstName, Address address, List<String> emails) {
+        super(personId, lastName, firstName, address, emails);
     }
 }

@@ -1,0 +1,31 @@
+[
+  {
+    "basePrice": 59.99,
+    "code": "8sfd79",
+    "name": "Call of Duty: Cold War"
+  },
+  {
+    "basePrice": 29.99,
+    "code": "hn7890",
+    "name": "Mario Kart 8"
+  },
+  {
+    "annualFee": 59.99,
+    "code": "a0s87d",
+    "name": "Xbox Live Gold Membership 12-months"
+  },
+  {
+    "code": "dnfg0h",
+    "name": "Fortnite Gift Card"
+  },
+  {
+    "hourlyRate": 99.99,
+    "code": "a796d4",
+    "name": "PS4 Repair"
+  },
+  {
+    "annualFee": 19.99,
+    "code": "245hjk",
+    "name": "Switch Online Membership 12-months"
+  }
+]

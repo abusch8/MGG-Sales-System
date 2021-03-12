@@ -1,31 +1,108 @@
 [
   {
+    "basePrice": 399.99,
+    "quantity": 2,
+    "code": "du3gvc",
+    "name": "PlayStation 5 Digital Edition"
+  },
+  {
+    "basePrice": 999.99,
+    "quantity": 2,
+    "code": "8cgtc5",
+    "name": "Xbox Series X"
+  },
+  {
+    "basePrice": 199.99,
+    "quantity": 2,
+    "code": "okc480",
+    "name": "Nintendo Switch Lite"
+  },
+  {
+    "basePrice": 44.99,
+    "quantity": 2,
+    "code": "h1z0px",
+    "name": "Cyberpunk 2077"
+  },
+  {
+    "basePrice": 0.0,
+    "code": "g8e3m1",
+    "name": "Steam"
+  },
+  {
+    "basePrice": 0.0,
+    "code": "gf05gd",
+    "name": "Fortnite"
+  },
+  {
+    "basePrice": 0.0,
+    "code": "tmuvc6",
+    "name": "Roblox"
+  },
+  {
+    "basePrice": 0.0,
+    "code": "hjrjmf",
+    "name": "App Store"
+  },
+  {
+    "basePrice": 0.0,
+    "code": "vta4x6",
+    "name": "PlayStation Store"
+  },
+  {
+    "basePrice": 24.5,
+    "quantity": 1,
+    "code": "czsbx8",
+    "name": "Legend of Zelda (NES)"
+  },
+  {
+    "basePrice": 2.99,
+    "quantity": 1,
+    "code": "1u08fl",
+    "name": "Tomb Raider"
+  },
+  {
+    "basePrice": 599.99,
+    "quantity": 1,
+    "code": "ndop6a",
+    "name": "Vive"
+  },
+  {
     "basePrice": 59.99,
-    "code": "8sfd79",
-    "name": "Call of Duty: Cold War"
+    "quantity": 1,
+    "code": "wyuhli",
+    "name": "Animal Crossings"
   },
   {
-    "basePrice": 29.99,
-    "code": "hn7890",
-    "name": "Mario Kart 8"
+    "hourlyRate": 173.99,
+    "numHours": 173.99,
+    "code": "r57oej",
+    "name": "Console Repair"
   },
   {
-    "annualFee": 59.99,
-    "code": "a0s87d",
-    "name": "Xbox Live Gold Membership 12-months"
+    "hourlyRate": 186.91,
+    "numHours": 186.91,
+    "code": "t2jurm",
+    "name": "Headset Repair"
   },
   {
-    "code": "dnfg0h",
-    "name": "Fortnite Gift Card"
+    "hourlyRate": 213.27,
+    "numHours": 213.27,
+    "code": "uq4ufn",
+    "name": "VR set up"
   },
   {
-    "hourlyRate": 99.99,
-    "code": "a796d4",
-    "name": "PS4 Repair"
+    "annualFee": 89.99,
+    "code": "a7ssvx",
+    "name": "Steam"
   },
   {
-    "annualFee": 19.99,
-    "code": "245hjk",
-    "name": "Switch Online Membership 12-months"
+    "annualFee": 109.99,
+    "code": "wgqevs",
+    "name": "PUBG Mobile"
+  },
+  {
+    "annualFee": 54.99,
+    "code": "nb6d0j",
+    "name": "X-Box Live"
   }
 ]

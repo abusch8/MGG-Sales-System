@@ -1,104 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <stores>
   <store>
-    <storeCode>1al23k</storeCode>
+    <storeCode>j8woan</storeCode>
     <manager>
-      <personId>c9fa12</personId>
-      <name>
-        <lastName>Diehl</lastName>
-        <firstName>Dylan</firstName>
-      </name>
+      <personId>pi71s9</personId>
+      <lastName>O&apos;Gready</lastName>
+      <firstName>Lockwood</firstName>
       <address>
-        <street>67 West Oak Valley Court</street>
-        <city>Beatrice</city>
-        <state>NE</state>
-        <zip>68503</zip>
-        <country>USA</country>
+        <street>51220 Lindbergh Junction</street>
+        <city>Houston</city>
+        <state>TX</state>
+        <zip>77095</zip>
+        <country>US</country>
       </address>
       <emails>
-        <string>dylandiehl@icloud.com</string>
+        <string>logreadyc@cam.ac.uk</string>
       </emails>
     </manager>
     <address>
-      <street>484 Grove Court</street>
-      <city>Chicago</city>
-      <state>IL</state>
-      <zip>19426</zip>
+      <street>63 Del Mar Crossing</street>
+      <city>Inglewood</city>
+      <state>CA</state>
+      <zip>90398</zip>
       <country>US</country>
     </address>
   </store>
   <store>
-    <storeCode>234jkd</storeCode>
+    <storeCode>pca7io</storeCode>
     <manager>
-      <personId>19ozud</personId>
-      <name>
-        <lastName>Johnson</lastName>
-        <firstName>Arnold</firstName>
-      </name>
-      <address>
-        <street>Creative Apartments Apt 192</street>
-        <city>Princeton</city>
-        <state>NJ</state>
-        <zip>10335</zip>
-        <country>USA</country>
-      </address>
-      <emails>
-        <string>jarnie88@hotmail.com</string>
-      </emails>
-    </manager>
-    <address>
-      <street>4 County Street</street>
-      <city>New York City</city>
-      <state>NY</state>
-      <zip>47150</zip>
-      <country>US</country>
-    </address>
-  </store>
-  <store>
-    <storeCode>jas890</storeCode>
-    <manager>
-      <personId>c9fa12</personId>
-      <name reference="../../../store/manager/name"/>
+      <personId>pi71s9</personId>
+      <lastName>O&apos;Gready</lastName>
+      <firstName>Lockwood</firstName>
       <address reference="../../../store/manager/address"/>
       <emails reference="../../../store/manager/emails"/>
     </manager>
     <address>
-      <street>420 Lafayette Drive</street>
-      <city>Tampa</city>
-      <state>FL</state>
-      <zip>22701</zip>
+      <street>4 Memorial Lane</street>
+      <city>Knoxville</city>
+      <state>TN</state>
+      <zip>37924</zip>
       <country>US</country>
     </address>
   </store>
   <store>
-    <storeCode>aj90ds</storeCode>
+    <storeCode>i04hle</storeCode>
     <manager>
-      <personId>19ozud</personId>
-      <name reference="../../../store[2]/manager/name"/>
-      <address reference="../../../store[2]/manager/address"/>
-      <emails reference="../../../store[2]/manager/emails"/>
+      <personId>kameic</personId>
+      <lastName>Yitzovicz</lastName>
+      <firstName>Bale</firstName>
+      <address>
+        <street>64151 Atwood Lane</street>
+        <city>Chicago</city>
+        <state>IL</state>
+        <zip>60663</zip>
+        <country>US</country>
+      </address>
+      <emails>
+        <string>byitzovicz1@so-net.ne.jp</string>
+      </emails>
     </manager>
     <address>
-      <street>9273 Vermont Lane</street>
-      <city>Phoenix</city>
-      <state>AZ</state>
-      <zip>85001</zip>
+      <street>81 Arkansas Way</street>
+      <city>Winston Salem</city>
+      <state>NC</state>
+      <zip>27116</zip>
       <country>US</country>
     </address>
   </store>
   <store>
-    <storeCode>3j90fs</storeCode>
+    <storeCode>ns4ie7</storeCode>
     <manager>
-      <personId>c9fa12</personId>
-      <name reference="../../../store/manager/name"/>
+      <personId>pi71s9</personId>
+      <lastName>O&apos;Gready</lastName>
+      <firstName>Lockwood</firstName>
       <address reference="../../../store/manager/address"/>
       <emails reference="../../../store/manager/emails"/>
     </manager>
     <address>
-      <street>7624 Chris Bourke Memorial Street</street>
-      <city>Lincoln</city>
-      <state>NE</state>
-      <zip>68501</zip>
+      <street>149 Northport Avenue</street>
+      <city>Louisville</city>
+      <state>KY</state>
+      <zip>40287</zip>
+      <country>US</country>
+    </address>
+  </store>
+  <store>
+    <storeCode>yzn182</storeCode>
+    <manager>
+      <personId>xta9br</personId>
+      <lastName>Nock</lastName>
+      <firstName>Dominick</firstName>
+      <address>
+        <street>522 Warrior Circle</street>
+        <city>Jackson</city>
+        <state>MS</state>
+        <zip>39236</zip>
+        <country>US</country>
+      </address>
+      <emails>
+        <string>dnockd@networkadvertising.org</string>
+      </emails>
+    </manager>
+    <address>
+      <street>34 Wayridge Pass</street>
+      <city>Grand Rapids</city>
+      <state>MI</state>
+      <zip>49510</zip>
       <country>US</country>
     </address>
   </store>

@@ -8,13 +8,15 @@ import java.util.List;
 public abstract class Person {
 
     private String personId;
-    private Name name;
+    private String lastName;
+    private String firstName;
     private Address address;
     private List<String> emails;
 
-    protected Person(String personId, Name name, Address address, List<String> emails) {
+    protected Person(String personId, String lastName, String firstName, Address address, List<String> emails) {
         this.personId = personId;
-        this.name = name;
+        this.lastName = lastName;
+        this.firstName = firstName;
         this.address = address;
         this.emails = emails;
     }
@@ -23,8 +25,12 @@ public abstract class Person {
         return personId;
     }
 
-    public Name getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
     }
 
     public Address getAddress() {
@@ -33,5 +39,17 @@ public abstract class Person {
 
     public List<String> getEmails() {
         return emails;
+    }
+
+    public String emailListToString() {
+        String emailListToString = "[";
+        for(int i = 0; i < emails.size(); i++) {
+            emailListToString += emails.get(i);
+            if(i + 1 < emails.size()) {
+                emailListToString += ", ";
+            }
+        }
+        emailListToString += "]";
+        return emailListToString;
     }
 }

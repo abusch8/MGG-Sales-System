@@ -81,6 +81,7 @@ public class Sale {
     }
 
     public double calculateDiscount() {
+        //System.out.printf("%s %s\n", customer.getFirstName(), customer.getLastName());
         double discountAmount = 0;
         if (customer instanceof Customer) {
             if (customer instanceof PlatinumMember) {

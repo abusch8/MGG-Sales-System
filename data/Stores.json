@@ -1,131 +1,126 @@
 [
   {
-    "storeCode": "3c0234",
+    "storeCode": "1al23k",
     "manager": {
-      "personId": "fdc267",
-      "lastName": "Quarry",
-      "firstName": "Staci",
+      "personId": "c9fa12",
+      "lastName": "Diehl",
+      "firstName": "Dylan",
       "address": {
-        "street": "601 Lotheville Road",
-        "city": "Savannah",
-        "state": "GA",
-        "zip": "31405",
-        "country": "US"
+        "street": "67 West Oak Valley Court",
+        "city": "Beatrice",
+        "state": "NE",
+        "zip": "68503",
+        "country": "USA"
       },
       "emails": [
-        "squarry0@reverbnation.com",
-        "squarry0@salon.com"
+        "dylandiehl@icloud.com"
       ]
     },
     "address": {
-      "street": "2 Crest Line Way",
+      "street": "484 Grove Court",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "19426",
+      "country": "US"
+    }
+  },
+  {
+    "storeCode": "234jkd",
+    "manager": {
+      "personId": "19ozud",
+      "lastName": "Johnson",
+      "firstName": "Arnold",
+      "address": {
+        "street": "Creative Apartments Apt 192",
+        "city": "Princeton",
+        "state": "NJ",
+        "zip": "10335",
+        "country": "USA"
+      },
+      "emails": [
+        "jarnie88@hotmail.com"
+      ]
+    },
+    "address": {
+      "street": "4 County Street",
       "city": "New York City",
       "state": "NY",
-      "zip": "10184",
+      "zip": "47150",
       "country": "US"
     }
   },
   {
-    "storeCode": "9f352c",
+    "storeCode": "jas890",
     "manager": {
-      "personId": "aa887a",
-      "lastName": "Leavold",
-      "firstName": "Wit",
+      "personId": "c9fa12",
+      "lastName": "Diehl",
+      "firstName": "Dylan",
       "address": {
-        "street": "65337 Straubel Place",
-        "city": "Muncie",
-        "state": "IN",
-        "zip": "47306",
-        "country": "US"
+        "street": "67 West Oak Valley Court",
+        "city": "Beatrice",
+        "state": "NE",
+        "zip": "68503",
+        "country": "USA"
       },
       "emails": [
-        "wleavold2@npr.org",
-        "wleavold2@craigslist.org"
+        "dylandiehl@icloud.com"
       ]
     },
     "address": {
-      "street": "438 Jenna Road",
-      "city": "Huntsville",
-      "state": "AL",
-      "zip": "35815",
+      "street": "420 Lafayette Drive",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "22701",
       "country": "US"
     }
   },
   {
-    "storeCode": "73668b",
+    "storeCode": "aj90ds",
     "manager": {
-      "personId": "fdc267",
-      "lastName": "Quarry",
-      "firstName": "Staci",
+      "personId": "19ozud",
+      "lastName": "Johnson",
+      "firstName": "Arnold",
       "address": {
-        "street": "601 Lotheville Road",
-        "city": "Savannah",
-        "state": "GA",
-        "zip": "31405",
-        "country": "US"
+        "street": "Creative Apartments Apt 192",
+        "city": "Princeton",
+        "state": "NJ",
+        "zip": "10335",
+        "country": "USA"
       },
       "emails": [
-        "squarry0@reverbnation.com",
-        "squarry0@salon.com"
+        "jarnie88@hotmail.com"
       ]
     },
     "address": {
-      "street": "9257 Maywood Junction",
+      "street": "9273 Vermont Lane",
       "city": "Phoenix",
       "state": "AZ",
-      "zip": "85099",
+      "zip": "85001",
       "country": "US"
     }
   },
   {
-    "storeCode": "96f2cf",
+    "storeCode": "3j90fs",
     "manager": {
-      "personId": "fdc267",
-      "lastName": "Quarry",
-      "firstName": "Staci",
+      "personId": "c9fa12",
+      "lastName": "Diehl",
+      "firstName": "Dylan",
       "address": {
-        "street": "601 Lotheville Road",
-        "city": "Savannah",
-        "state": "GA",
-        "zip": "31405",
-        "country": "US"
+        "street": "67 West Oak Valley Court",
+        "city": "Beatrice",
+        "state": "NE",
+        "zip": "68503",
+        "country": "USA"
       },
       "emails": [
-        "squarry0@reverbnation.com",
-        "squarry0@salon.com"
+        "dylandiehl@icloud.com"
       ]
     },
     "address": {
-      "street": "1145 Transport Drive",
-      "city": "Gainesville",
-      "state": "FL",
-      "zip": "32605",
-      "country": "US"
-    }
-  },
-  {
-    "storeCode": "25d901",
-    "manager": {
-      "personId": "aa887a",
-      "lastName": "Leavold",
-      "firstName": "Wit",
-      "address": {
-        "street": "65337 Straubel Place",
-        "city": "Muncie",
-        "state": "IN",
-        "zip": "47306",
-        "country": "US"
-      },
-      "emails": [
-        "wleavold2@npr.org",
-        "wleavold2@craigslist.org"
-      ]
-    },
-    "address": {
-      "street": "180 Magdeline Plaza",
-      "city": "Wichita",
-      "state": "KS",
-      "zip": "67230",
+      "street": "7624 Chris Bourke Memorial Street",
+      "city": "Lincoln",
+      "state": "NE",
+      "zip": "68501",
       "country": "US"
     }
   }

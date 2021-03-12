@@ -1,105 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <stores>
   <store>
-    <storeCode>3c0234</storeCode>
+    <storeCode>1al23k</storeCode>
     <manager>
-      <personId>fdc267</personId>
-      <lastName>Quarry</lastName>
-      <firstName>Staci</firstName>
+      <personId>c9fa12</personId>
+      <lastName>Diehl</lastName>
+      <firstName>Dylan</firstName>
       <address>
-        <street>601 Lotheville Road</street>
-        <city>Savannah</city>
-        <state>GA</state>
-        <zip>31405</zip>
-        <country>US</country>
+        <street>67 West Oak Valley Court</street>
+        <city>Beatrice</city>
+        <state>NE</state>
+        <zip>68503</zip>
+        <country>USA</country>
       </address>
       <emails>
-        <string>squarry0@reverbnation.com</string>
-        <string>squarry0@salon.com</string>
+        <string>dylandiehl@icloud.com</string>
       </emails>
     </manager>
     <address>
-      <street>2 Crest Line Way</street>
+      <street>484 Grove Court</street>
+      <city>Chicago</city>
+      <state>IL</state>
+      <zip>19426</zip>
+      <country>US</country>
+    </address>
+  </store>
+  <store>
+    <storeCode>234jkd</storeCode>
+    <manager>
+      <personId>19ozud</personId>
+      <lastName>Johnson</lastName>
+      <firstName>Arnold</firstName>
+      <address>
+        <street>Creative Apartments Apt 192</street>
+        <city>Princeton</city>
+        <state>NJ</state>
+        <zip>10335</zip>
+        <country>USA</country>
+      </address>
+      <emails>
+        <string>jarnie88@hotmail.com</string>
+      </emails>
+    </manager>
+    <address>
+      <street>4 County Street</street>
       <city>New York City</city>
       <state>NY</state>
-      <zip>10184</zip>
+      <zip>47150</zip>
       <country>US</country>
     </address>
   </store>
   <store>
-    <storeCode>9f352c</storeCode>
+    <storeCode>jas890</storeCode>
     <manager>
-      <personId>aa887a</personId>
-      <lastName>Leavold</lastName>
-      <firstName>Wit</firstName>
-      <address>
-        <street>65337 Straubel Place</street>
-        <city>Muncie</city>
-        <state>IN</state>
-        <zip>47306</zip>
-        <country>US</country>
-      </address>
-      <emails>
-        <string>wleavold2@npr.org</string>
-        <string>wleavold2@craigslist.org</string>
-      </emails>
-    </manager>
-    <address>
-      <street>438 Jenna Road</street>
-      <city>Huntsville</city>
-      <state>AL</state>
-      <zip>35815</zip>
-      <country>US</country>
-    </address>
-  </store>
-  <store>
-    <storeCode>73668b</storeCode>
-    <manager>
-      <personId>fdc267</personId>
-      <lastName>Quarry</lastName>
-      <firstName>Staci</firstName>
+      <personId>c9fa12</personId>
+      <lastName>Diehl</lastName>
+      <firstName>Dylan</firstName>
       <address reference="../../../store/manager/address"/>
       <emails reference="../../../store/manager/emails"/>
     </manager>
     <address>
-      <street>9257 Maywood Junction</street>
-      <city>Phoenix</city>
-      <state>AZ</state>
-      <zip>85099</zip>
-      <country>US</country>
-    </address>
-  </store>
-  <store>
-    <storeCode>96f2cf</storeCode>
-    <manager>
-      <personId>fdc267</personId>
-      <lastName>Quarry</lastName>
-      <firstName>Staci</firstName>
-      <address reference="../../../store/manager/address"/>
-      <emails reference="../../../store/manager/emails"/>
-    </manager>
-    <address>
-      <street>1145 Transport Drive</street>
-      <city>Gainesville</city>
+      <street>420 Lafayette Drive</street>
+      <city>Tampa</city>
       <state>FL</state>
-      <zip>32605</zip>
+      <zip>22701</zip>
       <country>US</country>
     </address>
   </store>
   <store>
-    <storeCode>25d901</storeCode>
+    <storeCode>aj90ds</storeCode>
     <manager>
-      <personId>aa887a</personId>
-      <lastName>Leavold</lastName>
-      <firstName>Wit</firstName>
+      <personId>19ozud</personId>
+      <lastName>Johnson</lastName>
+      <firstName>Arnold</firstName>
       <address reference="../../../store[2]/manager/address"/>
       <emails reference="../../../store[2]/manager/emails"/>
     </manager>
     <address>
-      <street>180 Magdeline Plaza</street>
-      <city>Wichita</city>
-      <state>KS</state>
-      <zip>67230</zip>
+      <street>9273 Vermont Lane</street>
+      <city>Phoenix</city>
+      <state>AZ</state>
+      <zip>85001</zip>
+      <country>US</country>
+    </address>
+  </store>
+  <store>
+    <storeCode>3j90fs</storeCode>
+    <manager>
+      <personId>c9fa12</personId>
+      <lastName>Diehl</lastName>
+      <firstName>Dylan</firstName>
+      <address reference="../../../store/manager/address"/>
+      <emails reference="../../../store/manager/emails"/>
+    </manager>
+    <address>
+      <street>7624 Chris Bourke Memorial Street</street>
+      <city>Lincoln</city>
+      <state>NE</state>
+      <zip>68501</zip>
       <country>US</country>
     </address>
   </store>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <NewProduct>
+    <itemCode>1d4d89</itemCode>
+    <name>PlayStation 5 Digital Edition</name>
+    <basePrice>399.99</basePrice>
+    <quantity>2</quantity>
+  </NewProduct>
+  <NewProduct>
+    <itemCode>1ed5b7</itemCode>
+    <name>Nintendo Switch Lite</name>
+    <basePrice>199.99</basePrice>
+    <quantity>2</quantity>
+  </NewProduct>
+  <NewProduct>
+    <itemCode>6ce4cd</itemCode>
+    <name>Splatoon 2 (Digital Copy)</name>
+    <basePrice>59.99</basePrice>
+    <quantity>2</quantity>
+  </NewProduct>
+  <NewProduct>
+    <itemCode>c547e7</itemCode>
+    <name>Diet Mt Dew (20oz)</name>
+    <basePrice>1.99</basePrice>
+    <quantity>2</quantity>
+  </NewProduct>
+  <GiftCard>
+    <itemCode>5f73aa</itemCode>
+    <name>Nintendo Digital Gold</name>
+    <basePrice>0.0</basePrice>
+  </GiftCard>
+  <GiftCard>
+    <itemCode>14e2b7</itemCode>
+    <name>Steam</name>
+    <basePrice>0.0</basePrice>
+  </GiftCard>
+  <GiftCard>
+    <itemCode>8a30ad</itemCode>
+    <name>Android Store</name>
+    <basePrice>0.0</basePrice>
+  </GiftCard>
+  <GiftCard>
+    <itemCode>daad6a</itemCode>
+    <name>Robux</name>
+    <basePrice>0.0</basePrice>
+  </GiftCard>
+  <UsedProduct>
+    <itemCode>649f88</itemCode>
+    <name>Legend of Zelda (NES)</name>
+    <basePrice>24.5</basePrice>
+    <quantity>1</quantity>
+  </UsedProduct>
+  <UsedProduct>
+    <itemCode>0ec6e9</itemCode>
+    <name>Animal Crossings</name>
+    <basePrice>59.99</basePrice>
+    <quantity>1</quantity>
+  </UsedProduct>
+  <UsedProduct>
+    <itemCode>9b6e30</itemCode>
+    <name>Oculus Rift</name>
+    <basePrice>199.99</basePrice>
+    <quantity>1</quantity>
+  </UsedProduct>
+  <UsedProduct>
+    <itemCode>40a433</itemCode>
+    <name>Vive</name>
+    <basePrice>599.99</basePrice>
+    <quantity>1</quantity>
+  </UsedProduct>
+  <Service>
+    <itemCode>8e366e</itemCode>
+    <name>Console Repair</name>
+    <hourlyRate>59.99</hourlyRate>
+    <numHours>59.99</numHours>
+  </Service>
+  <Service>
+    <itemCode>c4fb35</itemCode>
+    <name>VR Party Rental</name>
+    <hourlyRate>120.0</hourlyRate>
+    <numHours>120.0</numHours>
+  </Service>
+  <Service>
+    <itemCode>740515</itemCode>
+    <name>Game Addiction Counseling</name>
+    <hourlyRate>1.99</hourlyRate>
+    <numHours>1.99</numHours>
+  </Service>
+  <Subscription>
+    <itemCode>426dda</itemCode>
+    <name>X-Box Live</name>
+    <annualFee>50.0</annualFee>
+  </Subscription>
+  <Subscription>
+    <itemCode>dedd44</itemCode>
+    <name>Nintendo Power magazine</name>
+    <annualFee>120.0</annualFee>
+  </Subscription>
+  <Subscription>
+    <itemCode>3506f6</itemCode>
+    <name>Disney Plus</name>
+    <annualFee>89.99</annualFee>
+  </Subscription>
+</items>

@@ -111,7 +111,7 @@ public class ReadFile {
     public static List<Sale> readSaleCSV(List<Person> personList, List<Store> storeList, List<Item> itemList) {
         List<Sale> sales = new ArrayList<>();
         Store store = null;
-        Customer customer = null;
+        Person customer = null;
         Employee salesperson = null;
         try {
             BufferedReader reader = new BufferedReader(new FileReader("data/Sales.csv"));
@@ -188,12 +188,16 @@ public class ReadFile {
                             //this is where are storing the customers, platinum members, etc.
                             for (Person existingPerson : personList) {
                                 if (content[2].equals(existingPerson.getPersonId())) {
-                                    if (existingPerson instanceof PlatinumMember) {
-                                        customer = new PlatinumMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
-                                    } else if (existingPerson instanceof GoldMember) {
-                                        customer = new GoldMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
-                                    } else {
-                                        customer = new Customer(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                    if (existingPerson instanceof Customer) {
+                                        if (existingPerson instanceof PlatinumMember) {
+                                            customer = new PlatinumMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                        } else if (existingPerson instanceof GoldMember) {
+                                            customer = new GoldMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                        } else {
+                                            customer = new Customer(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                        }
+                                    } else if (existingPerson instanceof Employee) {
+                                         customer = new Employee(existingPerson.getPersonId(),existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
                                     }
                                 }
                                 if (content[3].equals(existingPerson.getPersonId())) {

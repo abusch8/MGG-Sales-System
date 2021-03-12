@@ -1,0 +1,132 @@
+[
+  {
+    "storeCode": "3c0234",
+    "manager": {
+      "personId": "fdc267",
+      "lastName": "Quarry",
+      "firstName": "Staci",
+      "address": {
+        "street": "601 Lotheville Road",
+        "city": "Savannah",
+        "state": "GA",
+        "zip": "31405",
+        "country": "US"
+      },
+      "emails": [
+        "squarry0@reverbnation.com",
+        "squarry0@salon.com"
+      ]
+    },
+    "address": {
+      "street": "2 Crest Line Way",
+      "city": "New York City",
+      "state": "NY",
+      "zip": "10184",
+      "country": "US"
+    }
+  },
+  {
+    "storeCode": "9f352c",
+    "manager": {
+      "personId": "aa887a",
+      "lastName": "Leavold",
+      "firstName": "Wit",
+      "address": {
+        "street": "65337 Straubel Place",
+        "city": "Muncie",
+        "state": "IN",
+        "zip": "47306",
+        "country": "US"
+      },
+      "emails": [
+        "wleavold2@npr.org",
+        "wleavold2@craigslist.org"
+      ]
+    },
+    "address": {
+      "street": "438 Jenna Road",
+      "city": "Huntsville",
+      "state": "AL",
+      "zip": "35815",
+      "country": "US"
+    }
+  },
+  {
+    "storeCode": "73668b",
+    "manager": {
+      "personId": "fdc267",
+      "lastName": "Quarry",
+      "firstName": "Staci",
+      "address": {
+        "street": "601 Lotheville Road",
+        "city": "Savannah",
+        "state": "GA",
+        "zip": "31405",
+        "country": "US"
+      },
+      "emails": [
+        "squarry0@reverbnation.com",
+        "squarry0@salon.com"
+      ]
+    },
+    "address": {
+      "street": "9257 Maywood Junction",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85099",
+      "country": "US"
+    }
+  },
+  {
+    "storeCode": "96f2cf",
+    "manager": {
+      "personId": "fdc267",
+      "lastName": "Quarry",
+      "firstName": "Staci",
+      "address": {
+        "street": "601 Lotheville Road",
+        "city": "Savannah",
+        "state": "GA",
+        "zip": "31405",
+        "country": "US"
+      },
+      "emails": [
+        "squarry0@reverbnation.com",
+        "squarry0@salon.com"
+      ]
+    },
+    "address": {
+      "street": "1145 Transport Drive",
+      "city": "Gainesville",
+      "state": "FL",
+      "zip": "32605",
+      "country": "US"
+    }
+  },
+  {
+    "storeCode": "25d901",
+    "manager": {
+      "personId": "aa887a",
+      "lastName": "Leavold",
+      "firstName": "Wit",
+      "address": {
+        "street": "65337 Straubel Place",
+        "city": "Muncie",
+        "state": "IN",
+        "zip": "47306",
+        "country": "US"
+      },
+      "emails": [
+        "wleavold2@npr.org",
+        "wleavold2@craigslist.org"
+      ]
+    },
+    "address": {
+      "street": "180 Magdeline Plaza",
+      "city": "Wichita",
+      "state": "KS",
+      "zip": "67230",
+      "country": "US"
+    }
+  }
+]

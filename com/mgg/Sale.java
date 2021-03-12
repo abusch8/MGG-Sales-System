@@ -1,17 +1,16 @@
 package com.mgg;
 
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class Sale {
 
     private String saleCode;
     private Store store;
-    private Customer customer;
+    private Person customer;
     private Employee salesperson;
     private List<Item> items;
 
-    public Sale(String saleCode, Store store, Customer customer, Employee salesperson, List<Item> items) {
+    public Sale(String saleCode, Store store, Person customer, Employee salesperson, List<Item> items) {
         this.saleCode = saleCode;
         this.store = store;
         this.customer = customer;
@@ -27,7 +26,7 @@ public class Sale {
         return store;
     }
 
-    public Customer getCustomer() {
+    public Person getCustomer() {
         return customer;
     }
 
@@ -83,11 +82,13 @@ public class Sale {
 
     public double calculateDiscount() {
         double discountAmount = 0;
-        if (customer instanceof PlatinumMember) {
-            discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .1;
-        } else if (customer instanceof GoldMember) {
-            discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .05;
-        } else if (customer.getPersonId().equals(salesperson.getPersonId())) {
+        if (customer instanceof Customer) {
+            if (customer instanceof PlatinumMember) {
+                discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .1;
+            } else if (customer instanceof GoldMember) {
+                discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .05;
+            }
+        } else if (customer instanceof Employee) {
             discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .15;
         }
         return Math.round(discountAmount * 100.0) / 100.0;

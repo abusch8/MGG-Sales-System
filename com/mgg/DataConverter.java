@@ -28,6 +28,6 @@ public class DataConverter {
 
         List<Sale> sales = ReadFile.readSaleCSV(persons, stores, items);
 
-        SalesReport.generateSalesReport(sales);
+        SalesReport.generateSalesReport(sales, persons, stores);
     }
 }

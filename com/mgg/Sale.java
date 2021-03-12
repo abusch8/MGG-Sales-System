@@ -57,7 +57,7 @@ public class Sale {
                 subTotal += ((Subscription) item).calculatePrice();
             }
         }
-        return subTotal;
+        return Math.round(subTotal * 100.0) / 100.0;
     }
 
     public double calculateTax() {
@@ -78,7 +78,7 @@ public class Sale {
                 taxTotal += 0;
             }
         }
-        return taxTotal;
+        return Math.round(taxTotal *  100.0)/ 100.0;
     }
 
     public double calculateDiscount() {
@@ -90,10 +90,10 @@ public class Sale {
         } else if (customer.getPersonId().equals(salesperson.getPersonId())) {
             discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .15;
         }
-        return discountAmount;
+        return Math.round(discountAmount * 100.0) / 100.0;
     }
 
     public double calculateGrandTotal() {
-        return ((this.calculateSubTotal() + this.calculateTax()) - this.calculateDiscount());
+        return (this.calculateSubTotal() + this.calculateTax()) - this.calculateDiscount();
     }
 }

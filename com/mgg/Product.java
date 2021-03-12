@@ -18,8 +18,4 @@ public abstract class Product extends Item {
     public int getQuantity() {
         return quantity;
     }
-
-    public double calculateTax() {
-        return (double) Math.round((basePrice * quantity) * .0725 * 100) / 100;
-    }
 }

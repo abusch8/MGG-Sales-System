@@ -7,10 +7,14 @@ public class UsedProduct extends Product {
     }
 
     public double calculatePrice() {
-        return (double) Math.round(((basePrice * .8) * quantity) * 100) / 100;
+        return (double) Math.round(((getReducedPrice()) * quantity) * 100) / 100;
     }
 
     public double getReducedPrice() {
-        return (basePrice * .8);
+        return Math.round((basePrice * .8)* 100.0) / 100.0;
+    }
+
+    public double calculateTax() {
+        return Math.round(((getReducedPrice() * quantity) * .0725) * 100.0) / 100.0;
     }
 }

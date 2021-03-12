@@ -5,12 +5,21 @@ import java.util.Comparator;
 import java.util.List;
 
 public class SalesReport {
-
-    public static void generateSalesReport(List<Sale> sales) {
+    /**
+     * Method that generates the sales report of each store, employee, and receipt on file.
+     * @param sales a list of sales, can be obtained from ReadStoresCSV
+     * @param personList a list of persons, can be obtained from ReadPersonsCSV
+     * @param storeList a list of stores, can be obtained from ReadStoresCSV
+     */
+    public static void generateSalesReport(List<Sale> sales, List<Person> personList, List<Store> storeList) {
 
         Comparator<Sale> cmpBySalesPerson = Comparator.comparing(a -> a.getSalesperson().getLastName());
 
         Comparator<Sale> cmpByStoreCode = Comparator.comparing(a -> a.getStore().getStoreCode());
+
+        Comparator<Employee> cmpByEmployee = Comparator.comparing(a -> a.getLastName());
+
+        Comparator<Store> cmpByStoreId = Comparator.comparing(a -> a.getStoreCode());
 
         System.out.println("+-----------------------------------------------------+");
         System.out.println("| Salesperson Summary Report                          |");
@@ -219,7 +228,7 @@ public class SalesReport {
 
                     System.out.print(subscription.getName() + "\n\t");
                     StringBuilder printString = new StringBuilder();
-                    printString.append(String.format("(Subscription #%s %f days@$%.2f/yr)", subscription.getCode(), dayDifference, subscription.getAnnualFee()));
+                    printString.append(String.format("(Subscription #%s %d days@$%.2f/yr)", subscription.getCode(), (int) dayDifference, subscription.getAnnualFee()));
                     int length = printString.length();
                     for (int i = 0; i < 57 - length; i++) {
                         printString.append(" ");
@@ -241,5 +250,6 @@ public class SalesReport {
             System.out.printf("                                                 Grand Total $%10.2f\n\n\n", (double) Math.round(sale.calculateGrandTotal() * 100) / 100);
 
         }
+
     }
 }

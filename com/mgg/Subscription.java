@@ -28,4 +28,12 @@ public class Subscription extends Item {
     public LocalDate getEndDate() {
         return endDate;
     }
+
+    public double getDayDifference() {
+       return ((double) (beginDate.until(endDate, ChronoUnit.DAYS)) + 1);
+    }
+
+    public double calculatePrice() {
+        return ((annualFee/365)*this.getDayDifference());
+    }
 }

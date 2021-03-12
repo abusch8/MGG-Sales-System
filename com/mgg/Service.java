@@ -24,4 +24,12 @@ public class Service extends Item {
     public double getNumHours() {
         return numHours;
     }
+
+    public double calculatePrice() {
+        return (double) Math.round((this.hourlyRate * this.numHours) * 100) / 100;
+    }
+
+    public double calculateTax() {
+        return (double) Math.round(((this.hourlyRate * this.numHours) * .0285) * 100) / 100;
+    }
 }

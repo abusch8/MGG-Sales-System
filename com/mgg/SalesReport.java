@@ -17,7 +17,7 @@ public class SalesReport {
 
         Comparator<Sale> cmpByStoreCode = Comparator.comparing(a -> a.getStore().getStoreCode());
 
-        Comparator<Employee> cmpByEmployee = Comparator.comparing(a -> a.getLastName());
+        Comparator<Employee> cmpByEmployee = Comparator.comparing(Person::getLastName);
 
         Comparator<Store> cmpByStoreId = Comparator.comparing(a -> a.getStoreCode());
 

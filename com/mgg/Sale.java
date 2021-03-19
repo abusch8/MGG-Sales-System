@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Sale {
 
-    private String saleCode;
-    private Store store;
-    private Person customer;
-    private Employee salesperson;
-    private List<Item> items;
+    private final String saleCode;
+    private final Store store;
+    private final Person customer;
+    private final Employee salesperson;
+    private final List<Item> items;
 
     public Sale(String saleCode, Store store, Person customer, Employee salesperson, List<Item> items) {
         this.saleCode = saleCode;
@@ -77,11 +77,10 @@ public class Sale {
                 taxTotal += 0;
             }
         }
-        return Math.round(taxTotal *  100.0)/ 100.0;
+        return Math.round(taxTotal *  100.0) / 100.0;
     }
 
     public double calculateDiscount() {
-        //System.out.printf("%s %s\n", customer.getFirstName(), customer.getLastName());
         double discountAmount = 0;
         if (customer instanceof Customer) {
             if (customer instanceof PlatinumMember) {

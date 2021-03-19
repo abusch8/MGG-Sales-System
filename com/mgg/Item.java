@@ -5,8 +5,8 @@ package com.mgg;
  */
 public abstract class Item {
 
-    private String code;
-    private String name;
+    private final String code;
+    private final String name;
 
     protected Item(String code, String name) {
         this.code = code;

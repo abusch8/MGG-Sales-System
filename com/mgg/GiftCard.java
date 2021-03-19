@@ -2,7 +2,7 @@ package com.mgg;
 
 public class GiftCard extends Item {
 
-    private double basePrice;
+    private final double basePrice;
 
     public GiftCard(String code, String name, double basePrice) {
         super(code, name);

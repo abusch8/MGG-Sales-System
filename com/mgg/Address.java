@@ -5,11 +5,11 @@ package com.mgg;
  */
 public class Address {
 
-    private String street;
-    private String city;
-    private String state;
-    private String zip;
-    private String country;
+    private final String street;
+    private final String city;
+    private final String state;
+    private final String zip;
+    private final String country;
 
     public Address(String street, String city, String state, String zip, String country) {
         this.street = street;

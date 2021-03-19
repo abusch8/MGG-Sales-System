@@ -2,9 +2,9 @@ package com.mgg;
 
 public class Store {
 
-    private String storeCode;
-    private Employee manager;
-    private Address address;
+    private final String storeCode;
+    private final Employee manager;
+    private final Address address;
 
     public Store(String storeCode, Employee manager, Address address) {
         this.storeCode = storeCode;

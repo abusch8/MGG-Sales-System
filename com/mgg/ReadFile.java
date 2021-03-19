@@ -185,7 +185,6 @@ public class ReadFile {
                                     store = new Store(existingStore.getStoreCode(), existingStore.getManager(), existingStore.getAddress());
                                 }
                             }
-                            //this is where are storing the customers, platinum members, etc.
                             for (Person existingPerson : personList) {
                                 if (content[2].equals(existingPerson.getPersonId())) {
                                     if (existingPerson instanceof Customer) {
@@ -209,7 +208,6 @@ public class ReadFile {
                 }
                 Sale sale = new Sale(content[0], store, customer, salesperson, items);
                 sales.add(sale);
-                //System.out.println("Created a sale!");
             }
             reader.close();
             return sales;

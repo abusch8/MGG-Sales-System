@@ -2,13 +2,12 @@ package com.mgg;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.ChronoUnit;
 
 public class Subscription extends Item {
 
-    private double annualFee;
-    private LocalDate beginDate;
-    private LocalDate endDate;
+    private final double annualFee;
+    private final LocalDate beginDate;
+    private final LocalDate endDate;
 
     public Subscription(String code, String name, double annualFee, LocalDate beginDate, LocalDate endDate) {
         super(code, name);

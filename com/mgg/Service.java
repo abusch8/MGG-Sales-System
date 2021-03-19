@@ -2,9 +2,9 @@ package com.mgg;
 
 public class Service extends Item {
 
-    private double hourlyRate;
-    private Employee employee;
-    private double numHours;
+    private final double hourlyRate;
+    private final Employee employee;
+    private final double numHours;
 
     public Service(String code, String name, double hourlyRate, Employee employee, double numHours) {
         super(code, name);

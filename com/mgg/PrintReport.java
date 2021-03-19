@@ -140,6 +140,10 @@ public class PrintReport {
     }
 
     public static void generateSalesReceipts(List<Sale> sales) {
+
+        Comparator<Sale> cmpByCustomerLastName = Comparator.comparing(a -> a.getCustomer().getLastName());
+        sales.sort(cmpByCustomerLastName);
+
         for (Sale sale : sales) {
             System.out.printf("Sale\t#%s\n", sale.getSaleCode());
             System.out.printf("Store\t#%s\n", sale.getStore().getStoreCode());
@@ -155,7 +159,6 @@ public class PrintReport {
 
                 if (item instanceof GiftCard) {
                     GiftCard giftCard = (GiftCard) item;
-
                     double price = giftCard.calculatePrice();
 
                     System.out.print(giftCard.getName() + "\n\t");
@@ -171,7 +174,6 @@ public class PrintReport {
                 } else if (item instanceof Product) {
                     Product product = (Product) item;
                     if (product instanceof NewProduct) {
-
                         double price = ((NewProduct) product).calculatePrice();
 
                         System.out.print(product.getName() + "\n\t");
@@ -185,7 +187,6 @@ public class PrintReport {
                         System.out.println(printString);
 
                     } else if (product instanceof UsedProduct) {
-
                         double price = ((UsedProduct) product).calculatePrice(); //80 percent of original price
 
                         System.out.print(product.getName() + "\n\t");
@@ -216,10 +217,8 @@ public class PrintReport {
                 } else if (item instanceof Subscription) {
                     Subscription subscription = (Subscription) item;
 
-
                     double dayDifference = subscription.getDayDifference();
                     double price = subscription.calculatePrice();
-
 
                     System.out.print(subscription.getName() + "\n\t");
                     StringBuilder printString = new StringBuilder();

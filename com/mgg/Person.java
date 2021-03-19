@@ -7,11 +7,11 @@ import java.util.List;
  */
 public abstract class Person {
 
-    private String personId;
-    private String lastName;
-    private String firstName;
-    private Address address;
-    private List<String> emails;
+    private final String personId;
+    private final String lastName;
+    private final String firstName;
+    private final Address address;
+    private final List<String> emails;
 
     protected Person(String personId, String lastName, String firstName, Address address, List<String> emails) {
         this.personId = personId;

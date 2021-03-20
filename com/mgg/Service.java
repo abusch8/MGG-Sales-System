@@ -33,6 +33,10 @@ public class Service extends Item {
         return (double) Math.round(((this.hourlyRate * this.numHours) * .0285) * 100) / 100;
     }
 
+    /**
+     * Puts the entire receipt for a sale into a string format
+     * @return receipt in a formatted string
+     */
     public String receiptToString() {
         StringBuilder formattedString = new StringBuilder();
         formattedString.append(String.format("(Service #%s by %s, %s %.2fhrs@$%.2f/hr)", this.getCode(), this.getEmployee().getLastName(), this.getEmployee().getFirstName(), this.getNumHours(), this.getHourlyRate()));

@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * This class handles all of the responsibilities with printing out our receipts and sales summaries.
+ */
 public class PrintReport {
 
     public static void generateSalespersonSummaryReport(List<Sale> sales, List<Person> persons) {
-
+        //We are using comparators to make the list sorted by last name, Store Summary does the exact same thing with another comparator below.
         Comparator<Employee> cmpByEmployeeLastName = Comparator.comparing(Person::getLastName);
 
         System.out.println("+-----------------------------------------------------+");

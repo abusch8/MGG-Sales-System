@@ -6,14 +6,26 @@ public class NewProduct extends Product {
         super(code, name, basePrice, quantity);
     }
 
+    /**
+     * Calculates the price of the item before tax
+     * @return price
+     */
     public double calculatePrice() {
         return (double) Math.round((basePrice * quantity) * 100) / 100;
     }
 
+    /**
+     * Calculates the tax of the item
+     * @return tax price
+     */
     public double calculateTax() {
         return (double) Math.round(((basePrice * quantity) * .0725) * 100) / 100;
     }
 
+    /**
+     * Puts the entire receipt for a sale into a string format
+     * @return receipt in a formatted string
+     */
     public String receiptToString() {
         StringBuilder formattedString = new StringBuilder();
         formattedString.append(String.format("(New Item #%s %d@$%.2f/ea)", this.getCode(), this.getQuantity(), this.getBasePrice()));

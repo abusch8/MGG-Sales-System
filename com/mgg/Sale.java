@@ -2,6 +2,9 @@ package com.mgg;
 
 import java.util.List;
 
+/**
+ * Main class for handling all of the variables that are involved with a sale.
+ */
 public class Sale {
 
     private final String saleCode;
@@ -38,6 +41,10 @@ public class Sale {
         return items;
     }
 
+    /**
+     * Calculates the subtotal of all the items(all of the items prices before taxes)
+     * @return Sub total amount
+     */
     public double calculateSubTotal() {
         double subTotal = 0;
         for (Item item : this.items) {
@@ -46,6 +53,10 @@ public class Sale {
         return Math.round(subTotal * 100.0) / 100.0;
     }
 
+    /**
+     * Calculates the total tax of a sale. (Adds all of the item taxes togethers
+     * @return Total tax amount of sale
+     */
     public double calculateTax() {
         double taxTotal = 0;
         for (Item item : this.items) {
@@ -54,11 +65,19 @@ public class Sale {
         return Math.round(taxTotal *  100.0) / 100.0;
     }
 
+    /**
+     * Calculates the discount amount of the sale.
+     * @return discount amount
+     */
     public double calculateDiscount() {
         double discountAmount = (this.calculateSubTotal() + this.calculateTax()) * customer.getDiscountAmount();
         return Math.round(discountAmount * 100.0) / 100.0;
     }
 
+    /**
+     * Calculates the total after adding the subtotal and tax, and subtracting the discount(if applicable).
+     * @return grand total of the sale
+     */
     public double calculateGrandTotal() {
         return (this.calculateSubTotal() + this.calculateTax()) - this.calculateDiscount();
     }

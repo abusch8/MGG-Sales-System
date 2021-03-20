@@ -41,7 +41,9 @@ public abstract class Person {
         return emails;
     }
 
-    public String emailListToString() {
+    public abstract double getDiscountAmount();
+
+    public String emailsToString() {
         StringBuilder emailListToString = new StringBuilder();
         for(int i = 0; i < emails.size(); i++) {
             emailListToString.append(emails.get(i));

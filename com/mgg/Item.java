@@ -20,4 +20,10 @@ public abstract class Item {
     public String getName() {
         return name;
     }
+
+    public abstract double calculatePrice();
+
+    public abstract double calculateTax();
+
+    public abstract String receiptToString();
 }

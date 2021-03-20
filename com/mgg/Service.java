@@ -32,4 +32,11 @@ public class Service extends Item {
     public double calculateTax() {
         return (double) Math.round(((this.hourlyRate * this.numHours) * .0285) * 100) / 100;
     }
+
+    public String receiptToString() {
+        StringBuilder formattedString = new StringBuilder();
+        formattedString.append(String.format("(Service #%s by %s, %s %.2fhrs@$%.2f/hr)", this.getCode(), this.getEmployee().getLastName(), this.getEmployee().getFirstName(), this.getNumHours(), this.getHourlyRate()));
+        formattedString.append(" ".repeat(Math.max(0, 57 - formattedString.length())));
+        return String.format("%s\n\t%s$%10.2f", this.getName(), formattedString.toString(), this.calculatePrice());
+    }
 }

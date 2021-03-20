@@ -7,7 +7,6 @@ import java.util.List;
  * @author Alex Busch
  */
 
-
 /**
  * Main class for running all of the classes, combining them to get our desired result.
  */

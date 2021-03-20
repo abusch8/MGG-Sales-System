@@ -35,4 +35,15 @@ public class Subscription extends Item {
     public double calculatePrice() {
         return ((annualFee / 365) * this.getDayDifference()*100) / 100;
     }
+
+    public double calculateTax() {
+        return 0;
+    }
+
+    public String receiptToString() {
+        StringBuilder formattedString = new StringBuilder();
+        formattedString.append(String.format("(Subscription #%s %d days@$%.2f/yr)", this.getCode(), (int) this.getDayDifference(), this.getAnnualFee()));
+        formattedString.append(" ".repeat(Math.max(0, 57 - formattedString.length())));
+        return String.format("%s\n\t%s$%10.2f", this.getName(), formattedString.toString(), this.calculatePrice());
+    }
 }

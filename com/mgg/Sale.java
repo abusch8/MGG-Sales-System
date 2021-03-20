@@ -41,20 +41,7 @@ public class Sale {
     public double calculateSubTotal() {
         double subTotal = 0;
         for (Item item : this.items) {
-            if (item instanceof GiftCard) {
-                subTotal += ((GiftCard) item).calculatePrice();
-            } else if (item instanceof Product) {
-                Product product = (Product) item;
-                if (product instanceof NewProduct) {
-                    subTotal += ((NewProduct) product).calculatePrice();
-                } else if (product instanceof UsedProduct) {
-                    subTotal += ((UsedProduct) product).calculatePrice();
-                }
-            } else if (item instanceof Service) {
-                subTotal += ((Service) item).calculatePrice();
-            } else if (item instanceof Subscription) {
-                subTotal += ((Subscription) item).calculatePrice();
-            }
+            subTotal += item.calculatePrice();
         }
         return Math.round(subTotal * 100.0) / 100.0;
     }
@@ -62,35 +49,13 @@ public class Sale {
     public double calculateTax() {
         double taxTotal = 0;
         for (Item item : this.items) {
-            if (item instanceof GiftCard) {
-                taxTotal += ((GiftCard) item).calculateTax();
-            } else if (item instanceof Product) {
-                Product product = (Product) item;
-                if (product instanceof NewProduct) {
-                    taxTotal += ((NewProduct) product).calculateTax();
-                } else if (product instanceof UsedProduct) {
-                    taxTotal += ((UsedProduct) product).calculateTax();
-                }
-            } else if (item instanceof Service) {
-                taxTotal += ((Service) item).calculateTax();
-            } else if (item instanceof Subscription) {
-                taxTotal += 0;
-            }
+            taxTotal += item.calculateTax();
         }
         return Math.round(taxTotal *  100.0) / 100.0;
     }
 
     public double calculateDiscount() {
-        double discountAmount = 0;
-        if (customer instanceof Customer) {
-            if (customer instanceof PlatinumMember) {
-                discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .1;
-            } else if (customer instanceof GoldMember) {
-                discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .05;
-            }
-        } else if (customer instanceof Employee) {
-            discountAmount = (this.calculateSubTotal() + this.calculateTax()) * .15;
-        }
+        double discountAmount = (this.calculateSubTotal() + this.calculateTax()) * customer.getDiscountAmount();
         return Math.round(discountAmount * 100.0) / 100.0;
     }
 

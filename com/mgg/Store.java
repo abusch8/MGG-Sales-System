@@ -1,10 +1,14 @@
 package com.mgg;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Store {
 
     private final String storeCode;
     private final Employee manager;
     private final Address address;
+    private final List<Sale> sales = new ArrayList<>();
 
     public Store(String storeCode, Employee manager, Address address) {
         this.storeCode = storeCode;
@@ -22,5 +26,17 @@ public class Store {
 
     public Address getAddress() {
         return address;
+    }
+
+    public List<Sale> getSales() {
+        return sales;
+    }
+
+    public void setSales(List<Sale> sales) {
+        for (Sale sale : sales) {
+            if (sale.getStore().getStoreCode().equals(this.getStoreCode())) {
+                this.sales.add(sale);
+            }
+        }
     }
 }

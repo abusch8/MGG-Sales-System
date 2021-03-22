@@ -120,7 +120,6 @@ public class ReadFile {
                 String[] content = reader.readLine().split(",");
                 List<Item> items = new ArrayList<>();
                 Item item = null;
-
                 currentLine:
                 {
                     for (int j = 4; j < content.length; j++) {
@@ -192,7 +191,7 @@ public class ReadFile {
                                     } else if (existingPerson instanceof GoldMember) {
                                         customer = new GoldMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
                                     } else if (existingPerson instanceof Employee) {
-                                         customer = new Employee(existingPerson.getPersonId(),existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                        customer = new Employee(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
                                     } else {
                                         customer = new Customer(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
                                     }

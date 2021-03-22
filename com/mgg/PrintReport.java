@@ -15,9 +15,9 @@ public class PrintReport {
         System.out.println("+-----------------------------------------------------+");
         System.out.println("Salesperson                    # Sales    Grand Total  ");
 
-        int countTotal = 0;
         double total = 0;
         double grandTotal = 0;
+        int salesCountTotal = 0;
 
         List<Employee> salespersons = new ArrayList<>();
 
@@ -35,22 +35,19 @@ public class PrintReport {
             for (Sale sale : salesperson.getSales()) {
                 total += sale.calculateGrandTotal();
                 grandTotal += sale.calculateGrandTotal();
-                countTotal++;
+                salesCountTotal++;
             }
 
             StringBuilder printString = new StringBuilder();
             printString.append(String.format("%s, %s", salesperson.getLastName(), salesperson.getFirstName()));
-            int length = printString.length();
-            for (int i = 0; i < 31 - length; i++) {
-                printString.append(" ");
-            }
+            printString.append(" ".repeat(Math.max(0, 31 - printString.length())));
             printString.append(String.format("%-11d$%10.2f", salesperson.getSales().size(), (double) Math.round(total * 100) / 100));
             System.out.println(printString);
             total = 0;
         }
 
         System.out.println("+-----------------------------------------------------+");
-        System.out.printf("                               %-11d$%10.2f\n\n\n", countTotal, (double) Math.round(grandTotal * 100) / 100);
+        System.out.printf("                               %-11d$%10.2f\n\n\n", salesCountTotal, (double) Math.round(grandTotal * 100) / 100);
     }
 
     public static void generateStoreSalesSummaryReport(List<Sale> sales, List<Store> stores) {
@@ -62,9 +59,9 @@ public class PrintReport {
         System.out.println("+----------------------------------------------------------------+");
         System.out.println("Store      Manager                        # Sales    Grand Total  ");
 
-        int countTotal = 0;
         double total = 0;
         double grandTotal = 0;
+        int salesCountTotal = 0;
 
         stores.sort(cmpByManagerLastName);
 
@@ -74,27 +71,25 @@ public class PrintReport {
             for (Sale sale : store.getSales()) {
                 total += sale.calculateGrandTotal();
                 grandTotal += sale.calculateGrandTotal();
-                countTotal++;
+                salesCountTotal++;
             }
 
             StringBuilder printString = new StringBuilder();
             printString.append(String.format("%s     %s, %s", store.getStoreCode(), store.getManager().getLastName(), store.getManager().getFirstName()));
-            int length = printString.length();
-            for (int j = 0; j < 42 - length; j++) {
-                printString.append(" ");
-            }
+            printString.append(" ".repeat(Math.max(0, 42 - printString.length())));
             printString.append(String.format("%-11d$%10.2f", store.getSales().size(), (double) Math.round(total * 100) / 100));
             System.out.println(printString);
             total = 0;
         }
 
         System.out.println("+----------------------------------------------------------------+");
-        System.out.printf("                                          %-11d$%10.2f\n\n\n", countTotal, (double) Math.round(grandTotal * 100) / 100);
+        System.out.printf("                                          %-11d$%10.2f\n\n\n", salesCountTotal, (double) Math.round(grandTotal * 100) / 100);
     }
 
     public static void generateSalesReceipts(List<Sale> sales) {
 
         Comparator<Sale> cmpByCustomerLastName = Comparator.comparing(a -> a.getCustomer().getLastName());
+
         sales.sort(cmpByCustomerLastName);
 
         for (Sale sale : sales) {
@@ -109,7 +104,7 @@ public class PrintReport {
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-");
 
             for (Item item : sale.getItems()) {
-                    System.out.println(item.receiptToString());
+                System.out.println(item.receiptToString());
             }
 
             System.out.println("                                                             -=-=-=-=-=-");

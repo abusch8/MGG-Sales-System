@@ -43,6 +43,10 @@ public abstract class Person {
 
     public abstract double getDiscountAmount();
 
+    /**
+     * Puts all of the emails in a string
+     * @return string of emails
+     */
     public String emailsToString() {
         StringBuilder emailListToString = new StringBuilder();
         for(int i = 0; i < emails.size(); i++) {

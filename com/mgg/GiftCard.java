@@ -13,14 +13,26 @@ public class GiftCard extends Item {
         return basePrice;
     }
 
+    /**
+     * Calculates the price of the item before tax
+     * @return price
+     */
     public double calculatePrice() {
         return this.basePrice;
     }
 
+    /**
+     * Calculates the tax of the item
+     * @return tax price
+     */
     public double calculateTax() {
         return (double) Math.round((this.basePrice * .0725) * 100) / 100;
     }
 
+    /**
+     * Puts the entire receipt for a sale into a string format
+     * @return receipt in a formatted string
+     */
     public String receiptToString() {
         StringBuilder formattedString = new StringBuilder();
         formattedString.append(String.format("(Gift Card #%s)", this.getCode()));

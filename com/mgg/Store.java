@@ -32,6 +32,10 @@ public class Store {
         return sales;
     }
 
+    /**
+     * Takes in a list of sales and identifies which sales belong to this store.
+     * @param sales a list of type "Sale"
+     */
     public void setSales(List<Sale> sales) {
         for (Sale sale : sales) {
             if (sale.getStore().getStoreCode().equals(this.getStoreCode())) {

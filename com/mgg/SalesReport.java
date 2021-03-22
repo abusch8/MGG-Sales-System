@@ -1,7 +1,9 @@
 package com.mgg;
 
 import java.util.List;
-
+/**
+ * This class uses all of the other classes to get our desired output.
+ */
 public class SalesReport {
 
     public static void main(String[] args) {

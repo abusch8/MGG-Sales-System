@@ -6,18 +6,24 @@ import java.time.temporal.ChronoUnit;
 public class Subscription extends Item {
 
     private final double annualFee;
-    private final LocalDate beginDate;
-    private final LocalDate endDate;
+    private LocalDate beginDate;
+    private LocalDate endDate;
 
-    public Subscription(String code, String name, double annualFee, LocalDate beginDate, LocalDate endDate) {
+    public Subscription(String code, String name, double annualFee) {
         super(code, name);
         this.annualFee = annualFee;
-        this.beginDate = beginDate;
-        this.endDate = endDate;
     }
 
     public double getAnnualFee() {
         return annualFee;
+    }
+
+    public void setBeginDate(LocalDate beginDate) {
+        this.beginDate = beginDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
     }
 
     public LocalDate getBeginDate() {

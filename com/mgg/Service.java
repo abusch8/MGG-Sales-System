@@ -3,18 +3,24 @@ package com.mgg;
 public class Service extends Item {
 
     private final double hourlyRate;
-    private final Employee employee;
-    private final double numHours;
+    private Employee employee;
+    private double numHours;
 
-    public Service(String code, String name, double hourlyRate, Employee employee, double numHours) {
+    public Service(String code, String name, double hourlyRate) {
         super(code, name);
         this.hourlyRate = hourlyRate;
-        this.employee = employee;
-        this.numHours = numHours;
     }
 
     public double getHourlyRate() {
         return hourlyRate;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public void setNumHours(double numHours) {
+        this.numHours = numHours;
     }
 
     public Employee getEmployee() {

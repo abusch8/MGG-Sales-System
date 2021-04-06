@@ -2,8 +2,8 @@ package com.mgg;
 
 public class UsedProduct extends Product {
 
-    public UsedProduct(String code, String name, double basePrice, int quantity) {
-        super(code, name, basePrice, quantity);
+    public UsedProduct(String code, String name, double basePrice) {
+        super(code, name, basePrice);
     }
 
     /**

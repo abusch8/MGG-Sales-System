@@ -30,10 +30,10 @@ public class ReadFile {
                 }
                 Person person = null;
                 switch (content[1]) {
-                    case "E" -> person = new Employee(content[0], content[2], content[3], address, emailList);
-                    case "C" -> person = new Customer(content[0], content[2], content[3], address, emailList);
                     case "P" -> person = new PlatinumMember(content[0], content[2], content[3], address, emailList);
                     case "G" -> person = new GoldMember(content[0], content[2], content[3], address, emailList);
+                    case "E" -> person = new Employee(content[0], content[2], content[3], address, emailList);
+                    case "C" -> person = new Customer(content[0], content[2], content[3], address, emailList);
                 }
                 persons.add(person);
             }
@@ -88,11 +88,11 @@ public class ReadFile {
                 String[] content = reader.readLine().split(",");
                 Item item = null;
                 switch (content[1]) {
-                    case "PN" -> item = new NewProduct(content[0], content[2], Double.parseDouble(content[3]), 2);
-                    case "PU" -> item = new UsedProduct(content[0], content[2], Double.parseDouble(content[3]), 1);
-                    case "PG" -> item = new GiftCard(content[0], content[2], 0.0);
-                    case "SV" -> item = new Service(content[0], content[2], Double.parseDouble(content[3]), null, Double.parseDouble(content[3]));
-                    case "SB" -> item = new Subscription(content[0], content[2], Double.parseDouble(content[3]), null, null);
+                    case "PN" -> item = new NewProduct(content[0], content[2], Double.parseDouble(content[3]));
+                    case "PU" -> item = new UsedProduct(content[0], content[2], Double.parseDouble(content[3]));
+                    case "PG" -> item = new GiftCard(content[0], content[2]);
+                    case "SV" -> item = new Service(content[0], content[2], Double.parseDouble(content[3]));
+                    case "SB" -> item = new Subscription(content[0], content[2], Double.parseDouble(content[3]));
                 }
                 items.add(item);
             }
@@ -129,9 +129,11 @@ public class ReadFile {
                                 if (itemList.get(k) instanceof Product) {
                                     Product existingProduct = (Product) itemList.get(k);
                                     if (existingProduct instanceof NewProduct) {
-                                        item = new NewProduct(existingProduct.getCode(), existingProduct.getName(), existingProduct.getBasePrice(), Integer.parseInt(content[j + 1]));
+                                        item = new NewProduct(existingProduct.getCode(), existingProduct.getName(), existingProduct.getBasePrice());
+                                        ((NewProduct) item).setQuantity(Integer.parseInt(content[j + 1]));
                                     } else if (existingProduct instanceof UsedProduct) {
-                                        item = new UsedProduct(existingProduct.getCode(), existingProduct.getName(), existingProduct.getBasePrice(), Integer.parseInt(content[j + 1]));
+                                        item = new UsedProduct(existingProduct.getCode(), existingProduct.getName(), existingProduct.getBasePrice());
+                                        ((UsedProduct) item).setQuantity(Integer.parseInt(content[j + 1]));
                                     }
                                     items.add(item);
                                     k = 0;
@@ -141,7 +143,8 @@ public class ReadFile {
                                         j += 2;
                                     }
                                 } else if (itemList.get(k) instanceof GiftCard) {
-                                    item = new GiftCard(itemList.get(k).getCode(), itemList.get(k).getName(), Double.parseDouble(content[j + 1]));
+                                    item = new GiftCard(itemList.get(k).getCode(), itemList.get(k).getName());
+                                    ((GiftCard) item).setBasePrice(Double.parseDouble(content[j + 1]));
                                     items.add(item);
                                     k = 0;
                                     if (j + 2 >= content.length) {
@@ -157,7 +160,9 @@ public class ReadFile {
                                         }
                                     }
                                     Service existingService = (Service) itemList.get(k);
-                                    item = new Service(itemList.get(k).getCode(), existingService.getName(), existingService.getHourlyRate(), employee, Double.parseDouble(content[j + 2]));
+                                    item = new Service(itemList.get(k).getCode(), existingService.getName(), existingService.getHourlyRate());
+                                    ((Service) item).setEmployee(employee);
+                                    ((Service) item).setNumHours(Double.parseDouble(content[j + 2]));
                                     items.add(item);
                                     k = 0;
                                     if (j + 3 >= content.length) {
@@ -167,7 +172,9 @@ public class ReadFile {
                                     }
                                 } else if (itemList.get(k) instanceof Subscription) {
                                     Subscription existingSubscription = (Subscription) itemList.get(k);
-                                    item = new Subscription(existingSubscription.getCode(), existingSubscription.getName(), existingSubscription.getAnnualFee(), LocalDate.parse(content[j + 1]), LocalDate.parse(content[j + 2]));
+                                    item = new Subscription(existingSubscription.getCode(), existingSubscription.getName(), existingSubscription.getAnnualFee());
+                                    ((Subscription) item).setBeginDate(LocalDate.parse(content[j + 1]));
+                                    ((Subscription) item).setEndDate(LocalDate.parse(content[j + 2]));
                                     items.add(item);
                                     k = 0;
                                     if (j + 3 >= content.length) {

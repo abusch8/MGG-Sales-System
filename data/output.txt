@@ -13,64 +13,13 @@ Johnson, Arnold                0          $      0.00
 | Store Sales Summary Report                                     |
 +----------------------------------------------------------------+
 Store      Manager                        # Sales    Grand Total
-1al23k Diehl, Dylan                       2          $    489.25
-234jkd Johnson, Arnold                    2          $    242.47
-jas890 Diehl, Dylan                       1          $    308.52
-3j90fs Diehl, Dylan                       0          $      0.00
-aj90ds Johnson, Arnold                    0          $      0.00
+1al23k     Diehl, Dylan                   2          $    489.25
+jas890     Diehl, Dylan                   1          $    308.52
+3j90fs     Diehl, Dylan                   0          $      0.00
+234jkd     Johnson, Arnold                2          $    242.47
+aj90ds     Johnson, Arnold                0          $      0.00
 +----------------------------------------------------------------+
                                           5          $   1040.24
-
-
-Sale	#1z4io1
-Store	#1al23k
-Customer:
-Smith, Jerry ([jsmith75@gmail.com])
-	285 Oakmont Stratton
-	Lawrence KS 65810 USA
-
-Sales Person:
-Busch, Alex, ([hooraygamer@yahoo.com])
-	104 Abel Hall
-	Grand Island NE 18571 USA
-
-Item                                                               Total
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
-Call of Duty: Cold War
-	(New Item #8sfd79 2@$59.99/ea)                           $    119.98
-Mario Kart 8
-	(Used Item #hn7890 3@($29.99 -> $23.99)/ea)              $     71.97
-Xbox Live Gold Membership
-	(Subscription #a0s87d 397 days@$59.99/yr)                $     65.25
-                                                             -=-=-=-=-=-
-                                                    Subtotal $    257.20
-                                                         Tax $     13.92
-                                                 Grand Total $    271.12
-
-
-Sale	#u89asd
-Store	#1al23k
-Customer:
-Garfield, Gary ([garyloveslasagna@icloud.com])
-	106 N 19th
-	Houndog LA 19540 USA
-
-Sales Person:
-Busch, Alex, ([hooraygamer@yahoo.com])
-	104 Abel Hall
-	Grand Island NE 18571 USA
-
-Item                                                               Total
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
-Fortnite Gift Card
-	(Gift Card #dnfg0h)                                      $     34.21
-PS4 Repair
-	(Service #a796d4 by Diehl, Dylan 2.00hrs@$99.99/hr)      $    199.98
-                                                             -=-=-=-=-=-
-                                                    Subtotal $    234.19
-                                                         Tax $      8.18
-                                           Discount (10.00%) $     24.24
-                                                 Grand Total $    218.13
 
 
 Sale	#24o5ij
@@ -78,12 +27,12 @@ Store	#234jkd
 Customer:
 Busch, Alex ([hooraygamer@yahoo.com])
 	104 Abel Hall
-	Grand Island NE 18571 USA
+	Grand Island NE 18571 US
 
 Sales Person:
-Diehl, Dylan, ([dylandiehl@icloud.com])
+Diehl, Dylan, ([dylandiehl@icloud.com, wildgamer12@mail.com])
 	67 West Oak Valley Court
-	Beatrice NE 68503 USA
+	Beatrice NE 68503 US
 
 Item                                                               Total
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
@@ -98,17 +47,42 @@ Mario Kart 8
                                                  Grand Total $    105.96
 
 
+Sale	#u89asd
+Store	#1al23k
+Customer:
+Garfield, Gary ([jsmith75@gmail.com, JerryBeary@yahoo.com])
+	106 N 19th
+	Houndog LA 19540 US
+
+Sales Person:
+Busch, Alex, ([hooraygamer@yahoo.com])
+	104 Abel Hall
+	Grand Island NE 18571 US
+
+Item                                                               Total
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
+Fortnite Gift Card
+	(Gift Card #dnfg0h)                                      $     34.21
+PS4 Repair
+	(Service #a796d4 by Diehl, Dylan 2.00hrs@$99.99/hr)      $    199.98
+                                                             -=-=-=-=-=-
+                                                    Subtotal $    234.19
+                                                         Tax $      8.18
+                                           Discount (10.00%) $     24.24
+                                                 Grand Total $    218.13
+
+
 Sale	#1mr0zs
 Store	#234jkd
 Customer:
 Mercedes, Agregory ([godgamer25@gmail.com])
 	918 West Washington
-	Clementine OR 59184 USA
+	Clementine OR 59184 US
 
 Sales Person:
-Diehl, Dylan, ([dylandiehl@icloud.com])
+Diehl, Dylan, ([dylandiehl@icloud.com, wildgamer12@mail.com])
 	67 West Oak Valley Court
-	Beatrice NE 68503 USA
+	Beatrice NE 68503 US
 
 Item                                                               Total
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
@@ -121,21 +95,21 @@ Mario Kart 8
                                                              -=-=-=-=-=-
                                                     Subtotal $    133.98
                                                          Tax $      9.71
-                                            Discount (5.00%) $      7.18
+                                           Discount ( 5.00%) $      7.18
                                                  Grand Total $    136.51
 
 
 Sale	#1kzmai
 Store	#jas890
 Customer:
-Moeller, James ([monkamode@mail.com])
+Moeller, James ([godgamer25@gmail.com])
 	104 West Hickory
-	Oklahoma City OK 18571 USA
+	Oklahoma City OK 18571 US
 
 Sales Person:
-Diehl, Dylan, ([dylandiehl@icloud.com])
+Diehl, Dylan, ([dylandiehl@icloud.com, wildgamer12@mail.com])
 	67 West Oak Valley Court
-	Beatrice NE 68503 USA
+	Beatrice NE 68503 US
 
 Item                                                               Total
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
@@ -145,3 +119,29 @@ PS4 Repair
                                                     Subtotal $    299.97
                                                          Tax $      8.55
                                                  Grand Total $    308.52
+
+
+Sale	#1z4io1
+Store	#1al23k
+Customer:
+Smith, Jerry ([jsmith75@gmail.com])
+	285 Oakmont Stratton
+	Lawrence KS 68510 US
+
+Sales Person:
+Busch, Alex, ([hooraygamer@yahoo.com])
+	104 Abel Hall
+	Grand Island NE 18571 US
+
+Item                                                               Total
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
+Call of Duty: Cold War
+	(New Item #8sfd79 2@$59.99/ea)                           $    119.98
+Mario Kart 8
+	(Used Item #hn7890 3@($29.99 -> $23.99)/ea)              $     71.97
+Xbox Live Gold Membership
+	(Subscription #a0s87d 397 days@$59.99/yr)                $     65.25
+                                                             -=-=-=-=-=-
+                                                    Subtotal $    257.20
+                                                         Tax $     13.92
+                                                 Grand Total $    271.12

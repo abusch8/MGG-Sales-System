@@ -10,7 +10,7 @@ import java.util.List;
 public class LoadData {
 
     private static Connection connect() {
-        Connection conn = null;
+        Connection conn;
         try {
             conn = DriverManager.getConnection(DatabaseInfo.URL, DatabaseInfo.USERNAME, DatabaseInfo.PASSWORD);
         } catch (SQLException e) {

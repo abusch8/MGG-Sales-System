@@ -66,11 +66,11 @@ public class LoadData {
         return address;
     }
 
-    private static Person retrievePerson(int personId, String type) {
+    private static Person retrievePerson(int personId) {
         Person person = null;
         Connection conn = connect();
 
-        String query1 = "select * from Person where personId = ? and type = ?;";
+        String query1 = "select * from Person where personId = ?";
         String query2 = "select a.email from Email a join Person b on a.personId = b.personId where b.personId = ?;";
 
         PreparedStatement ps = null;
@@ -79,13 +79,13 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query1);
             ps.setInt(1, personId);
-            ps.setString(2, type);
             rs = ps.executeQuery();
 
             if (rs.next()) {
                 String personCode = rs.getString("personCode");
                 String lastName = rs.getString("lastName");
                 String firstName = rs.getString("firstName");
+                String type = rs.getString("type");
                 int addressId = rs.getInt("addressId");
 
                 Address address = retrieveAddress(addressId);
@@ -130,7 +130,7 @@ public class LoadData {
 
             if (rs.next()) {
                 String storeCode= rs.getString("storeCode");
-                Employee manager = (Employee) retrievePerson(rs.getInt("managerId"), "E");
+                Employee manager = (Employee) retrievePerson(rs.getInt("managerId"));
                 Address address = retrieveAddress(rs.getInt("addressId"));
 
                 store = new Store(storeCode, manager, address);
@@ -183,7 +183,7 @@ public class LoadData {
         Sale sale = null;
         Connection conn = connect();
 
-        String query1 = "select a.*, b.type from Sale a join Person b on a.customerId = b.personId where saleId = ?;";
+        String query1 = "select * from Sale where saleId = ?;";
         String query2 = "select a.*, b.quantity, b.employeeId, b.numberOfHours, b.beginDate, b.endDate " +
                         "from Item a join SaleItem b on a.itemId = b.itemId where saleId = ?;";
 
@@ -198,8 +198,8 @@ public class LoadData {
             if (rs.next()) {
                 String saleCode = rs.getString("saleCode");
                 Store store = retrieveStore(rs.getInt("storeId"));
-                Person customer = retrievePerson(rs.getInt("customerId"), rs.getString("type"));
-                Employee salesperson = (Employee) retrievePerson(rs.getInt("salespersonId"), "E");
+                Person customer = retrievePerson(rs.getInt("customerId"));
+                Employee salesperson = (Employee) retrievePerson(rs.getInt("salespersonId"));
 
                 ps = conn.prepareStatement(query2);
                 ps.setInt(1, saleId);
@@ -214,9 +214,9 @@ public class LoadData {
                         } case "UsedProduct" -> {
                             ((UsedProduct) item).setQuantity(rs.getInt("quantity"));
                         } case "GiftCard" -> {
-                            ((GiftCard) item).setBasePrice(rs.getInt("quantity"));
+                            ((GiftCard) item).setBasePrice(rs.getDouble("quantity"));
                         } case "Service" -> {
-                            ((Service) item).setEmployee((Employee) retrievePerson(rs.getInt("employeeId"), "E"));
+                            ((Service) item).setEmployee((Employee) retrievePerson(rs.getInt("employeeId")));
                             ((Service) item).setNumHours(rs.getInt("numberOfHours"));
                         } case "Subscription" -> {
                             LocalDate beginDate = Instant.ofEpochMilli(rs.getDate("beginDate").getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
@@ -251,7 +251,7 @@ public class LoadData {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                persons.add(retrievePerson(rs.getInt("personId"), rs.getString("type")));
+                persons.add(retrievePerson(rs.getInt("personId")));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

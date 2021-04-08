@@ -27,6 +27,7 @@ public class LoadData {
 
     /**
      * This method connects to the database, the userinfo can be modified in the DatabaseInfo class
+     *
      * @return conn - the connection to the database.
      */
     private static Connection connect() {
@@ -34,7 +35,7 @@ public class LoadData {
         try {
             conn = DriverManager.getConnection(DatabaseInfo.URL, DatabaseInfo.USERNAME, DatabaseInfo.PASSWORD);
         } catch (SQLException e) {
-            LOGGER.error(String.format("Failed to connect to database @ %s", DatabaseInfo.URL));
+            LOGGER.error(String.format("Failed to establish connection to database @ %s", DatabaseInfo.URL));
             throw new RuntimeException(e);
         }
         return conn;
@@ -42,8 +43,9 @@ public class LoadData {
 
     /**
      * Disconnects us from the database.
-     * @param rs Resultset
-     * @param ps preparedStatement
+     *
+     * @param rs   ResultSet
+     * @param ps   preparedStatement
      * @param conn connection
      */
     private static void disconnect(ResultSet rs, PreparedStatement ps, Connection conn) {
@@ -65,6 +67,7 @@ public class LoadData {
 
     /**
      * This method retrieves an address and returns it.
+     *
      * @param addressId numeric ID that leads to an address.
      * @return address - an address
      */
@@ -80,7 +83,7 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query);
             ps.setInt(1, addressId);
-            LOGGER.info(String.format("Executing query: %s", ps));
+            LOGGER.info(ps);
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -103,6 +106,7 @@ public class LoadData {
 
     /**
      * This method retrieves a person, and returns it.
+     *
      * @param personId numeric ID that leads to a person
      * @return person - a person
      */
@@ -119,7 +123,7 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query1);
             ps.setInt(1, personId);
-            LOGGER.info(String.format("Executing query: %s", ps));
+            LOGGER.info(ps);
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -133,7 +137,7 @@ public class LoadData {
 
                 ps = conn.prepareStatement(query2);
                 ps.setInt(1, personId);
-                LOGGER.info(String.format("Executing query: %s", ps));
+                LOGGER.info(ps);
                 rs = ps.executeQuery();
 
                 List<String> emails = new ArrayList<>();
@@ -159,6 +163,7 @@ public class LoadData {
 
     /**
      * This method retrieves a person, and returns it.
+     *
      * @param storeId an ID that leads to a store.
      * @return store - a store
      */
@@ -174,11 +179,11 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query);
             ps.setInt(1, storeId);
-            LOGGER.info(String.format("Executing query: %s", ps));
+            LOGGER.info(ps);
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                String storeCode= rs.getString("storeCode");
+                String storeCode = rs.getString("storeCode");
                 Employee manager = (Employee) retrievePerson(rs.getInt("managerId"));
                 Address address = retrieveAddress(rs.getInt("addressId"));
 
@@ -192,8 +197,10 @@ public class LoadData {
         }
         return store;
     }
+
     /**
      * This method retrieves an item, and returns it.
+     *
      * @param itemId an ID that leads to a store.
      * @return item - an item
      */
@@ -209,7 +216,7 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query);
             ps.setInt(1, itemId);
-            LOGGER.info(String.format("Executing query: %s", ps));
+            LOGGER.info(ps);
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -234,8 +241,10 @@ public class LoadData {
         }
         return item;
     }
+
     /**
      * This method retrieves a sale, and returns it.
+     *
      * @param saleId ID that leads to a sale.
      * @return sale - a sale
      */
@@ -245,7 +254,7 @@ public class LoadData {
 
         String query1 = "select * from Sale where saleId = ?;";
         String query2 = "select a.*, b.quantity, b.employeeId, b.numberOfHours, b.beginDate, b.endDate " +
-                        "from Item a join SaleItem b on a.itemId = b.itemId where saleId = ?;";
+                "from Item a join SaleItem b on a.itemId = b.itemId where saleId = ?;";
 
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -253,7 +262,7 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query1);
             ps.setInt(1, saleId);
-            LOGGER.info(String.format("Executing query: %s", ps));
+            LOGGER.info(ps);
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -264,7 +273,7 @@ public class LoadData {
 
                 ps = conn.prepareStatement(query2);
                 ps.setInt(1, saleId);
-                LOGGER.info(String.format("Executing query: %s", ps));
+                LOGGER.info(ps);
                 rs = ps.executeQuery();
 
                 List<Item> items = new ArrayList<>();
@@ -273,23 +282,27 @@ public class LoadData {
                     switch (item.getClass().getSimpleName()) {
                         case "NewProduct" -> {
                             ((NewProduct) item).setQuantity(rs.getInt("quantity"));
-                        } case "UsedProduct" -> {
+                        }
+                        case "UsedProduct" -> {
                             ((UsedProduct) item).setQuantity(rs.getInt("quantity"));
-                        } case "GiftCard" -> {
+                        }
+                        case "GiftCard" -> {
                             ((GiftCard) item).setBasePrice(rs.getDouble("quantity"));
-                        } case "Service" -> {
+                        }
+                        case "Service" -> {
                             ((Service) item).setEmployee((Employee) retrievePerson(rs.getInt("employeeId")));
                             ((Service) item).setNumHours(rs.getInt("numberOfHours"));
-                        } case "Subscription" -> {
+                        }
+                        case "Subscription" -> {
                             LocalDate beginDate = Instant.ofEpochMilli(rs.getDate("beginDate").getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
                             ((Subscription) item).setBeginDate(beginDate);
                             LocalDate endDate = Instant.ofEpochMilli(rs.getDate("endDate").getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
                             ((Subscription) item).setEndDate(endDate);
                         }
                     }
-                items.add(item);
+                    items.add(item);
                 }
-            sale = new Sale(saleCode, store, customer, salesperson, items);
+                sale = new Sale(saleCode, store, customer, salesperson, items);
             }
         } catch (SQLException e) {
             LOGGER.error(e);
@@ -302,6 +315,7 @@ public class LoadData {
 
     /**
      * Reads the data from the SQL database and returns a list of people
+     *
      * @return persons - a list of people
      */
     public static List<Person> readPersonDatabase() {
@@ -315,7 +329,7 @@ public class LoadData {
 
         try {
             ps = conn.prepareStatement(query);
-            LOGGER.info(String.format("Executing query: %s", ps));
+            LOGGER.info(ps);
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -332,6 +346,7 @@ public class LoadData {
 
     /**
      * Reads the data from the SQL database and returns a list of stores
+     *
      * @return stores - a list of stores
      */
     public static List<Store> readStoreDatabase() {
@@ -345,7 +360,7 @@ public class LoadData {
 
         try {
             ps = conn.prepareStatement(query);
-            LOGGER.info(String.format("Executing query: %s", ps));
+            LOGGER.info(ps);
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -362,6 +377,7 @@ public class LoadData {
 
     /**
      * Reads the data from the SQL database and returns a list of items
+     *
      * @return items - a list of items
      */
     public static List<Item> readItemDatabase() {
@@ -375,7 +391,7 @@ public class LoadData {
 
         try {
             ps = conn.prepareStatement(query);
-            LOGGER.info(String.format("Executing query: %s", ps));
+            LOGGER.info(ps);
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -389,8 +405,10 @@ public class LoadData {
         }
         return items;
     }
+
     /**
      * Reads the data from the SQL database and returns a list of sales
+     *
      * @return sales - a list of sales
      */
     public static List<Sale> readSaleDatabase() {
@@ -404,7 +422,7 @@ public class LoadData {
 
         try {
             ps = conn.prepareStatement(query);
-            LOGGER.info(String.format("Executing query: %s", ps));
+            LOGGER.info(ps);
             rs = ps.executeQuery();
 
             while (rs.next()) {

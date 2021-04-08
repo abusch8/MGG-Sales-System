@@ -7,8 +7,15 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class that loads the data from an SQL database into their appropriate classes.
+ */
 public class LoadData {
 
+    /**
+     * This method connects to the database, the userinfo can be modified in the DatabaseInfo class
+     * @return conn - the connection to the database.
+     */
     private static Connection connect() {
         Connection conn;
         try {
@@ -19,6 +26,12 @@ public class LoadData {
         return conn;
     }
 
+    /**
+     * Disconnects us from the database.
+     * @param rs Resultset
+     * @param ps preparedStatement
+     * @param conn connection
+     */
     private static void disconnect(ResultSet rs, PreparedStatement ps, Connection conn) {
         try {
             if (rs != null && !rs.isClosed()) {
@@ -35,6 +48,11 @@ public class LoadData {
         }
     }
 
+    /**
+     * This method retrieves an address and returns it.
+     * @param addressId numeric ID that leads to an address.
+     * @return address - an address
+     */
     private static Address retrieveAddress(int addressId) {
         Address address = null;
         Connection conn = connect();
@@ -66,6 +84,11 @@ public class LoadData {
         return address;
     }
 
+    /**
+     * This method retrieves a person, and returns it.
+     * @param personId numeric ID that leads to a person
+     * @return person - a person
+     */
     private static Person retrievePerson(int personId) {
         Person person = null;
         Connection conn = connect();
@@ -114,6 +137,11 @@ public class LoadData {
         return person;
     }
 
+    /**
+     * This method retrieves a person, and returns it.
+     * @param storeId an ID that leads to a store.
+     * @return store - a store
+     */
     private static Store retrieveStore(int storeId) {
         Store store = null;
         Connection conn = connect();
@@ -142,7 +170,11 @@ public class LoadData {
         }
         return store;
     }
-
+    /**
+     * This method retrieves an item, and returns it.
+     * @param itemId an ID that leads to a store.
+     * @return item - an item
+     */
     private static Item retrieveItem(int itemId) {
         Item item = null;
         Connection conn = connect();
@@ -178,7 +210,11 @@ public class LoadData {
         }
         return item;
     }
-
+    /**
+     * This method retrieves a sale, and returns it.
+     * @param saleId ID that leads to a sale.
+     * @return sale - a sale
+     */
     private static Sale retrieveSale(int saleId) {
         Sale sale = null;
         Connection conn = connect();
@@ -237,6 +273,10 @@ public class LoadData {
         return sale;
     }
 
+    /**
+     * Reads the data from the SQL database and returns a list of people
+     * @return persons - a list of people
+     */
     public static List<Person> readPersonDatabase() {
         List<Person> persons = new ArrayList<>();
         Connection conn = connect();
@@ -261,6 +301,10 @@ public class LoadData {
         return persons;
     }
 
+    /**
+     * Reads the data from the SQL database and returns a list of stores
+     * @return stores - a list of stores
+     */
     public static List<Store> readStoreDatabase() {
         List<Store> stores = new ArrayList<>();
         Connection conn = connect();
@@ -285,6 +329,10 @@ public class LoadData {
         return stores;
     }
 
+    /**
+     * Reads the data from the SQL database and returns a list of items
+     * @return items - a list of items
+     */
     public static List<Item> readItemDatabase() {
         List<Item> items = new ArrayList<>();
         Connection conn = connect();
@@ -308,7 +356,10 @@ public class LoadData {
         }
         return items;
     }
-
+    /**
+     * Reads the data from the SQL database and returns a list of sales
+     * @return sales - a list of sales
+     */
     public static List<Sale> readSaleDatabase() {
         List<Sale> sales = new ArrayList<>();
         Connection conn = connect();

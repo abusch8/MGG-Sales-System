@@ -1,5 +1,11 @@
 package com.mgg;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
+import org.apache.logging.log4j.core.config.DefaultConfiguration;
+
 import java.sql.*;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -12,6 +18,13 @@ import java.util.List;
  */
 public class LoadData {
 
+    private static final Logger LOGGER = LogManager.getLogger(LoadData.class);
+
+    static {
+        Configurator.initialize(new DefaultConfiguration());
+        Configurator.setRootLevel(Level.INFO);
+    }
+
     /**
      * This method connects to the database, the userinfo can be modified in the DatabaseInfo class
      * @return conn - the connection to the database.
@@ -21,6 +34,7 @@ public class LoadData {
         try {
             conn = DriverManager.getConnection(DatabaseInfo.URL, DatabaseInfo.USERNAME, DatabaseInfo.PASSWORD);
         } catch (SQLException e) {
+            LOGGER.error(String.format("Failed to connect to database @ %s", DatabaseInfo.URL));
             throw new RuntimeException(e);
         }
         return conn;
@@ -44,6 +58,7 @@ public class LoadData {
                 conn.close();
             }
         } catch (SQLException e) {
+            LOGGER.error(e);
             throw new RuntimeException(e);
         }
     }
@@ -65,6 +80,7 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query);
             ps.setInt(1, addressId);
+            LOGGER.info(String.format("Executing query: %s", ps));
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -77,6 +93,7 @@ public class LoadData {
                 address = new Address(street, city, state, zip, country);
             }
         } catch (SQLException e) {
+            LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
             disconnect(rs, ps, conn);
@@ -102,6 +119,7 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query1);
             ps.setInt(1, personId);
+            LOGGER.info(String.format("Executing query: %s", ps));
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -115,6 +133,7 @@ public class LoadData {
 
                 ps = conn.prepareStatement(query2);
                 ps.setInt(1, personId);
+                LOGGER.info(String.format("Executing query: %s", ps));
                 rs = ps.executeQuery();
 
                 List<String> emails = new ArrayList<>();
@@ -130,6 +149,7 @@ public class LoadData {
                 }
             }
         } catch (SQLException e) {
+            LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
             disconnect(rs, ps, conn);
@@ -154,6 +174,7 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query);
             ps.setInt(1, storeId);
+            LOGGER.info(String.format("Executing query: %s", ps));
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -164,6 +185,7 @@ public class LoadData {
                 store = new Store(storeCode, manager, address);
             }
         } catch (SQLException e) {
+            LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
             disconnect(rs, ps, conn);
@@ -187,6 +209,7 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query);
             ps.setInt(1, itemId);
+            LOGGER.info(String.format("Executing query: %s", ps));
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -204,6 +227,7 @@ public class LoadData {
                 }
             }
         } catch (SQLException e) {
+            LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
             disconnect(rs, ps, conn);
@@ -229,6 +253,7 @@ public class LoadData {
         try {
             ps = conn.prepareStatement(query1);
             ps.setInt(1, saleId);
+            LOGGER.info(String.format("Executing query: %s", ps));
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -239,6 +264,7 @@ public class LoadData {
 
                 ps = conn.prepareStatement(query2);
                 ps.setInt(1, saleId);
+                LOGGER.info(String.format("Executing query: %s", ps));
                 rs = ps.executeQuery();
 
                 List<Item> items = new ArrayList<>();
@@ -266,6 +292,7 @@ public class LoadData {
             sale = new Sale(saleCode, store, customer, salesperson, items);
             }
         } catch (SQLException e) {
+            LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
             disconnect(rs, ps, conn);
@@ -288,12 +315,14 @@ public class LoadData {
 
         try {
             ps = conn.prepareStatement(query);
+            LOGGER.info(String.format("Executing query: %s", ps));
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 persons.add(retrievePerson(rs.getInt("personId")));
             }
         } catch (SQLException e) {
+            LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
             disconnect(rs, ps, conn);
@@ -316,12 +345,14 @@ public class LoadData {
 
         try {
             ps = conn.prepareStatement(query);
+            LOGGER.info(String.format("Executing query: %s", ps));
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 stores.add(retrieveStore(rs.getInt("storeId")));
             }
         } catch (SQLException e) {
+            LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
             disconnect(rs, ps, conn);
@@ -344,12 +375,14 @@ public class LoadData {
 
         try {
             ps = conn.prepareStatement(query);
+            LOGGER.info(String.format("Executing query: %s", ps));
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 items.add(retrieveItem(rs.getInt("itemId")));
             }
         } catch (SQLException e) {
+            LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
             disconnect(rs, ps, conn);
@@ -371,12 +404,14 @@ public class LoadData {
 
         try {
             ps = conn.prepareStatement(query);
+            LOGGER.info(String.format("Executing query: %s", ps));
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 sales.add(retrieveSale(rs.getInt("saleId")));
             }
         } catch (SQLException e) {
+            LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
             disconnect(rs, ps, conn);

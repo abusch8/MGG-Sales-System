@@ -6,6 +6,10 @@ public class UsedProduct extends Product {
         super(code, name, basePrice);
     }
 
+    public UsedProduct(UsedProduct usedProduct, int quantity) {
+        super(usedProduct, quantity);
+    }
+
     /**
      * Calculates price of item before tax.
      * @return price

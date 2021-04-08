@@ -281,23 +281,26 @@ public class LoadData {
                     Item item = retrieveItem(rs.getInt("itemId"));
                     switch (item.getClass().getSimpleName()) {
                         case "NewProduct" -> {
-                            ((NewProduct) item).setQuantity(rs.getInt("quantity"));
+                            int quantity = rs.getInt("quantity");
+                            item = new NewProduct((NewProduct) item, quantity);
                         }
                         case "UsedProduct" -> {
-                            ((UsedProduct) item).setQuantity(rs.getInt("quantity"));
+                            int quantity = rs.getInt("quantity");
+                            item = new UsedProduct((UsedProduct) item, quantity);
                         }
                         case "GiftCard" -> {
-                            ((GiftCard) item).setBasePrice(rs.getDouble("quantity"));
+                            double basePrice = rs.getDouble("quantity");
+                            item = new GiftCard((GiftCard) item, basePrice);
                         }
                         case "Service" -> {
-                            ((Service) item).setEmployee((Employee) retrievePerson(rs.getInt("employeeId")));
-                            ((Service) item).setNumHours(rs.getInt("numberOfHours"));
+                            Employee employee = (Employee) retrievePerson(rs.getInt("employeeId"));
+                            double numHours = rs.getInt("numberOfHours");
+                            item = new Service((Service) item, employee, numHours);
                         }
                         case "Subscription" -> {
                             LocalDate beginDate = Instant.ofEpochMilli(rs.getDate("beginDate").getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
-                            ((Subscription) item).setBeginDate(beginDate);
                             LocalDate endDate = Instant.ofEpochMilli(rs.getDate("endDate").getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
-                            ((Subscription) item).setEndDate(endDate);
+                            item = new Subscription((Subscription) item, beginDate, endDate);
                         }
                     }
                     items.add(item);

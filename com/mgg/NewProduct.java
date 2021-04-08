@@ -6,6 +6,10 @@ public class NewProduct extends Product {
         super(code, name, basePrice);
     }
 
+    public NewProduct(NewProduct newProduct, int quantity) {
+        super(newProduct, quantity);
+    }
+
     /**
      * Calculates the price of the item before tax
      * @return price

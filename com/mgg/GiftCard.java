@@ -8,7 +8,8 @@ public class GiftCard extends Item {
         super(code, name);
     }
 
-    public void setBasePrice(double basePrice) {
+    public GiftCard(GiftCard giftCard, double basePrice) {
+        this(giftCard.getCode(), giftCard.getName());
         this.basePrice = basePrice;
     }
 

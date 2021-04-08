@@ -10,12 +10,13 @@ public abstract class Product extends Item {
         this.basePrice = basePrice;
     }
 
-    public double getBasePrice() {
-        return basePrice;
+    public Product(Product product, int quantity) {
+        this(product.getCode(), product.getName(), product.getBasePrice());
+        this.quantity = quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public double getBasePrice() {
+        return basePrice;
     }
 
     public int getQuantity() {

@@ -14,16 +14,14 @@ public class Subscription extends Item {
         this.annualFee = annualFee;
     }
 
+    public Subscription(Subscription subscription, LocalDate beginDate, LocalDate endDate) {
+        this(subscription.getCode(), subscription.getName(), subscription.getAnnualFee());
+        this.beginDate = beginDate;
+        this.endDate = endDate;
+    }
+
     public double getAnnualFee() {
         return annualFee;
-    }
-
-    public void setBeginDate(LocalDate beginDate) {
-        this.beginDate = beginDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
     }
 
     public LocalDate getBeginDate() {

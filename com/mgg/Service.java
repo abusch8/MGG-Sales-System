@@ -11,16 +11,18 @@ public class Service extends Item {
         this.hourlyRate = hourlyRate;
     }
 
+    public Service(Service service, Employee employee, double numHours) {
+        this(service.getCode(), service.getName(), service.getHourlyRate());
+        this.employee = employee;
+        this.numHours = numHours;
+    }
+
     public double getHourlyRate() {
         return hourlyRate;
     }
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
-    }
-
-    public void setNumHours(double numHours) {
-        this.numHours = numHours;
     }
 
     public Employee getEmployee() {

@@ -126,61 +126,61 @@ public class ReadFile {
                         int k = 0;
                         while (k < itemList.size()) {
                             if (content[j].equals(itemList.get(k).getCode())) {
-                                if (itemList.get(k) instanceof Product) {
-                                    Product existingProduct = (Product) itemList.get(k);
-                                    if (existingProduct instanceof NewProduct) {
-                                        item = new NewProduct(existingProduct.getCode(), existingProduct.getName(), existingProduct.getBasePrice());
-                                        ((NewProduct) item).setQuantity(Integer.parseInt(content[j + 1]));
-                                    } else if (existingProduct instanceof UsedProduct) {
-                                        item = new UsedProduct(existingProduct.getCode(), existingProduct.getName(), existingProduct.getBasePrice());
-                                        ((UsedProduct) item).setQuantity(Integer.parseInt(content[j + 1]));
-                                    }
-                                    items.add(item);
-                                    k = 0;
-                                    if (j + 2 >= content.length) {
-                                        break currentLine;
-                                    } else {
-                                        j += 2;
-                                    }
-                                } else if (itemList.get(k) instanceof GiftCard) {
-                                    item = new GiftCard(itemList.get(k).getCode(), itemList.get(k).getName());
-                                    ((GiftCard) item).setBasePrice(Double.parseDouble(content[j + 1]));
-                                    items.add(item);
-                                    k = 0;
-                                    if (j + 2 >= content.length) {
-                                        break currentLine;
-                                    } else {
-                                        j += 2;
-                                    }
-                                } else if (itemList.get(k) instanceof Service) {
-                                    Employee employee = null;
-                                    for (Person existingPerson : personList) {
-                                        if (content[j + 1].equals(existingPerson.getPersonId())) {
-                                            employee = new Employee(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                Item currentExistingItem = itemList.get(k);
+                                switch (currentExistingItem.getClass().getSimpleName()) {
+                                    case "NewProduct" -> {
+                                        item = new NewProduct((NewProduct) currentExistingItem, Integer.parseInt(content[j + 1]));
+                                        items.add(item);
+                                        k = 0;
+                                        if (j + 2 >= content.length) {
+                                            break currentLine;
+                                        } else {
+                                            j += 2;
                                         }
-                                    }
-                                    Service existingService = (Service) itemList.get(k);
-                                    item = new Service(itemList.get(k).getCode(), existingService.getName(), existingService.getHourlyRate());
-                                    ((Service) item).setEmployee(employee);
-                                    ((Service) item).setNumHours(Double.parseDouble(content[j + 2]));
-                                    items.add(item);
-                                    k = 0;
-                                    if (j + 3 >= content.length) {
-                                        break currentLine;
-                                    } else {
-                                        j += 3;
-                                    }
-                                } else if (itemList.get(k) instanceof Subscription) {
-                                    Subscription existingSubscription = (Subscription) itemList.get(k);
-                                    item = new Subscription(existingSubscription.getCode(), existingSubscription.getName(), existingSubscription.getAnnualFee());
-                                    ((Subscription) item).setBeginDate(LocalDate.parse(content[j + 1]));
-                                    ((Subscription) item).setEndDate(LocalDate.parse(content[j + 2]));
-                                    items.add(item);
-                                    k = 0;
-                                    if (j + 3 >= content.length) {
-                                        break currentLine;
-                                    } else {
-                                        j += 3;
+                                    } case "UsedProduct" -> {
+                                        item = new UsedProduct((UsedProduct) currentExistingItem, Integer.parseInt(content[j + 1]));
+                                        items.add(item);
+                                        k = 0;
+                                        if (j + 2 >= content.length) {
+                                            break currentLine;
+                                        } else {
+                                            j += 2;
+                                        }
+                                    } case "GiftCard" -> {
+                                        item = new GiftCard((GiftCard) currentExistingItem, Double.parseDouble(content[j + 1]));
+                                        items.add(item);
+                                        k = 0;
+                                        if (j + 2 >= content.length) {
+                                            break currentLine;
+                                        } else {
+                                            j += 2;
+                                        }
+                                    } case "Service" -> {
+                                        Employee employee = null;
+                                        for (Person existingPerson : personList) {
+                                            if (content[j + 1].equals(existingPerson.getPersonId())) {
+                                                employee = new Employee(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                            }
+                                        }
+                                        item = new Service((Service) currentExistingItem, employee, Double.parseDouble(content[j + 2]));
+                                        System.out.println(((Service) item).getNumHours());
+                                        System.out.println(((Service) item).calculatePrice());
+                                        items.add(item);
+                                        k = 0;
+                                        if (j + 3 >= content.length) {
+                                            break currentLine;
+                                        } else {
+                                            j += 3;
+                                        }
+                                    } case "Subscription" -> {
+                                        item = new Subscription((Subscription) currentExistingItem, LocalDate.parse(content[j + 1]), LocalDate.parse(content[j + 2]));
+                                        items.add(item);
+                                        k = 0;
+                                        if (j + 3 >= content.length) {
+                                            break currentLine;
+                                        } else {
+                                            j += 3;
+                                        }
                                     }
                                 }
                             } else {

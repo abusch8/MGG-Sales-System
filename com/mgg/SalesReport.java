@@ -1,8 +1,14 @@
 package com.mgg;
 
 import java.util.List;
+
 /**
- * This class uses all of the other classes to get our desired output.
+ * @author Dylan Diehl
+ * @author Alex Busch
+ */
+
+/**
+ * Main class for running all of the classes that load the data and generate reports.
  */
 public class SalesReport {
 

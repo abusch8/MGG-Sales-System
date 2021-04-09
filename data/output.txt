@@ -37,9 +37,9 @@ Diehl, Dylan, ([dylandiehl@icloud.com, wildgamer12@mail.com])
 Item                                                               Total
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
 Switch Online Membership
-	(Subscription #245hjk 397 days@$19.99/yr)                $     21.74
+    (Subscription #245hjk 397 days@$19.99/yr)                $     21.74
 Mario Kart 8
-	(Used Item #hn7890 4@($29.99 -> $23.99)/ea)              $     95.96
+    (Used Item #hn7890 4@($29.99 -> $23.99)/ea)              $     95.96
                                                              -=-=-=-=-=-
                                                     Subtotal $    117.70
                                                          Tax $      6.96
@@ -62,9 +62,9 @@ Busch, Alex, ([hooraygamer@yahoo.com])
 Item                                                               Total
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
 Fortnite Gift Card
-	(Gift Card #dnfg0h)                                      $     34.21
+    (Gift Card #dnfg0h)                                      $     34.21
 PS4 Repair
-	(Service #a796d4 by Diehl, Dylan 2.00hrs@$99.99/hr)      $    199.98
+    (Service #a796d4 by Diehl, Dylan 2.00hrs@$99.99/hr)      $    199.98
                                                              -=-=-=-=-=-
                                                     Subtotal $    234.19
                                                          Tax $      8.18
@@ -87,11 +87,11 @@ Diehl, Dylan, ([dylandiehl@icloud.com, wildgamer12@mail.com])
 Item                                                               Total
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
 Fortnite Gift Card
-	(Gift Card #dnfg0h)                                      $     50.00
+    (Gift Card #dnfg0h)                                      $     50.00
 Call of Duty: Cold War
-	(New Item #8sfd79 1@$59.99/ea)                           $     59.99
+    (New Item #8sfd79 1@$59.99/ea)                           $     59.99
 Mario Kart 8
-	(Used Item #hn7890 1@($29.99 -> $23.99)/ea)              $     23.99
+    (Used Item #hn7890 1@($29.99 -> $23.99)/ea)              $     23.99
                                                              -=-=-=-=-=-
                                                     Subtotal $    133.98
                                                          Tax $      9.71
@@ -114,7 +114,7 @@ Diehl, Dylan, ([dylandiehl@icloud.com, wildgamer12@mail.com])
 Item                                                               Total
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
 PS4 Repair
-	(Service #a796d4 by Diehl, Dylan 3.00hrs@$99.99/hr)      $    299.97
+    (Service #a796d4 by Diehl, Dylan 3.00hrs@$99.99/hr)      $    299.97
                                                              -=-=-=-=-=-
                                                     Subtotal $    299.97
                                                          Tax $      8.55
@@ -136,11 +136,11 @@ Busch, Alex, ([hooraygamer@yahoo.com])
 Item                                                               Total
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
 Call of Duty: Cold War
-	(New Item #8sfd79 2@$59.99/ea)                           $    119.98
+    (New Item #8sfd79 2@$59.99/ea)                           $    119.98
 Mario Kart 8
-	(Used Item #hn7890 3@($29.99 -> $23.99)/ea)              $     71.97
+    (Used Item #hn7890 3@($29.99 -> $23.99)/ea)              $     71.97
 Xbox Live Gold Membership
-	(Subscription #a0s87d 397 days@$59.99/yr)                $     65.25
+    (Subscription #a0s87d 397 days@$59.99/yr)                $     65.25
                                                              -=-=-=-=-=-
                                                     Subtotal $    257.20
                                                          Tax $     13.92

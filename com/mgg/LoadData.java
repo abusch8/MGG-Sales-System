@@ -254,7 +254,7 @@ public class LoadData {
 
         String query1 = "select * from Sale where saleId = ?;";
         String query2 = "select a.*, b.quantity, b.employeeId, b.numberOfHours, b.beginDate, b.endDate " +
-                "from Item a join SaleItem b on a.itemId = b.itemId where saleId = ?;";
+                        "from Item a join SaleItem b on a.itemId = b.itemId where saleId = ?;";
 
         PreparedStatement ps = null;
         ResultSet rs = null;

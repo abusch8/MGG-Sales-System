@@ -119,7 +119,7 @@ public class ReadFile {
             for (int i = 0; i < count; i++) {
                 String[] content = reader.readLine().split(",");
                 List<Item> items = new ArrayList<>();
-                Item item = null;
+                Item item;
                 currentLine:
                 {
                     for (int j = 4; j < content.length; j++) {
@@ -163,8 +163,6 @@ public class ReadFile {
                                             }
                                         }
                                         item = new Service((Service) currentExistingItem, employee, Double.parseDouble(content[j + 2]));
-                                        System.out.println(((Service) item).getNumHours());
-                                        System.out.println(((Service) item).calculatePrice());
                                         items.add(item);
                                         k = 0;
                                         if (j + 3 >= content.length) {
@@ -193,14 +191,11 @@ public class ReadFile {
                             }
                             for (Person existingPerson : personList) {
                                 if (content[2].equals(existingPerson.getPersonId())) {
-                                    if (existingPerson instanceof PlatinumMember) {
-                                        customer = new PlatinumMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
-                                    } else if (existingPerson instanceof GoldMember) {
-                                        customer = new GoldMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
-                                    } else if (existingPerson instanceof Employee) {
-                                        customer = new Employee(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
-                                    } else {
-                                        customer = new Customer(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                    switch (existingPerson.getClass().getSimpleName()) {
+                                        case "PlatinumMember" -> customer = new PlatinumMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                        case "GoldMember" -> customer = new GoldMember(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                        case "Employee" -> customer = new Employee(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
+                                        case "Customer" -> customer = new Customer(existingPerson.getPersonId(), existingPerson.getLastName(), existingPerson.getFirstName(), existingPerson.getAddress(), existingPerson.getEmails());
                                     }
                                 }
                                 if (content[3].equals(existingPerson.getPersonId())) {

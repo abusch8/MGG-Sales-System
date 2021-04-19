@@ -26,46 +26,6 @@ public class LoadData {
     }
 
     /**
-     * This method connects to the database, the userinfo can be modified in the DatabaseInfo class
-     *
-     * @return conn - the connection to the database.
-     */
-    private static Connection connect() {
-        Connection conn;
-        try {
-            conn = DriverManager.getConnection(DatabaseInfo.URL, DatabaseInfo.USERNAME, DatabaseInfo.PASSWORD);
-        } catch (SQLException e) {
-            LOGGER.error(String.format("Failed to establish connection to database @ %s", DatabaseInfo.URL));
-            throw new RuntimeException(e);
-        }
-        return conn;
-    }
-
-    /**
-     * Disconnects us from the database.
-     *
-     * @param rs   ResultSet
-     * @param ps   preparedStatement
-     * @param conn connection
-     */
-    private static void disconnect(ResultSet rs, PreparedStatement ps, Connection conn) {
-        try {
-            if (rs != null && !rs.isClosed()) {
-                rs.close();
-            }
-            if (ps != null && !ps.isClosed()) {
-                ps.close();
-            }
-            if (conn != null && !conn.isClosed()) {
-                conn.close();
-            }
-        } catch (SQLException e) {
-            LOGGER.error(e);
-            throw new RuntimeException(e);
-        }
-    }
-
-    /**
      * This method retrieves an address and returns it.
      *
      * @param addressId numeric ID that leads to an address.
@@ -73,9 +33,9 @@ public class LoadData {
      */
     private static Address retrieveAddress(int addressId) {
         Address address = null;
-        Connection conn = connect();
+        Connection conn = Database.connect();
 
-        String query = "select * from Address where addressId = ?;";
+        String query = "select street, city, state, zip, country from Address where addressId = ?;";
 
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -99,7 +59,7 @@ public class LoadData {
             LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
-            disconnect(rs, ps, conn);
+            Database.disconnect(rs, ps, conn);
         }
         return address;
     }
@@ -112,9 +72,9 @@ public class LoadData {
      */
     private static Person retrievePerson(int personId) {
         Person person = null;
-        Connection conn = connect();
+        Connection conn = Database.connect();
 
-        String query1 = "select * from Person where personId = ?";
+        String query1 = "select personCode, lastName, firstName, type, addressId  from Person where personId = ?";
         String query2 = "select a.email from Email a join Person b on a.personId = b.personId where b.personId = ?;";
 
         PreparedStatement ps = null;
@@ -156,7 +116,7 @@ public class LoadData {
             LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
-            disconnect(rs, ps, conn);
+            Database.disconnect(rs, ps, conn);
         }
         return person;
     }
@@ -169,9 +129,9 @@ public class LoadData {
      */
     private static Store retrieveStore(int storeId) {
         Store store = null;
-        Connection conn = connect();
+        Connection conn = Database.connect();
 
-        String query = "select * from Store where storeId = ?;";
+        String query = "select storeCode, managerId, addressId from Store where storeId = ?;";
 
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -193,7 +153,7 @@ public class LoadData {
             LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
-            disconnect(rs, ps, conn);
+            Database.disconnect(rs, ps, conn);
         }
         return store;
     }
@@ -206,9 +166,9 @@ public class LoadData {
      */
     private static Item retrieveItem(int itemId) {
         Item item = null;
-        Connection conn = connect();
+        Connection conn = Database.connect();
 
-        String query = "select * from Item where itemId = ?;";
+        String query = "select itemCode, type, name, price from Item where itemId = ?;";
 
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -237,7 +197,7 @@ public class LoadData {
             LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
-            disconnect(rs, ps, conn);
+            Database.disconnect(rs, ps, conn);
         }
         return item;
     }
@@ -250,10 +210,10 @@ public class LoadData {
      */
     private static Sale retrieveSale(int saleId) {
         Sale sale = null;
-        Connection conn = connect();
+        Connection conn = Database.connect();
 
-        String query1 = "select * from Sale where saleId = ?;";
-        String query2 = "select a.*, b.quantity, b.employeeId, b.numberOfHours, b.beginDate, b.endDate " +
+        String query1 = "select saleCode, storeId, customerId, salespersonId from Sale where saleId = ?;";
+        String query2 = "select a.itemId, a.itemCode, a.type, b.quantity, b.employeeId, b.numberOfHours, b.beginDate, b.endDate " +
                         "from Item a join SaleItem b on a.itemId = b.itemId where saleId = ?;";
 
         PreparedStatement ps = null;
@@ -311,7 +271,7 @@ public class LoadData {
             LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
-            disconnect(rs, ps, conn);
+            Database.disconnect(rs, ps, conn);
         }
         return sale;
     }
@@ -323,7 +283,7 @@ public class LoadData {
      */
     public static List<Person> readPersonDatabase() {
         List<Person> persons = new ArrayList<>();
-        Connection conn = connect();
+        Connection conn = Database.connect();
 
         String query = "select personId, type from Person;";
 
@@ -342,7 +302,7 @@ public class LoadData {
             LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
-            disconnect(rs, ps, conn);
+            Database.disconnect(rs, ps, conn);
         }
         return persons;
     }
@@ -354,7 +314,7 @@ public class LoadData {
      */
     public static List<Store> readStoreDatabase() {
         List<Store> stores = new ArrayList<>();
-        Connection conn = connect();
+        Connection conn = Database.connect();
 
         String query = "select storeId from Store;";
 
@@ -373,7 +333,7 @@ public class LoadData {
             LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
-            disconnect(rs, ps, conn);
+            Database.disconnect(rs, ps, conn);
         }
         return stores;
     }
@@ -385,7 +345,7 @@ public class LoadData {
      */
     public static List<Item> readItemDatabase() {
         List<Item> items = new ArrayList<>();
-        Connection conn = connect();
+        Connection conn = Database.connect();
 
         String query = "select itemId from Item;";
 
@@ -404,7 +364,7 @@ public class LoadData {
             LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
-            disconnect(rs, ps, conn);
+            Database.disconnect(rs, ps, conn);
         }
         return items;
     }
@@ -416,7 +376,7 @@ public class LoadData {
      */
     public static List<Sale> readSaleDatabase() {
         List<Sale> sales = new ArrayList<>();
-        Connection conn = connect();
+        Connection conn = Database.connect();
 
         String query = "select saleId from Sale;";
 
@@ -435,7 +395,7 @@ public class LoadData {
             LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {
-            disconnect(rs, ps, conn);
+            Database.disconnect(rs, ps, conn);
         }
         return sales;
     }

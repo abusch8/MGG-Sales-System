@@ -1,13 +1,13 @@
 [
   {
     "basePrice": 59.99,
-    "quantity": 2,
+    "quantity": 0,
     "code": "8sfd79",
     "name": "Call of Duty: Cold War"
   },
   {
     "basePrice": 29.99,
-    "quantity": 1,
+    "quantity": 0,
     "code": "hn7890",
     "name": "Mario Kart 8"
   },
@@ -23,7 +23,7 @@
   },
   {
     "hourlyRate": 99.99,
-    "numHours": 99.99,
+    "numHours": 0.0,
     "code": "a796d4",
     "name": "PS4 Repair"
   },

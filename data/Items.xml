@@ -4,13 +4,13 @@
     <itemCode>8sfd79</itemCode>
     <name>Call of Duty: Cold War</name>
     <basePrice>59.99</basePrice>
-    <quantity>2</quantity>
+    <quantity>0</quantity>
   </NewProduct>
   <UsedProduct>
     <itemCode>hn7890</itemCode>
     <name>Mario Kart 8</name>
     <basePrice>29.99</basePrice>
-    <quantity>1</quantity>
+    <quantity>0</quantity>
   </UsedProduct>
   <Subscription>
     <itemCode>a0s87d</itemCode>
@@ -26,7 +26,7 @@
     <itemCode>a796d4</itemCode>
     <name>PS4 Repair</name>
     <hourlyRate>99.99</hourlyRate>
-    <numHours>99.99</numHours>
+    <numHours>0.0</numHours>
   </Service>
   <Subscription>
     <itemCode>245hjk</itemCode>

@@ -2,6 +2,7 @@
   {
     "storeCode": "1al23k",
     "manager": {
+      "sales": [],
       "personId": "c9fa12",
       "lastName": "Diehl",
       "firstName": "Dylan",
@@ -10,7 +11,7 @@
         "city": "Beatrice",
         "state": "NE",
         "zip": "68503",
-        "country": "USA"
+        "country": "US"
       },
       "emails": [
         "dylandiehl@icloud.com"
@@ -22,11 +23,13 @@
       "state": "IL",
       "zip": "19426",
       "country": "US"
-    }
+    },
+    "sales": []
   },
   {
     "storeCode": "234jkd",
     "manager": {
+      "sales": [],
       "personId": "19ozud",
       "lastName": "Johnson",
       "firstName": "Arnold",
@@ -35,7 +38,7 @@
         "city": "Princeton",
         "state": "NJ",
         "zip": "10335",
-        "country": "USA"
+        "country": "US"
       },
       "emails": [
         "jarnie88@hotmail.com"
@@ -47,11 +50,13 @@
       "state": "NY",
       "zip": "47150",
       "country": "US"
-    }
+    },
+    "sales": []
   },
   {
     "storeCode": "jas890",
     "manager": {
+      "sales": [],
       "personId": "c9fa12",
       "lastName": "Diehl",
       "firstName": "Dylan",
@@ -60,7 +65,7 @@
         "city": "Beatrice",
         "state": "NE",
         "zip": "68503",
-        "country": "USA"
+        "country": "US"
       },
       "emails": [
         "dylandiehl@icloud.com"
@@ -72,11 +77,13 @@
       "state": "FL",
       "zip": "22701",
       "country": "US"
-    }
+    },
+    "sales": []
   },
   {
     "storeCode": "aj90ds",
     "manager": {
+      "sales": [],
       "personId": "19ozud",
       "lastName": "Johnson",
       "firstName": "Arnold",
@@ -85,7 +92,7 @@
         "city": "Princeton",
         "state": "NJ",
         "zip": "10335",
-        "country": "USA"
+        "country": "US"
       },
       "emails": [
         "jarnie88@hotmail.com"
@@ -97,11 +104,13 @@
       "state": "AZ",
       "zip": "85001",
       "country": "US"
-    }
+    },
+    "sales": []
   },
   {
     "storeCode": "3j90fs",
     "manager": {
+      "sales": [],
       "personId": "c9fa12",
       "lastName": "Diehl",
       "firstName": "Dylan",
@@ -110,7 +119,7 @@
         "city": "Beatrice",
         "state": "NE",
         "zip": "68503",
-        "country": "USA"
+        "country": "US"
       },
       "emails": [
         "dylandiehl@icloud.com"
@@ -122,6 +131,7 @@
       "state": "NE",
       "zip": "68501",
       "country": "US"
-    }
+    },
+    "sales": []
   }
 ]

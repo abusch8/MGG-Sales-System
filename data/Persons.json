@@ -1,5 +1,6 @@
 [
   {
+    "sales": [],
     "personId": "c9fa12",
     "lastName": "Diehl",
     "firstName": "Dylan",
@@ -8,7 +9,7 @@
       "city": "Beatrice",
       "state": "NE",
       "zip": "68503",
-      "country": "USA"
+      "country": "US"
     },
     "emails": [
       "dylandiehl@icloud.com"
@@ -23,7 +24,7 @@
       "city": "Lawrence",
       "state": "KS",
       "zip": "65810",
-      "country": "USA"
+      "country": "US"
     },
     "emails": [
       "jsmith75@gmail.com"
@@ -38,13 +39,14 @@
       "city": "Houndog",
       "state": "LA",
       "zip": "19540",
-      "country": "USA"
+      "country": "US"
     },
     "emails": [
       "garyloveslasagna@icloud.com"
     ]
   },
   {
+    "sales": [],
     "personId": "19ozud",
     "lastName": "Johnson",
     "firstName": "Arnold",
@@ -53,13 +55,14 @@
       "city": "Princeton",
       "state": "NJ",
       "zip": "10335",
-      "country": "USA"
+      "country": "US"
     },
     "emails": [
       "jarnie88@hotmail.com"
     ]
   },
   {
+    "sales": [],
     "personId": "zm18te",
     "lastName": "Busch",
     "firstName": "Alex",
@@ -68,7 +71,7 @@
       "city": "Grand Island",
       "state": "NE",
       "zip": "18571",
-      "country": "USA"
+      "country": "US"
     },
     "emails": [
       "hooraygamer@yahoo.com"
@@ -83,7 +86,7 @@
       "city": "Clementine",
       "state": "OR",
       "zip": "59184",
-      "country": "USA"
+      "country": "US"
     },
     "emails": [
       "godgamer25@gmail.com"
@@ -98,7 +101,7 @@
       "city": "Oklahoma City",
       "state": "OK",
       "zip": "18571",
-      "country": "USA"
+      "country": "US"
     },
     "emails": [
       "monkamode@mail.com"
@@ -113,7 +116,7 @@
       "city": "Dubai",
       "state": "CA",
       "zip": "37561",
-      "country": "USA"
+      "country": "US"
     },
     "emails": [
       "dilshadder2k@yahoo.com"
@@ -128,7 +131,7 @@
       "city": "Creatile",
       "state": "ND",
       "zip": "18139",
-      "country": "USA"
+      "country": "US"
     },
     "emails": [
       "xsmith@gmail.com"
@@ -143,7 +146,7 @@
       "city": "Cratile",
       "state": "SD",
       "zip": "18128",
-      "country": "USA"
+      "country": "US"
     },
     "emails": [
       "mcgreg@mail.com",

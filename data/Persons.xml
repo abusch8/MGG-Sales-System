@@ -9,11 +9,12 @@
       <city>Beatrice</city>
       <state>NE</state>
       <zip>68503</zip>
-      <country>USA</country>
+      <country>US</country>
     </address>
     <emails>
       <email>dylandiehl@icloud.com</email>
     </emails>
+    <sales/>
   </Employee>
   <Customer>
     <personId>oz901n</personId>
@@ -24,7 +25,7 @@
       <city>Lawrence</city>
       <state>KS</state>
       <zip>65810</zip>
-      <country>USA</country>
+      <country>US</country>
     </address>
     <emails>
       <email>jsmith75@gmail.com</email>
@@ -39,7 +40,7 @@
       <city>Houndog</city>
       <state>LA</state>
       <zip>19540</zip>
-      <country>USA</country>
+      <country>US</country>
     </address>
     <emails>
       <email>garyloveslasagna@icloud.com</email>
@@ -54,11 +55,12 @@
       <city>Princeton</city>
       <state>NJ</state>
       <zip>10335</zip>
-      <country>USA</country>
+      <country>US</country>
     </address>
     <emails>
       <email>jarnie88@hotmail.com</email>
     </emails>
+    <sales/>
   </Employee>
   <Employee>
     <personId>zm18te</personId>
@@ -69,11 +71,12 @@
       <city>Grand Island</city>
       <state>NE</state>
       <zip>18571</zip>
-      <country>USA</country>
+      <country>US</country>
     </address>
     <emails>
       <email>hooraygamer@yahoo.com</email>
     </emails>
+    <sales/>
   </Employee>
   <GoldMember>
     <personId>1zqo0t</personId>
@@ -84,7 +87,7 @@
       <city>Clementine</city>
       <state>OR</state>
       <zip>59184</zip>
-      <country>USA</country>
+      <country>US</country>
     </address>
     <emails>
       <email>godgamer25@gmail.com</email>
@@ -99,7 +102,7 @@
       <city>Oklahoma City</city>
       <state>OK</state>
       <zip>18571</zip>
-      <country>USA</country>
+      <country>US</country>
     </address>
     <emails>
       <email>monkamode@mail.com</email>
@@ -114,7 +117,7 @@
       <city>Dubai</city>
       <state>CA</state>
       <zip>37561</zip>
-      <country>USA</country>
+      <country>US</country>
     </address>
     <emails>
       <email>dilshadder2k@yahoo.com</email>
@@ -129,7 +132,7 @@
       <city>Creatile</city>
       <state>ND</state>
       <zip>18139</zip>
-      <country>USA</country>
+      <country>US</country>
     </address>
     <emails>
       <email>xsmith@gmail.com</email>
@@ -144,7 +147,7 @@
       <city>Cratile</city>
       <state>SD</state>
       <zip>18128</zip>
-      <country>USA</country>
+      <country>US</country>
     </address>
     <emails>
       <email>mcgreg@mail.com</email>

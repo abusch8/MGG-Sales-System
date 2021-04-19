@@ -16,7 +16,7 @@ public class SalesReport {
         List<Person> persons = LoadData.readPersonDatabase();
         List<Store> stores = LoadData.readStoreDatabase();
         List<Sale> sales = LoadData.readSaleDatabase();
-
+//
 //        List<Person> persons = ReadFile.readPersonsCSV();
 //        List<Store> stores = ReadFile.readStoresCSV(persons);
 //        List<Item> items = ReadFile.readItemsCSV();

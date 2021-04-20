@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//these are the ones i imported in the push
+//these are the ones that were imported in the push
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -577,7 +577,7 @@ public class SalesData {
 			ps = conn.prepareStatement(query3);
 			ps.setInt(1, saleId);
 			ps.setInt(2, itemId);
-			//i have no clue if this works ¯\_(ツ)_/¯
+			//i have no clue if this works. oh well!
 			ps.setDate(3, (java.sql.Date) sDate);
 			ps.setDate(4, (java.sql.Date) eDate);
 

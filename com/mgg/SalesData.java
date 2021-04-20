@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//these are the ones that were imported in the push
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -223,7 +222,7 @@ public class SalesData {
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, email);
 			ps.setInt(2, personId);
-
+			ps.executeUpdate();
 		} catch (SQLException e) {
 			LOGGER.error(e);
 			throw new RuntimeException(e);
@@ -515,6 +514,7 @@ public class SalesData {
 	 * @param billedHours
 	 */
 	public static void addServiceToSale(String saleCode, String itemCode, String employeeCode, double billedHours) {
+
 		Connection conn = Database.connect();
 
 		String query1 = "select personId from Person where personCode = ?;";
@@ -549,7 +549,6 @@ public class SalesData {
 			while(rs.next()) {
 				itemId = rs.getInt("itemId");
 			}
-			System.out.printf("BILLEDHOURS: %f\n", billedHours);
 			ps = conn.prepareStatement(query);
 			ps.setInt(1,saleId);
 			ps.setString(2,saleCode);

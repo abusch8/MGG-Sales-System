@@ -33,14 +33,20 @@ public class SalesData {
 	public static void removeAllSales() {
 		Connection conn = Database.connect();
 
-		String query = "truncate Sale;";
+		String query = "SET FOREIGN_KEY_CHECKS = 0;";
+		String query2 = "truncate Sale;";
+		String query3 = "SET FOREIGN_KEY_CHECKS = 1;";
 
 		PreparedStatement ps = null;
 
 		try {
 			ps = conn.prepareStatement(query);
-			LOGGER.info(ps);
 			ps.executeUpdate();
+			ps = conn.prepareStatement(query2);
+			ps.executeUpdate();
+			ps = conn.prepareStatement(query3);
+			ps.executeUpdate();
+
 		} catch (SQLException e) {
 			LOGGER.error(e);
 			throw new RuntimeException(e);
@@ -65,7 +71,7 @@ public class SalesData {
 		try {
 			ps = conn.prepareStatement(query);
 			ps.setString(1, saleCode);
-			LOGGER.info(ps);
+			//LOGGER.info(ps);
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			LOGGER.error(e);
@@ -79,6 +85,46 @@ public class SalesData {
 	 * Clears all tables of the database of all records.
 	 */
 	public static void clearDatabase() {
+		Connection conn = Database.connect();
+
+		String query = "SET FOREIGN_KEY_CHECKS = 0;";
+		String query2 = "truncate SaleItem;";
+		String query3 = "truncate Sale;";
+		String query4 = "truncate Store;";
+		String query5 = "truncate Email;";
+		String query6 = "truncate Person;";
+		String query7 = "truncate Item;";
+		String query8 = "truncate Address;";
+		String query9 = "SET FOREIGN_KEY_CHECKS = 1;";
+
+		PreparedStatement ps = null;
+
+		try {
+			ps = conn.prepareStatement(query);
+			ps.executeUpdate();
+			ps = conn.prepareStatement(query2);
+			ps.executeUpdate();
+			ps = conn.prepareStatement(query3);
+			ps.executeUpdate();
+			ps = conn.prepareStatement(query4);
+			ps.executeUpdate();
+			ps = conn.prepareStatement(query5);
+			ps.executeUpdate();
+			ps = conn.prepareStatement(query6);
+			ps.executeUpdate();
+			ps = conn.prepareStatement(query7);
+			ps.executeUpdate();
+			ps = conn.prepareStatement(query8);
+			ps.executeUpdate();
+			ps = conn.prepareStatement(query9);
+			ps.executeUpdate();
+
+		} catch (SQLException e) {
+			LOGGER.error(e);
+			throw new RuntimeException(e);
+		} finally {
+			Database.disconnect(null, ps, conn);
+		}
 
 	}
 
@@ -103,25 +149,41 @@ public class SalesData {
 
 		String query1 = "insert into Address(street, city, state, zip, country) values (?, ?, ?, ?, ?);";
 		String query2 = "insert into Person(personCode, type, lastName, firstName, addressId) values (?, ?, ?, ?, ?);";
+		String query3 = "select addressId from Address where street=? and city=? and state=? and zip=? and country=?;";
+
 
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
 		try {
+			int zipCode = Integer.parseInt(zip);
+
+
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, street);
 			ps.setString(2, city);
 			ps.setString(3, state);
-			ps.setString(4, zip);
+			ps.setInt(4, zipCode);
+			ps.setString(5, country);
+			ps.executeUpdate();
+
+
+			ps = conn.prepareStatement(query3);
+			ps.setString(1, street);
+			ps.setString(2, city);
+			ps.setString(3, state);
+			ps.setInt(4, zipCode);
 			ps.setString(5, country);
 			rs = ps.executeQuery();
+
+			int addressId = rs.getInt("addressId");
 
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, personCode);
 			ps.setString(2, type);
 			ps.setString(3, lastName);
 			ps.setString(4, firstName);
-			ps.setString(5, rs.getString("addressId"));
+			ps.setInt(5, addressId);
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
@@ -185,7 +247,7 @@ public class SalesData {
 		String query2 = "insert into Address(street, city, state, zip, country) values (?, ?, ?, ?, ?);";
 		String query3 = "select from Address where street = ? and city = ? and state = ? and zip = ? and country = ?;";
 		String query4 = "insert into Store(storeCode, managerId, addressId) values (?, ?, ?);";
-
+		int zipCode = Integer.parseInt(zip);
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
@@ -200,7 +262,7 @@ public class SalesData {
 			ps.setString(1, street);
 			ps.setString(2, city);
 			ps.setString(3, state);
-			ps.setString(4, zip);
+			ps.setInt(4, zipCode);
 			ps.setString(5, country);
 			ps.executeUpdate();
 
@@ -208,7 +270,7 @@ public class SalesData {
 			ps.setString(1, street);
 			ps.setString(2, city);
 			ps.setString(3, state);
-			ps.setString(4, zip);
+			ps.setInt(4, zipCode);
 			ps.setString(5, country);
 			rs = ps.executeQuery();
 

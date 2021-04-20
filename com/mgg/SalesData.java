@@ -157,7 +157,7 @@ public class SalesData {
 
 		try {
 			int zipCode = Integer.parseInt(zip);
-
+			int addressId = 0;
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, street);
@@ -176,8 +176,9 @@ public class SalesData {
 			ps.setString(5, country);
 			rs = ps.executeQuery();
 
-			int addressId = rs.getInt("addressId");
-
+			while(rs.next()) {
+				addressId = rs.getInt("addressId");
+			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, personCode);
 			ps.setString(2, type);
@@ -211,13 +212,17 @@ public class SalesData {
 		ResultSet rs = null;
 
 		try {
+			int personId = 0;
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, personCode);
 			rs = ps.executeQuery();
+			while(rs.next()) {
+				personId = rs.getInt("personId");
+			}
 
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, email);
-			ps.setInt(2, rs.getInt("personId"));
+			ps.setInt(2, personId);
 
 		} catch (SQLException e) {
 			LOGGER.error(e);
@@ -245,19 +250,22 @@ public class SalesData {
 
 		String query1 = "select personId from Person where personCode = ?;";
 		String query2 = "insert into Address(street, city, state, zip, country) values (?, ?, ?, ?, ?);";
-		String query3 = "select from Address where street = ? and city = ? and state = ? and zip = ? and country = ?;";
+		String query3 = "select addressId from Address where street = ? and city = ? and state = ? and zip = ? and country = ?;";
 		String query4 = "insert into Store(storeCode, managerId, addressId) values (?, ?, ?);";
 		int zipCode = Integer.parseInt(zip);
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
 		try {
+			int managerId = 0;
+			int addressId = 0;
+
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, managerCode);
 			rs = ps.executeQuery();
-
-			int managerId = rs.getInt("personId");
-
+			while(rs.next()) {
+				managerId = rs.getInt("personId");
+			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, street);
 			ps.setString(2, city);
@@ -273,9 +281,9 @@ public class SalesData {
 			ps.setInt(4, zipCode);
 			ps.setString(5, country);
 			rs = ps.executeQuery();
-
-			int addressId = rs.getInt("addressId");
-
+			while(rs.next()) {
+				addressId = rs.getInt("addressId");
+			}
 			ps = conn.prepareStatement(query4);
 			ps.setString(1, storeCode);
 			ps.setInt(2, managerId);
@@ -307,17 +315,24 @@ public class SalesData {
 		Connection conn = Database.connect();
 
 		String query = "insert into Item(itemCode, type, name, price) values (?, ?, ?, ?);";
-
+		String query2 = "insert into Item(itemCode, type, name) values (?, ?, ?);";
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-
 		try {
-			ps = conn.prepareStatement(query);
-			ps.setString(1, itemCode);
-			ps.setString(2, type);
-			ps.setString(3, name);
-			ps.setDouble(4, basePrice);
-			ps.executeUpdate();
+			if(basePrice == null) {
+				ps = conn.prepareStatement(query2);
+				ps.setString(1, itemCode);
+				ps.setString(2, type);
+				ps.setString(3, name);
+				ps.executeUpdate();
+			} else {
+				ps = conn.prepareStatement(query);
+				ps.setString(1, itemCode);
+				ps.setString(2, type);
+				ps.setString(3, name);
+				ps.setDouble(4, basePrice);
+				ps.executeUpdate();
+			}
 
 		} catch (SQLException e) {
 			LOGGER.error(e);
@@ -346,24 +361,28 @@ public class SalesData {
 		ResultSet rs = null;
 
 		try {
+			int storeId = 0;
+			int customerId = 0;
+			int salespersonId = 0;
+
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, storeCode);
 			rs = ps.executeQuery();
-
-			int storeId = rs.getInt("storeId");
-
+			while(rs.next()) {
+				storeId = rs.getInt("storeId");
+			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, customerCode);
 			rs = ps.executeQuery();
-
-			int customerId = rs.getInt("personId");
-
+			while(rs.next()) {
+				customerId = rs.getInt("personId");
+			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, salesPersonCode);
 			rs = ps.executeQuery();
-
-			int salespersonId = rs.getInt("personId");
-
+			while(rs.next()) {
+				salespersonId = rs.getInt("personId");
+			}
 			ps = conn.prepareStatement(query3);
 			ps.setString(1, saleCode);
 			ps.setInt(2, storeId);
@@ -400,19 +419,21 @@ public class SalesData {
 		ResultSet rs = null;
 
 		try {
+			int saleId = 0;
+			int itemId = 0;
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, saleCode);
 			rs = ps.executeQuery();
-
-			int saleId = rs.getInt("saleId");
-
+			while(rs.next()) {
+				saleId = rs.getInt("saleId");
+			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, itemCode);
 			rs = ps.executeQuery();
-
-			int itemId = rs.getInt("itemId");
-
+			while(rs.next()) {
+				itemId = rs.getInt("itemId");
+			}
 			ps = conn.prepareStatement(query3);
 			ps.setInt(1, saleId);
 			ps.setString(2, saleCode);
@@ -448,19 +469,21 @@ public class SalesData {
 		ResultSet rs = null;
 
 		try {
+			int saleId = 0;
+			int itemId = 0;
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, saleCode);
 			rs = ps.executeQuery();
-
-			int saleId = rs.getInt("saleId");
-
+			while(rs.next()) {
+				saleId = rs.getInt("saleId");
+			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, itemCode);
 			rs = ps.executeQuery();
-
-			int itemId = rs.getInt("itemId");
-
+			while(rs.next()) {
+				itemId = rs.getInt("itemId");
+			}
 			ps = conn.prepareStatement(query3);
 			ps.setInt(1,saleId);
 			ps.setString(2,saleCode);
@@ -499,24 +522,27 @@ public class SalesData {
 		ResultSet rs = null;
 
 		try {
+			int employeeId = 0;
+			int saleId = 0;
+			int itemId = 0;
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, employeeCode);
 			rs = ps.executeQuery();
-
-			int employeeId = rs.getInt("personId");
-
+			while(rs.next()) {
+				employeeId = rs.getInt("personId");
+			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, saleCode);
 			rs = ps.executeQuery();
-
-			int saleId = rs.getInt("saleId");
-
+			while(rs.next()) {
+				saleId = rs.getInt("saleId");
+			}
 			ps = conn.prepareStatement(query3);
 			ps.setString(1, itemCode);
-
-			int itemId = rs.getInt("itemId");
-
+			while(rs.next()) {
+				itemId = rs.getInt("itemId");
+			}
 			ps = conn.prepareStatement(query);
 			ps.setInt(1,saleId);
 			ps.setString(2,saleCode);
@@ -558,19 +584,21 @@ public class SalesData {
 		ResultSet rs = null;
 
 		try {
+			int saleId = 0;
+			int itemId = 0;
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, saleCode);
 			rs = ps.executeQuery();
-
-			int saleId = rs.getInt("saleId");
-
+			while(rs.next()) {
+				saleId = rs.getInt("saleId");
+			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, itemCode);
 			rs = ps.executeQuery();
-
-			int itemId = rs.getInt("itemId");
-
+			while(rs.next()) {
+				itemId = rs.getInt("itemId");
+			}
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); //ex: 2020-03-31
 			Date sDate = format.parse(startDate);
 			Date eDate = format.parse(endDate);

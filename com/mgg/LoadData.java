@@ -81,12 +81,14 @@ public class LoadData {
         ResultSet rs = null;
 
         try {
+
             ps = conn.prepareStatement(query1);
             ps.setInt(1, personId);
             LOGGER.info(ps);
             rs = ps.executeQuery();
 
             if (rs.next()) {
+
                 String personCode = rs.getString("personCode");
                 String lastName = rs.getString("lastName");
                 String firstName = rs.getString("firstName");

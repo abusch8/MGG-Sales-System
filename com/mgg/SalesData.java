@@ -10,6 +10,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+//these are the ones i imported in the push
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Database interface class
@@ -422,6 +426,52 @@ public class SalesData {
 	 * @param billedHours
 	 */
 	public static void addServiceToSale(String saleCode, String itemCode, String employeeCode, double billedHours) {
+		Connection conn = Database.connect();
+
+		String query1 = "select personId from Person where personCode = ?;";
+		String query2 = "select saleId from Sale where saleCode = ?;";
+		String query3 = "select itemId from Item where itemCode = ?;";
+		String query = "insert into SaleItem(saleId, saleCode, itemId, employeeId, numberOfHours) values (?,?,?,?,?);";
+
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+
+			ps = conn.prepareStatement(query1);
+			ps.setString(1, employeeCode);
+			rs = ps.executeQuery();
+
+			int employeeId = rs.getInt("personId");
+
+			ps = conn.prepareStatement(query2);
+			ps.setString(1, saleCode);
+			rs = ps.executeQuery();
+
+			int saleId = rs.getInt("saleId");
+
+			ps = conn.prepareStatement(query3);
+			ps.setString(1, itemCode);
+
+			int itemId = rs.getInt("itemId");
+
+			ps = conn.prepareStatement(query);
+			ps.setInt(1,saleId);
+			ps.setString(2,saleCode);
+			ps.setInt(3,itemId);
+			ps.setInt(4,employeeId);
+			ps.setDouble(5, billedHours);
+			ps.executeUpdate();
+
+
+		} catch(SQLException e) {
+			LOGGER.error(e);
+			throw new RuntimeException(e);
+		} finally {
+			Database.disconnect(rs, ps, conn);
+		}
+
+
 	}
 
 	/**
@@ -459,13 +509,17 @@ public class SalesData {
 
 			int itemId = rs.getInt("itemId");
 
-//			ps = conn.prepareStatement(query3);
-//			ps.setInt(1, saleId);
-//			ps.setInt(2, itemId);
-//			ps.setDate(3, LocalDate.parse(startDate));
-//			ps.setDate(4, endDate);
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); //ex: 2020-03-31
+			Date sDate = format.parse(startDate);
+			Date eDate = format.parse(endDate);
+			ps = conn.prepareStatement(query3);
+			ps.setInt(1, saleId);
+			ps.setInt(2, itemId);
+			//i have no clue if this works ¯\_(ツ)_/¯
+			ps.setDate(3, (java.sql.Date) sDate);
+			ps.setDate(4, (java.sql.Date) eDate);
 
-		} catch (SQLException e) {
+		} catch (SQLException | ParseException e) {
 			LOGGER.error(e);
 			throw new RuntimeException(e);
 		} finally {

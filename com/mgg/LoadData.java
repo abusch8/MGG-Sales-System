@@ -254,7 +254,7 @@ public class LoadData {
                         }
                         case "Service" -> {
                             Employee employee = (Employee) retrievePerson(rs.getInt("employeeId"));
-                            double numHours = rs.getInt("numberOfHours");
+                            double numHours = rs.getDouble("numberOfHours");
                             item = new Service((Service) item, employee, numHours);
                         }
                         case "Subscription" -> {

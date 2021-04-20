@@ -255,10 +255,10 @@ public class SalesData {
 		int zipCode = Integer.parseInt(zip);
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		int managerId = 0;
+		int addressId = 0;
 
 		try {
-			int managerId = 0;
-			int addressId = 0;
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, managerCode);
@@ -266,6 +266,7 @@ public class SalesData {
 			while(rs.next()) {
 				managerId = rs.getInt("personId");
 			}
+
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, street);
 			ps.setString(2, city);
@@ -284,6 +285,7 @@ public class SalesData {
 			while(rs.next()) {
 				addressId = rs.getInt("addressId");
 			}
+
 			ps = conn.prepareStatement(query4);
 			ps.setString(1, storeCode);
 			ps.setInt(2, managerId);
@@ -291,7 +293,9 @@ public class SalesData {
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
-			LOGGER.error(e);
+			//LOGGER.error(e);
+			System.out.println(managerId);
+			System.out.println(addressId);
 			throw new RuntimeException(e);
 		} finally {
 			Database.disconnect(rs, ps, conn);
@@ -354,7 +358,7 @@ public class SalesData {
 		Connection conn = Database.connect();
 
 		String query1 = "select storeId from Store where storeCode = ?;";
-		String query2 = "select PersonId from Person where personCode = ?;";
+		String query2 = "select personId from Person where personCode = ?;";
 		String query3 = "insert into Sale(saleCode, storeId, customerId, salespersonId) values (?, ?, ?, ?);";
 
 		PreparedStatement ps = null;
@@ -520,11 +524,12 @@ public class SalesData {
 
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		int employeeId = 0;
+		int saleId = 0;
+		int itemId = 0;
 
 		try {
-			int employeeId = 0;
-			int saleId = 0;
-			int itemId = 0;
+
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, employeeCode);
@@ -540,9 +545,11 @@ public class SalesData {
 			}
 			ps = conn.prepareStatement(query3);
 			ps.setString(1, itemCode);
+			rs = ps.executeQuery();
 			while(rs.next()) {
 				itemId = rs.getInt("itemId");
 			}
+			System.out.printf("BILLEDHOURS: %f\n", billedHours);
 			ps = conn.prepareStatement(query);
 			ps.setInt(1,saleId);
 			ps.setString(2,saleCode);
@@ -553,6 +560,9 @@ public class SalesData {
 
 
 		} catch(SQLException e) {
+			System.out.println(employeeId);
+			System.out.println(saleId);
+			System.out.println(itemId);
 			LOGGER.error(e);
 			throw new RuntimeException(e);
 		} finally {
@@ -578,7 +588,7 @@ public class SalesData {
 
 		String query1 = "select saleId from Sale where saleCode = ?;";
 		String query2 = "select itemId from Item where itemCode = ?;";
-		String query3 = "insert into SaleItem(saleId, saleCode, itemId, beginDate, endDate) value (?, ?, ?, ?);";
+		String query3 = "insert into SaleItem(saleId, saleCode, itemId, beginDate, endDate) value (?, ?, ?, ?, ?);";
 
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -599,16 +609,19 @@ public class SalesData {
 			while(rs.next()) {
 				itemId = rs.getInt("itemId");
 			}
+
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); //ex: 2020-03-31
 			Date sDate = format.parse(startDate);
 			Date eDate = format.parse(endDate);
+			java.sql.Date SQLsDate = new java.sql.Date(sDate.getTime());
+			java.sql.Date SQLeDate = new java.sql.Date(eDate.getTime());
 			ps = conn.prepareStatement(query3);
 			ps.setInt(1, saleId);
-			ps.setInt(2, itemId);
-			//i have no clue if this works. oh well!
-			ps.setDate(3, (java.sql.Date) sDate);
-			ps.setDate(4, (java.sql.Date) eDate);
-
+			ps.setString(2, saleCode);
+			ps.setInt(3, itemId);
+			ps.setDate(4, SQLsDate);
+			ps.setDate(5, SQLeDate);
+			ps.executeUpdate();
 		} catch (SQLException | ParseException e) {
 			LOGGER.error(e);
 			throw new RuntimeException(e);

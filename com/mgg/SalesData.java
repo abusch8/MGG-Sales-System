@@ -167,7 +167,7 @@ public class SalesData {
 			ps.setString(5, country);
 			ps.executeUpdate();
 
-			// i believe something with rs next should happen here
+			
 			ps = conn.prepareStatement(query3);
 			ps.setString(1, street);
 			ps.setString(2, city);

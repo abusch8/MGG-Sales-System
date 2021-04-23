@@ -293,8 +293,6 @@ public class SalesData {
 
 		} catch (SQLException e) {
 			//LOGGER.error(e);
-			System.out.println(managerId);
-			System.out.println(addressId);
 			throw new RuntimeException(e);
 		} finally {
 			Database.disconnect(rs, ps, conn);
@@ -559,9 +557,6 @@ public class SalesData {
 
 
 		} catch(SQLException e) {
-			System.out.println(employeeId);
-			System.out.println(saleId);
-			System.out.println(itemId);
 			LOGGER.error(e);
 			throw new RuntimeException(e);
 		} finally {

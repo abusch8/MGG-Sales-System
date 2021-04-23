@@ -32,18 +32,23 @@ public class SalesData {
 	public static void removeAllSales() {
 		Connection conn = Database.connect();
 
-		String query = "SET FOREIGN_KEY_CHECKS = 0;";
+		String query1 = "SET FOREIGN_KEY_CHECKS = 0;";
 		String query2 = "truncate Sale;";
 		String query3 = "SET FOREIGN_KEY_CHECKS = 1;";
 
 		PreparedStatement ps = null;
 
 		try {
-			ps = conn.prepareStatement(query);
+			ps = conn.prepareStatement(query1);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 			ps = conn.prepareStatement(query2);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 			ps = conn.prepareStatement(query3);
+			LOGGER.info(ps);
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
@@ -70,8 +75,9 @@ public class SalesData {
 		try {
 			ps = conn.prepareStatement(query);
 			ps.setString(1, saleCode);
-			//LOGGER.info(ps);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 		} catch (SQLException e) {
 			LOGGER.error(e);
 			throw new RuntimeException(e);
@@ -86,7 +92,7 @@ public class SalesData {
 	public static void clearDatabase() {
 		Connection conn = Database.connect();
 
-		String query = "SET FOREIGN_KEY_CHECKS = 0;";
+		String query1 = "SET FOREIGN_KEY_CHECKS = 0;";
 		String query2 = "truncate SaleItem;";
 		String query3 = "truncate Sale;";
 		String query4 = "truncate Store;";
@@ -99,23 +105,40 @@ public class SalesData {
 		PreparedStatement ps = null;
 
 		try {
-			ps = conn.prepareStatement(query);
+			ps = conn.prepareStatement(query1);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 			ps = conn.prepareStatement(query2);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 			ps = conn.prepareStatement(query3);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 			ps = conn.prepareStatement(query4);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 			ps = conn.prepareStatement(query5);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 			ps = conn.prepareStatement(query6);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 			ps = conn.prepareStatement(query7);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 			ps = conn.prepareStatement(query8);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 			ps = conn.prepareStatement(query9);
+			LOGGER.info(ps);
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
@@ -164,6 +187,7 @@ public class SalesData {
 			ps.setString(3, state);
 			ps.setInt(4, zipCode);
 			ps.setString(5, country);
+			LOGGER.info(ps);
 			ps.executeUpdate();
 
 			
@@ -173,17 +197,20 @@ public class SalesData {
 			ps.setString(3, state);
 			ps.setInt(4, zipCode);
 			ps.setString(5, country);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
 
-			while(rs.next()) {
+			while (rs.next()) {
 				addressId = rs.getInt("addressId");
 			}
+
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, personCode);
 			ps.setString(2, type);
 			ps.setString(3, lastName);
 			ps.setString(4, firstName);
 			ps.setInt(5, addressId);
+			LOGGER.info(ps);
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
@@ -214,15 +241,19 @@ public class SalesData {
 			int personId = 0;
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, personCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				personId = rs.getInt("personId");
 			}
 
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, email);
 			ps.setInt(2, personId);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 		} catch (SQLException e) {
 			LOGGER.error(e);
 			throw new RuntimeException(e);
@@ -258,11 +289,12 @@ public class SalesData {
 		int addressId = 0;
 
 		try {
-
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, managerCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				managerId = rs.getInt("personId");
 			}
 
@@ -272,6 +304,7 @@ public class SalesData {
 			ps.setString(3, state);
 			ps.setInt(4, zipCode);
 			ps.setString(5, country);
+			LOGGER.info(ps);
 			ps.executeUpdate();
 
 			ps = conn.prepareStatement(query3);
@@ -280,8 +313,10 @@ public class SalesData {
 			ps.setString(3, state);
 			ps.setInt(4, zipCode);
 			ps.setString(5, country);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				addressId = rs.getInt("addressId");
 			}
 
@@ -289,12 +324,11 @@ public class SalesData {
 			ps.setString(1, storeCode);
 			ps.setInt(2, managerId);
 			ps.setInt(3, addressId);
+			LOGGER.info(ps);
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
-			//LOGGER.error(e);
-			System.out.println(managerId);
-			System.out.println(addressId);
+			LOGGER.error(e);
 			throw new RuntimeException(e);
 		} finally {
 			Database.disconnect(rs, ps, conn);
@@ -322,11 +356,12 @@ public class SalesData {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
-			if(basePrice == null) {
+			if (basePrice == null) {
 				ps = conn.prepareStatement(query2);
 				ps.setString(1, itemCode);
 				ps.setString(2, type);
 				ps.setString(3, name);
+				LOGGER.info(ps);
 				ps.executeUpdate();
 			} else {
 				ps = conn.prepareStatement(query);
@@ -334,6 +369,7 @@ public class SalesData {
 				ps.setString(2, type);
 				ps.setString(3, name);
 				ps.setDouble(4, basePrice);
+				LOGGER.info(ps);
 				ps.executeUpdate();
 			}
 
@@ -370,27 +406,37 @@ public class SalesData {
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, storeCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				storeId = rs.getInt("storeId");
 			}
+
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, customerCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				customerId = rs.getInt("personId");
 			}
+
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, salesPersonCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				salespersonId = rs.getInt("personId");
 			}
+
 			ps = conn.prepareStatement(query3);
 			ps.setString(1, saleCode);
 			ps.setInt(2, storeId);
 			ps.setInt(3, customerId);
 			ps.setInt(4, salespersonId);
+			LOGGER.info(ps);
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
@@ -427,21 +473,27 @@ public class SalesData {
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, saleCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
+
 			while(rs.next()) {
 				saleId = rs.getInt("saleId");
 			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, itemCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				itemId = rs.getInt("itemId");
 			}
+
 			ps = conn.prepareStatement(query3);
 			ps.setInt(1, saleId);
 			ps.setString(2, saleCode);
 			ps.setInt(3, itemId);
 			ps.setInt(4, quantity);
+			LOGGER.info(ps);
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
@@ -477,21 +529,28 @@ public class SalesData {
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, saleCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				saleId = rs.getInt("saleId");
 			}
+
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, itemCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				itemId = rs.getInt("itemId");
 			}
+
 			ps = conn.prepareStatement(query3);
 			ps.setInt(1,saleId);
 			ps.setString(2,saleCode);
 			ps.setInt(3,itemId);
 			ps.setDouble(4,amount);
+			LOGGER.info(ps);
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
@@ -530,45 +589,47 @@ public class SalesData {
 
 		try {
 
-
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, employeeCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				employeeId = rs.getInt("personId");
 			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, saleCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				saleId = rs.getInt("saleId");
 			}
+
 			ps = conn.prepareStatement(query3);
 			ps.setString(1, itemCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				itemId = rs.getInt("itemId");
 			}
+
 			ps = conn.prepareStatement(query);
 			ps.setInt(1,saleId);
 			ps.setString(2,saleCode);
 			ps.setInt(3,itemId);
 			ps.setInt(4,employeeId);
 			ps.setDouble(5, billedHours);
+			LOGGER.info(ps);
 			ps.executeUpdate();
 
-
 		} catch(SQLException e) {
-			System.out.println(employeeId);
-			System.out.println(saleId);
-			System.out.println(itemId);
 			LOGGER.error(e);
 			throw new RuntimeException(e);
 		} finally {
 			Database.disconnect(rs, ps, conn);
 		}
-
-
 	}
 
 	/**
@@ -598,14 +659,19 @@ public class SalesData {
 
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, saleCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				saleId = rs.getInt("saleId");
 			}
+
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, itemCode);
+			LOGGER.info(ps);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+
+			while (rs.next()) {
 				itemId = rs.getInt("itemId");
 			}
 
@@ -620,7 +686,9 @@ public class SalesData {
 			ps.setInt(3, itemId);
 			ps.setDate(4, SQLsDate);
 			ps.setDate(5, SQLeDate);
+			LOGGER.info(ps);
 			ps.executeUpdate();
+
 		} catch (SQLException | ParseException e) {
 			LOGGER.error(e);
 			throw new RuntimeException(e);
@@ -628,6 +696,4 @@ public class SalesData {
 			Database.disconnect(rs, ps, conn);
 		}
 	}
-
-
 }

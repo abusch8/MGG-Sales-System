@@ -81,12 +81,14 @@ public class LoadData {
         ResultSet rs = null;
 
         try {
+
             ps = conn.prepareStatement(query1);
             ps.setInt(1, personId);
             LOGGER.info(ps);
             rs = ps.executeQuery();
 
             if (rs.next()) {
+
                 String personCode = rs.getString("personCode");
                 String lastName = rs.getString("lastName");
                 String firstName = rs.getString("firstName");
@@ -254,7 +256,7 @@ public class LoadData {
                         }
                         case "Service" -> {
                             Employee employee = (Employee) retrievePerson(rs.getInt("employeeId"));
-                            double numHours = rs.getInt("numberOfHours");
+                            double numHours = rs.getDouble("numberOfHours");
                             item = new Service((Service) item, employee, numHours);
                         }
                         case "Subscription" -> {

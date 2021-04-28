@@ -1,13 +1,17 @@
 package com.mgg;
 
+import com.mgg.entity.Item;
+import com.mgg.entity.Person;
+import com.mgg.entity.Store;
+import com.mgg.io.ReadFile;
+import com.mgg.io.WriteFile;
+
 import java.util.List;
 
 /**
  * @author Dylan Diehl
  * @author Alex Busch
- */
-
-/**
+ *
  * Main class for running all of the classes, combining them to get our desired result.
  */
 public class DataConverter {

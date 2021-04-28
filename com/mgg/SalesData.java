@@ -529,18 +529,18 @@ public class SalesData {
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, employeeCode);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				employeeId = rs.getInt("personId");
 			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, saleCode);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				saleId = rs.getInt("saleId");
 			}
 			ps = conn.prepareStatement(query3);
 			ps.setString(1, itemCode);
-			while(rs.next()) {
+			while (rs.next()) {
 				itemId = rs.getInt("itemId");
 			}
 			ps = conn.prepareStatement(query);
@@ -590,13 +590,13 @@ public class SalesData {
 			ps = conn.prepareStatement(query1);
 			ps.setString(1, saleCode);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				saleId = rs.getInt("saleId");
 			}
 			ps = conn.prepareStatement(query2);
 			ps.setString(1, itemCode);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				itemId = rs.getInt("itemId");
 			}
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); //ex: 2020-03-31
@@ -608,6 +608,7 @@ public class SalesData {
 			//i have no clue if this works. oh well!
 			ps.setDate(3, (java.sql.Date) sDate);
 			ps.setDate(4, (java.sql.Date) eDate);
+			ps.executeUpdate();
 
 		} catch (SQLException | ParseException e) {
 			LOGGER.error(e);

@@ -1,5 +1,7 @@
-package com.mgg.sql;
+package com.mgg;
 
+import com.mgg.sql.Database;
+import com.mgg.sql.LoadData;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -250,7 +252,7 @@ public class SalesData {
             ps.setString(1, email);
             ps.setInt(2, personId);
             LOGGER.info(ps);
-            ps.executeQuery();
+            ps.executeUpdate();
 
         } catch (SQLException e) {
             LOGGER.error(e);

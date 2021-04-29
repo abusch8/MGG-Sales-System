@@ -1,7 +1,5 @@
 package com.mgg.util;
 
-import com.mgg.entity.Sale;
-
 import java.util.Comparator;
 import java.util.List;
 
@@ -21,26 +19,18 @@ public class SortedList<T> {
     public void add(T element) {
         if (this.underlyingList.isEmpty()) {
             this.underlyingList.addToStart(element);
-
-            System.out.println(((Sale)element).getSaleCode());
-
         } else {
+            boolean isInList = false;
             for (int i = 0; i < this.underlyingList.getSize(); i++) {
                 int cmp = this.cmp.compare(element, this.underlyingList.getElementAtIndex(i));
-//                if (cmp < 1) { //
-//                    if (i == 0) {
-//
-//                    }
-//                } else {
-//                    this.underlyingList.addElementAtIndex(element, i);
-//                    break;
-//                }
-//
                 if (cmp < 1) { //0 & -1
                     this.underlyingList.addElementAtIndex(element, i);
-                    System.out.println(((Sale)element).getSaleCode());
+                    isInList = true;
                     break;
                 }
+            }
+            if (!isInList) {
+                this.underlyingList.addToEnd(element);
             }
         }
     }

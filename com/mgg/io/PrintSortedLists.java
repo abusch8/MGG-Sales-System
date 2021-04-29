@@ -18,12 +18,7 @@ public class PrintSortedLists {
             return cmp;
         };
 
-//        Comparator<Sale> cmpByTotal = Comparator.comparingDouble(Sale::calculateGrandTotal);
-
-        Comparator<Sale> cmpByTotal = (a,b) -> {
-            return Double.compare(b.calculateGrandTotal(), a.calculateGrandTotal());
-        };
-
+        Comparator<Sale> cmpByTotal = (a,b) -> Double.compare(b.calculateGrandTotal(), a.calculateGrandTotal());
 
         Comparator<Sale> cmpByStore = (a, b) -> {
             int cmp = CharSequence.compare(a.getStore().getStoreCode(), b.getStore().getStoreCode());

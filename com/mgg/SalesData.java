@@ -652,7 +652,7 @@ public class SalesData {
 
         String query1 = "select saleId from Sale where saleCode = ?;";
         String query2 = "select itemId from Item where itemCode = ?;";
-        String query3 = "insert into SaleItem(saleId, saleCode, itemId, beginDate, endDate) value (?, ?, ?, ?);";
+        String query3 = "insert into SaleItem(saleId, saleCode, itemId, beginDate, endDate) value (?, ?, ?, ?, ?);";
 
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -679,19 +679,20 @@ public class SalesData {
                 itemId = rs.getInt("itemId");
             }
 
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); //ex: 2020-03-31
-            Date sDate = format.parse(startDate);
-            Date eDate = format.parse(endDate);
+            java.sql.Date sDate = java.sql.Date.valueOf(startDate);
+            java.sql.Date eDate = java.sql.Date.valueOf(endDate);
             ps = conn.prepareStatement(query3);
             ps.setInt(1, saleId);
-            ps.setInt(2, itemId);
-            //i have no clue if this works. oh well!
-            ps.setDate(3, (java.sql.Date) sDate);
-            ps.setDate(4, (java.sql.Date) eDate);
+            ps.setString(2, saleCode);
+            ps.setInt(3, itemId);
+
+            ps.setDate(4, sDate);
+            ps.setDate(5, eDate);
+
             LOGGER.info(ps);
             ps.executeUpdate();
 
-        } catch (SQLException | ParseException e) {
+        } catch (SQLException e) {
             LOGGER.error(e);
             throw new RuntimeException(e);
         } finally {

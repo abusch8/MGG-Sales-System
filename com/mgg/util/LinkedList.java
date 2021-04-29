@@ -10,14 +10,26 @@ public class LinkedList<T> {
         this.size = 0;
     }
 
+    /**
+     * This method checks if the list is empty.
+     * @return
+     */
     public boolean isEmpty() {
         return (this.head == null);
     }
 
+    /**
+     * Gets the size of the list
+     * @return
+     */
     public int getSize() {
         return this.size;
     }
 
+    /**
+     * Adds an element to the start of the list.
+     * @param element the element you want to add to the start of the list.
+     */
     public void addToStart(T element) {
         Node<T> newHead = new Node<T>(element);
         newHead.setNext(this.head);
@@ -25,19 +37,34 @@ public class LinkedList<T> {
         this.size++;
     }
 
+    /**
+     * Removes the element that is at the start of the list.
+     */
     public void removeFromStart() {
         this.head = this.head.getNext();
         this.size--;
     }
 
+    /**
+     * Adds an element to the end of the list.
+     * @param element the element you want to add to the end of the list.
+     */
     public void addToEnd(T element) {
         this.addElementAtIndex(element, this.size);
     }
 
+    /**
+     * Removed the element at the end of the list.
+     */
     public void removeFromEnd() {
         this.removeElementAtIndex(this.size);
     }
 
+    /**
+     * Adds an element to the desired index in the list.
+     * @param element element you want to add
+     * @param index index you want to place the element
+     */
     public void addElementAtIndex(T element, int index) {
         if (index < 0 || index > this.size) {
             throw new IllegalArgumentException("index " + index + " is out of bounds.\n");
@@ -54,6 +81,10 @@ public class LinkedList<T> {
         }
     }
 
+    /**
+     * Removes an element at the desired index
+     * @param index the index you want to have its element removed.
+     */
     public void removeElementAtIndex(int index) {
         if (index < 0 || index > this.size) {
             throw new IllegalArgumentException("index " + index + " is out of bounds.\n");
@@ -68,10 +99,20 @@ public class LinkedList<T> {
         }
     }
 
+    /**
+     * Grabs the element at the index
+     * @param index index you want to grab the element from in the list
+     * @return the element you found at the index
+     */
     public T getElementAtIndex(int index) {
         return this.getNodeAtIndex(index).getElement();
     }
 
+    /**
+     * Gets the node at the desired index in the list
+     * @param index the place in the list(index)
+     * @return The node that was found at the index
+     */
     private Node<T> getNodeAtIndex(int index) {
         if (index < 0 || index >= this.size) {
             throw new IllegalArgumentException("index " + index + " is out of bounds.\n");

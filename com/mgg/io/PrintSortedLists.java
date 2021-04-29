@@ -8,6 +8,10 @@ import java.util.List;
 
 public class PrintSortedLists {
 
+    /**
+     * Prints out the list of sales in 3 ordered lists(by name, store, total $)
+     * @param sales
+     */
     public static void printList(List<Sale> sales) {
 
         Comparator<Sale> cmpByCustomer = (a, b) -> {

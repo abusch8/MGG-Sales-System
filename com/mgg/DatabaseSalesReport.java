@@ -3,7 +3,8 @@ package com.mgg;
 import com.mgg.entity.Person;
 import com.mgg.entity.Sale;
 import com.mgg.entity.Store;
-import com.mgg.report.PrintReport;
+import com.mgg.io.PrintReport;
+import com.mgg.io.PrintSortedLists;
 import com.mgg.sql.LoadData;
 
 import java.util.List;
@@ -20,6 +21,8 @@ public class DatabaseSalesReport {
         List<Person> persons = LoadData.readPersonDatabase();
         List<Store> stores = LoadData.readStoreDatabase();
         List<Sale> sales = LoadData.readSaleDatabase();
+
+        PrintSortedLists.printList(sales);
 
         PrintReport.generateSalespersonSummaryReport(sales, persons);
         PrintReport.generateStoreSalesSummaryReport(sales, stores);

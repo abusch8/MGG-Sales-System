@@ -1,19 +1,6 @@
 package com.mgg.io;
 
-import com.mgg.entity.Address;
-import com.mgg.entity.Customer;
-import com.mgg.entity.Employee;
-import com.mgg.entity.GiftCard;
-import com.mgg.entity.GoldMember;
-import com.mgg.entity.Item;
-import com.mgg.entity.NewProduct;
-import com.mgg.entity.Person;
-import com.mgg.entity.PlatinumMember;
-import com.mgg.entity.Sale;
-import com.mgg.entity.Service;
-import com.mgg.entity.Store;
-import com.mgg.entity.Subscription;
-import com.mgg.entity.UsedProduct;
+import com.mgg.entity.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

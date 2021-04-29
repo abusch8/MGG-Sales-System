@@ -1,11 +1,6 @@
-package com.mgg.report;
+package com.mgg.io;
 
-import com.mgg.entity.Customer;
-import com.mgg.entity.Employee;
-import com.mgg.entity.Item;
-import com.mgg.entity.Person;
-import com.mgg.entity.Sale;
-import com.mgg.entity.Store;
+import com.mgg.entity.*;
 
 import java.util.ArrayList;
 import java.util.Comparator;

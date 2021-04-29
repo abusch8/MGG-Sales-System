@@ -34,6 +34,7 @@ public class Store {
 
     /**
      * Takes in a list of sales and identifies which sales belong to this store.
+     *
      * @param sales a list of type "Sale"
      */
     public void setSales(List<Sale> sales) {

@@ -8,12 +8,12 @@ import java.util.List;
 public class Sale {
 
     private final String saleCode;
-    private final com.mgg.entity.Store store;
-    private final com.mgg.entity.Person customer;
-    private final com.mgg.entity.Employee salesperson;
-    private final List<com.mgg.entity.Item> items;
+    private final Store store;
+    private final Person customer;
+    private final Employee salesperson;
+    private final List<Item> items;
 
-    public Sale(String saleCode, com.mgg.entity.Store store, com.mgg.entity.Person customer, com.mgg.entity.Employee salesperson, List<com.mgg.entity.Item> items) {
+    public Sale(String saleCode, Store store, Person customer, Employee salesperson, List<Item> items) {
         this.saleCode = saleCode;
         this.store = store;
         this.customer = customer;
@@ -37,17 +37,18 @@ public class Sale {
         return salesperson;
     }
 
-    public List<com.mgg.entity.Item> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
     /**
      * Calculates the subtotal of all the items(all of the items prices before taxes)
+     *
      * @return Sub total amount
      */
     public double calculateSubTotal() {
         double subTotal = 0;
-        for (com.mgg.entity.Item item : this.items) {
+        for (Item item : this.items) {
             subTotal += item.calculatePrice();
         }
         return Math.round(subTotal * 100.0) / 100.0;
@@ -55,6 +56,7 @@ public class Sale {
 
     /**
      * Calculates the total tax of a sale. (Adds all of the item taxes togethers
+     *
      * @return Total tax amount of sale
      */
     public double calculateTax() {
@@ -62,11 +64,12 @@ public class Sale {
         for (Item item : this.items) {
             taxTotal += item.calculateTax();
         }
-        return Math.round(taxTotal *  100.0) / 100.0;
+        return Math.round(taxTotal * 100.0) / 100.0;
     }
 
     /**
      * Calculates the discount amount of the sale.
+     *
      * @return discount amount
      */
     public double calculateDiscount() {
@@ -76,6 +79,7 @@ public class Sale {
 
     /**
      * Calculates the total after adding the subtotal and tax, and subtracting the discount(if applicable).
+     *
      * @return grand total of the sale
      */
     public double calculateGrandTotal() {

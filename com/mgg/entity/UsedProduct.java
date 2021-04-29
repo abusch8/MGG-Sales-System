@@ -12,6 +12,7 @@ public class UsedProduct extends Product {
 
     /**
      * Calculates price of item before tax.
+     *
      * @return price
      */
     public double calculatePrice() {
@@ -20,14 +21,16 @@ public class UsedProduct extends Product {
 
     /**
      * Used Products are only 80% of their normal price, so we calculate the reduced price
+     *
      * @return reduced price
      */
     public double calculateReducedPrice() {
-        return Math.round((basePrice * .8)* 100.0) / 100.0;
+        return Math.round((basePrice * .8) * 100.0) / 100.0;
     }
 
     /**
      * Calculates tax of item.
+     *
      * @return tax price
      */
     public double calculateTax() {
@@ -36,6 +39,7 @@ public class UsedProduct extends Product {
 
     /**
      * Puts the entire receipt for a sale into a string format
+     *
      * @return receipt in a formatted string
      */
     public String receiptToString() {

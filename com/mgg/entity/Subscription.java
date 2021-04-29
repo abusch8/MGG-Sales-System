@@ -34,6 +34,7 @@ public class Subscription extends Item {
 
     /**
      * Calculates the difference in days between two dates
+     *
      * @return difference in days
      */
     public double getDayDifference() {
@@ -42,14 +43,16 @@ public class Subscription extends Item {
 
     /**
      * Calculates the price of the item
+     *
      * @return price (before tax)
      */
     public double calculatePrice() {
-        return ((annualFee / 365) * this.getDayDifference()*100) / 100;
+        return ((annualFee / 365) * this.getDayDifference() * 100) / 100;
     }
 
     /**
      * There is no tax for a subscription, so we return 0
+     *
      * @return 0
      */
     public double calculateTax() {
@@ -58,6 +61,7 @@ public class Subscription extends Item {
 
     /**
      * Puts the entire receipt for a sale into a string format
+     *
      * @return receipt in a formatted string
      */
     public String receiptToString() {

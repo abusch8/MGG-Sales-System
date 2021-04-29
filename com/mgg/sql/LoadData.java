@@ -1,27 +1,16 @@
 package com.mgg.sql;
 
-import com.mgg.entity.Address;
-import com.mgg.entity.Customer;
-import com.mgg.entity.Employee;
-import com.mgg.entity.GiftCard;
-import com.mgg.entity.GoldMember;
-import com.mgg.entity.Item;
-import com.mgg.entity.NewProduct;
-import com.mgg.entity.Person;
-import com.mgg.entity.PlatinumMember;
-import com.mgg.entity.Sale;
-import com.mgg.entity.Service;
-import com.mgg.entity.Store;
-import com.mgg.entity.Subscription;
-import com.mgg.entity.UsedProduct;
-
+import com.mgg.entity.*;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.apache.logging.log4j.core.config.DefaultConfiguration;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -231,7 +220,7 @@ public class LoadData {
 
         String query1 = "select saleCode, storeId, customerId, salespersonId from Sale where saleId = ?;";
         String query2 = "select a.itemId, a.itemCode, a.type, b.quantity, b.employeeId, b.numberOfHours, b.beginDate, b.endDate " +
-                        "from Item a join SaleItem b on a.itemId = b.itemId where saleId = ?;";
+                "from Item a join SaleItem b on a.itemId = b.itemId where saleId = ?;";
 
         PreparedStatement ps = null;
         ResultSet rs = null;

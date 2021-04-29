@@ -39,6 +39,7 @@ public class Service extends Item {
 
     /**
      * Puts the entire receipt for a sale into a string format
+     *
      * @return receipt in a formatted string
      */
     public String receiptToString() {

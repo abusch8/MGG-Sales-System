@@ -19,6 +19,7 @@ public class GiftCard extends Item {
 
     /**
      * Calculates the price of the item before tax
+     *
      * @return price
      */
     public double calculatePrice() {
@@ -27,6 +28,7 @@ public class GiftCard extends Item {
 
     /**
      * Calculates the tax of the item
+     *
      * @return tax price
      */
     public double calculateTax() {
@@ -35,6 +37,7 @@ public class GiftCard extends Item {
 
     /**
      * Puts the entire receipt for a sale into a string format
+     *
      * @return receipt in a formatted string
      */
     public String receiptToString() {

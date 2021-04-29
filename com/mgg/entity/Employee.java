@@ -18,6 +18,7 @@ public class Employee extends Person {
 
     /**
      * Loops through the a list of sales and assigns any sales that belong to this employee to their sales list
+     *
      * @param sales a list of "Sale" type
      */
     public void setSales(List<Sale> sales) {

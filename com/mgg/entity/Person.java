@@ -10,10 +10,10 @@ public abstract class Person {
     private final String personId;
     private final String lastName;
     private final String firstName;
-    private final com.mgg.entity.Address address;
+    private final Address address;
     private final List<String> emails;
 
-    protected Person(String personId, String lastName, String firstName, com.mgg.entity.Address address, List<String> emails) {
+    protected Person(String personId, String lastName, String firstName, Address address, List<String> emails) {
         this.personId = personId;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -45,13 +45,14 @@ public abstract class Person {
 
     /**
      * Puts all of the emails in a string
+     *
      * @return string of emails
      */
     public String emailsToString() {
         StringBuilder emailListToString = new StringBuilder();
-        for(int i = 0; i < emails.size(); i++) {
+        for (int i = 0; i < emails.size(); i++) {
             emailListToString.append(emails.get(i));
-            if(i + 1 < emails.size()) {
+            if (i + 1 < emails.size()) {
                 emailListToString.append(", ");
             }
         }

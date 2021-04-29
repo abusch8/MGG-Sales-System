@@ -10,7 +10,7 @@ public class PrintSortedLists {
 
     public static void printList(List<Sale> sales) {
 
-        Comparator<Sale> cmpByCustomerName = (a, b) -> {
+        Comparator<Sale> cmpByCustomer = (a, b) -> {
             int cmp = CharSequence.compare(a.getCustomer().getLastName(), b.getCustomer().getLastName());
             if (cmp == 0) {
                 cmp = CharSequence.compare(a.getCustomer().getFirstName(), b.getCustomer().getFirstName());
@@ -18,9 +18,14 @@ public class PrintSortedLists {
             return cmp;
         };
 
-        Comparator<Sale> cmpByPrice = Comparator.comparingDouble(Sale::calculateGrandTotal);
+//        Comparator<Sale> cmpByTotal = Comparator.comparingDouble(Sale::calculateGrandTotal);
 
-        Comparator<Sale> cmpByStoreAndSalespersonName = (a, b) -> {
+        Comparator<Sale> cmpByTotal = (a,b) -> {
+            return Double.compare(b.calculateGrandTotal(), a.calculateGrandTotal());
+        };
+
+
+        Comparator<Sale> cmpByStore = (a, b) -> {
             int cmp = CharSequence.compare(a.getStore().getStoreCode(), b.getStore().getStoreCode());
             if (cmp == 0) {
                 cmp = CharSequence.compare(a.getSalesperson().getLastName(), b.getSalesperson().getLastName());
@@ -31,26 +36,40 @@ public class PrintSortedLists {
             return cmp;
         };
 
-        SortedList<Sale> sl1 = new SortedList<>(cmpByCustomerName);
+        SortedList<Sale> sl1 = new SortedList<>(cmpByCustomer);
         sl1.batchAdd(sales);
+
+        System.out.println("+-------------------------------------------------------------------------+");
+        System.out.println("| Sales by Customer                                                       |");
+        System.out.println("+-------------------------------------------------------------------------+");
+        System.out.println("Sale       Store      Customer             Salesperson          Total");
         for (int i = 0; i < sl1.size(); i++) {
-            System.out.println(sl1.get(i));
+            System.out.println(sl1.get(i).toString());
         }
+        System.out.print("\n\n");
 
-        SortedList<Sale> sl2 = new SortedList<>(cmpByPrice);
+        SortedList<Sale> sl2 = new SortedList<>(cmpByTotal);
         sl2.batchAdd(sales);
+
+        System.out.println("+-------------------------------------------------------------------------+");
+        System.out.println("| Sales by Total                                                          |");
+        System.out.println("+-------------------------------------------------------------------------+");
+        System.out.println("Sale       Store      Customer             Salesperson          Total");
         for (int i = 0; i < sl2.size(); i++) {
-            System.out.println(sl2.get(i));
+            System.out.println(sl2.get(i).toString());
         }
+        System.out.print("\n\n");
 
-        SortedList<Sale> sl3 = new SortedList<>(cmpByStoreAndSalespersonName);
+        SortedList<Sale> sl3 = new SortedList<>(cmpByStore);
         sl3.batchAdd(sales);
-        for (int i = 0; i < sl3.size(); i++) {
-            System.out.println(sl3.get(i));
-        }
 
-        if (sl1.isEmpty() || sl2.isEmpty() || sl3.isEmpty()) {
-            System.out.println("You fucked up");
+        System.out.println("+-------------------------------------------------------------------------+");
+        System.out.println("| Sales by Store                                                          |");
+        System.out.println("+-------------------------------------------------------------------------+");
+        System.out.println("Sale       Store      Customer             Salesperson          Total");
+        for (int i = 0; i < sl3.size(); i++) {
+            System.out.println(sl3.get(i).toString());
         }
+        System.out.print("\n\n");
     }
 }

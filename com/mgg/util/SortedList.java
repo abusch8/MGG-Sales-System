@@ -1,5 +1,7 @@
 package com.mgg.util;
 
+import com.mgg.entity.Sale;
+
 import java.util.Comparator;
 import java.util.List;
 
@@ -17,10 +19,28 @@ public class SortedList<T> {
     }
 
     public void add(T element) {
-        for (int i = 0; i < this.underlyingList.getSize(); i++) {
-            if (this.cmp.compare(element, this.underlyingList.getElementAtIndex(i)) >= 0) {
-                this.underlyingList.addElementAtIndex(element, i);
-                break;
+        if (this.underlyingList.isEmpty()) {
+            this.underlyingList.addToStart(element);
+
+            System.out.println(((Sale)element).getSaleCode());
+
+        } else {
+            for (int i = 0; i < this.underlyingList.getSize(); i++) {
+                int cmp = this.cmp.compare(element, this.underlyingList.getElementAtIndex(i));
+//                if (cmp < 1) { //
+//                    if (i == 0) {
+//
+//                    }
+//                } else {
+//                    this.underlyingList.addElementAtIndex(element, i);
+//                    break;
+//                }
+//
+                if (cmp < 1) { //0 & -1
+                    this.underlyingList.addElementAtIndex(element, i);
+                    System.out.println(((Sale)element).getSaleCode());
+                    break;
+                }
             }
         }
     }
@@ -37,13 +57,5 @@ public class SortedList<T> {
 
     public T get(int index) {
         return this.underlyingList.getElementAtIndex(index);
-    }
-
-    public String toString() {
-        return this.underlyingList.toString();
-    }
-
-    public boolean isEmpty() {
-        return this.underlyingList.isEmpty();
     }
 }

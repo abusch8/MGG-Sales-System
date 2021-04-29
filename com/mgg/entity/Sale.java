@@ -85,4 +85,18 @@ public class Sale {
     public double calculateGrandTotal() {
         return (this.calculateSubTotal() + this.calculateTax()) - this.calculateDiscount();
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getSaleCode());
+        sb.append(" ".repeat(Math.max(0, 11 - sb.length())));
+        sb.append(this.getStore().getStoreCode());
+        sb.append(" ".repeat(Math.max(0, 22 - sb.length())));
+        sb.append(this.getCustomer().getLastName() + "," + this.getCustomer().getFirstName());
+        sb.append(" ".repeat(Math.max(0, 43 - sb.length())));
+        sb.append(this.getSalesperson().getLastName() + "," + this.getSalesperson().getFirstName());
+        sb.append(" ".repeat(Math.max(0, 64 - sb.length())));
+        sb.append(String.format("$%10.2f", this.calculateGrandTotal()));
+        return sb.toString();
+    }
 }

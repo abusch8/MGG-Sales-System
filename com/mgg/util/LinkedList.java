@@ -82,15 +82,4 @@ public class LinkedList<T> {
         }
         return current;
     }
-
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        Node<T> current = this.head;
-        while (current.getNext() != null) {
-            sb.append(current.getElement() + ", ");
-            current = current.getNext();
-        }
-        sb.append(current.getElement());
-        return sb.toString();
-    }
 }
